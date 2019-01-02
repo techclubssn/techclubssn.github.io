@@ -1,5 +1,7 @@
 import './Logo.css';
 import './Navbar.css';
+import './TimelineSession.css';
+import './TimelineNews.css';
 import Tabletop from 'tabletop';
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
@@ -138,23 +140,9 @@ class Sessions extends Component{
 
   render() {
     return(
-    <div className="sessionsStyle">
     <div className="container">
         <div className="row">
-          <div className="col-lg-push-5 col-md-push-5 col-sm-push-5 col-xs-12">
-              <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non mauris ultrices, luctus dolor non, eleifend velit. Vestibulum gravida in enim tincidunt commodo. Ut at ipsum leo. Aliquam in semper sapien. Duis quis vulputate nulla. Phasellus ut arcu vitae ligula lacinia faucibus eget et massa. Donec sodales, nibh sed tristique aliquam, ipsum diam molestie dolor, ut laoreet quam nulla sed magna. Duis tincidunt nunc vel ligula imperdiet, quis gravida nibh ullamcorper. Aenean semper pellentesque neque, congue tristique velit volutpat sed. Maecenas ut molestie mauris, in tincidunt velit. Cras nec ornare erat, nec viverra nulla. Morbi quis feugiat odio, in mattis massa.
-
-Maecenas ut finibus lectus. Etiam consequat, libero nec consequat placerat, erat lacus posuere ipsum, nec malesuada nisl mi sed augue. Pellentesque eu blandit purus. Donec elit nisl, lobortis sit amet vestibulum ut, condimentum non neque. In a ipsum convallis sapien elementum vehicula ut quis tellus. Sed semper eros sed scelerisque commodo. Phasellus dignissim dolor vitae velit laoreet ullamcorper. Vivamus gravida, tellus non congue pulvinar, sapien purus lacinia quam, at pretium orci lorem vitae nibh. Ut in est at nibh scelerisque blandit facilisis eget sem. Praesent eu mollis nulla. Nunc quam libero, dapibus sit amet imperdiet at, tincidunt ut dolor. Sed eget lorem vel ipsum consequat sollicitudin et ac mi. Maecenas a convallis risus. Morbi ut placerat eros. Donec maximus sem eu dui posuere fringilla.
-
-Donec egestas quis urna eu varius. Quisque ex sapien, finibus et tempus eget, fringilla nec lacus. Morbi vitae tellus in massa pretium volutpat eu et ipsum. Donec a ligula nec nunc pellentesque finibus sed a erat. Etiam imperdiet laoreet nulla, iaculis convallis massa vestibulum ut. Proin mattis ultricies ligula ut tincidunt. Morbi mattis massa mi.
-
-Integer commodo purus suscipit, auctor ex a, ornare nisl. Quisque vulputate risus vitae iaculis hendrerit. Vestibulum turpis risus, consequat ultrices velit aliquet, varius aliquet magna. Pellentesque scelerisque sem vestibulum suscipit vestibulum. Fusce condimentum leo non ante sollicitudin, quis ultrices diam elementum. Praesent pulvinar, ex pulvinar feugiat pretium, metus mi consequat mauris, non maximus diam eros nec nisi. Donec vehicula dolor quis fermentum cursus. Nullam varius rutrum erat. Vestibulum tincidunt arcu nec nibh pretium, quis fermentum ante interdum. Mauris in libero est. Cras hendrerit facilisis metus, non ullamcorper odio egestas nec. Sed nec ipsum in sem mattis dictum. Quisque vitae varius sapien. Maecenas sagittis sollicitudin pharetra.
-
-Duis at congue ligula, pellentesque vestibulum nisl. Phasellus sit amet nisl sagittis urna commodo egestas. Mauris blandit, dolor sit amet interdum ornare, urna libero accumsan ex, sed sodales erat libero non leo. Nulla facilisi. Fusce finibus nibh id condimentum laoreet. Aenean turpis tortor, consequat ac accumsan fermentum, iaculis et est. Vestibulum pellentesque commodo purus nec semper. Nulla fermentum ligula non elit sodales, eget tincidunt felis commodo. Pellentesque vel tempus nibh. 
-              </p>
-          </div>
-          <div className="col-lg-pull-7 col-md-pull-7 col-sm-pull-7 col-xs-12">
+          <div className="col-lg-5 col-md-5 col-sm-5 col-xs-12 sessionsHeader"> 
       {/*
       <div className="sessionsStyle">
         <LinkNavbar ref={this.props.myRef} />
@@ -179,9 +167,26 @@ Duis at congue ligula, pellentesque vestibulum nisl. Phasellus sit amet nisl sag
       </div>
     */}
               <h1>Sessions</h1>
+           </div>
+          <div className="sessionsStyle">
+          <div className="col-lg-7 col-md-7 col-sm-7 col-xs-12 sessionsStyle"> 
+               <div class="timeline">
+                <div class="timeline-element right">
+                  <div class="content">
+                    <h2>2017</h2>
+                    <p>Lorem ipsum..</p>
+                  </div>
+                </div>
+                <div class="timeline-element left">
+                  <div class="content">
+                    <h2>2016</h2>
+                    <p>Lorem ipsum..</p>
+                  </div>
+                </div>
+              </div> 
+          </div>
           </div>
         </div>
-      </div>
       </div>
       )
   }
@@ -192,10 +197,9 @@ class News extends Component{
 
   render() {
     return(
-      <div className="newsStyle">
       <div className="container">
         <div className="row">
-          <div className="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+          <div className="col-sm-5 col-sm-push-7 sessionsHeader">
       {/*<div className="newsStyle">
         <LinkNavbar ref={this.props.myRef} />
         <h1>News Details</h1>
@@ -215,9 +219,9 @@ class News extends Component{
           </table>
         }
       </div>*/}
-              <h1>Anonouncements</h1>
+              <h1>Anouncements</h1>
           </div>
-          <div className="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+          <div className="col-sm-7 col-sm-pull-5 sessionsStyle">
               <p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla non mauris ultrices, luctus dolor non, eleifend velit. Vestibulum gravida in enim tincidunt commodo. Ut at ipsum leo. Aliquam in semper sapien. Duis quis vulputate nulla. Phasellus ut arcu vitae ligula lacinia faucibus eget et massa. Donec sodales, nibh sed tristique aliquam, ipsum diam molestie dolor, ut laoreet quam nulla sed magna. Duis tincidunt nunc vel ligula imperdiet, quis gravida nibh ullamcorper. Aenean semper pellentesque neque, congue tristique velit volutpat sed. Maecenas ut molestie mauris, in tincidunt velit. Cras nec ornare erat, nec viverra nulla. Morbi quis feugiat odio, in mattis massa.
 
@@ -230,7 +234,6 @@ Integer commodo purus suscipit, auctor ex a, ornare nisl. Quisque vulputate risu
 Duis at congue ligula, pellentesque vestibulum nisl. Phasellus sit amet nisl sagittis urna commodo egestas. Mauris blandit, dolor sit amet interdum ornare, urna libero accumsan ex, sed sodales erat libero non leo. Nulla facilisi. Fusce finibus nibh id condimentum laoreet. Aenean turpis tortor, consequat ac accumsan fermentum, iaculis et est. Vestibulum pellentesque commodo purus nec semper. Nulla fermentum ligula non elit sodales, eget tincidunt felis commodo. Pellentesque vel tempus nibh. 
               </p>
           </div>
-        </div>
       </div>
       </div>
       )

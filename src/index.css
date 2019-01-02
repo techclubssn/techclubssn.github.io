@@ -8,6 +8,21 @@ body {
   overflow-x: hidden;
 }
 
+.container{
+  padding: 0;
+  margin: 0;
+  width: 100%
+}
+
+.col-lg-5, .col-sm-5{
+    padding-bottom: 100%;
+    margin-bottom: -100%;
+}
+
+.row {
+    overflow: hidden;
+}
+
 .aboutUsStyle {
   text-align: center;
   color: white;
@@ -50,6 +65,28 @@ body {
   text-decoration: none;
 }
 
+.sessionsHeader {
+  color: white;
+  background: #333;
+  text-align: center;
+  font-family: "Cabin";
+  height: auto;
+}
+
+.sessionsStyle {
+  color: #333;
+  background: #ccc;
+  font-family: "Ubuntu";
+}
+
+.sessionsStyle h1{
+  color: #333;
+  text-align: center;
+  font-family: "Cabin";
+}
+
+
+/*
 .sessionsStyle {
   color: #333;
   background: #f8f8f8;
@@ -85,6 +122,7 @@ body {
   font-weight: bold;
   text-decoration: none;
 }
+*/
 
 .newsStyle {
   color: #BBB;
@@ -122,70 +160,10 @@ body {
   text-decoration: none;
 }
 
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-}
-
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-td, th { 
-  padding: 6px; 
-  text-align: left; 
-}
-
-/* 
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-  /* Force table to not be like tables anymore */
-  table, thead, tbody, th, td, tr { 
-    display: block; 
+@media (max-width: 768px) {
+  .col-lg-5, .col-sm-5 {
+    padding-bottom: 10px;
+    padding-top: 7px;
+    margin-bottom: 10px;
   }
-  
-  /* Hide table headers (but not display: none;, for accessibility) */
-  thead tr { 
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  
-  tr { border: 1px solid #ccc; }
-  
-  td { 
-    /* Behave  like a "row" */
-    border: none;
-    position: relative;
-    padding-left: 50%; 
-  }
-  
-  td:before { 
-    /* Now like a table header */
-    position: absolute;
-    /* Top/left values mimic padding */
-    top: 6px;
-    left: 6px;
-    width: 45%; 
-    padding-right: 10px; 
-    white-space: nowrap;
-  }
-  
-  /*
-  Label the data
-  */
-  .session td:nth-of-type(1):before { content: "Date"; }
-  .session td:nth-of-type(2):before { content: "Session"; }
-  .session td:nth-of-type(3):before { content: "Details"; }
-
-  .news td:nth-of-type(1):before { content: "Date"; }
-  .news td:nth-of-type(2):before { content: "News"; }
-
 }
