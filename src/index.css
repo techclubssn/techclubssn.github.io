@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", "Lato", "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+  overflow-x: hidden;
+}
+
+.aboutUsStyle {
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+}
+
+.teamStyle {
+  text-align: center;
+  background: #CCC;
+  color: #333;
+  padding-top: 50px;
+}
+
+.teamImg {
+  width: 150px;
+  height: 150px;
+}
+
+.teamStyle a{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.teamStyle a:visited{
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.teamStyle a:hover {
+  color:red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.teamStyle a:active{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sessionsStyle {
+  color: #333;
+  background: #f8f8f8;
+  font-family: "Ubuntu";
+}
+
+.sessionsStyle h1{
+  color: #333;
+  text-align: center;
+  font-family: "Cabin";
+}
+
+.sessionsStyle a {
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sessionsStyle a:visited {
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sessionsStyle a:hover {
+  color:red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sessionsStyle a:active {
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle {
+  color: #BBB;
+  background: black;
+}
+
+.newsStyle h1{
+  color: #BBB;
+  text-align: center;
+  font-family: "Cabin";
+}
+
+.newsStyle a{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle a:visited{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle a:hover {
+  color:red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle a:active{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  text-align: left; 
+}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: block; 
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tr { border: 1px solid #ccc; }
+  
+  td { 
+    /* Behave  like a "row" */
+    border: none;
+    position: relative;
+    padding-left: 50%; 
+  }
+  
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+  
+  /*
+  Label the data
+  */
+  .session td:nth-of-type(1):before { content: "Date"; }
+  .session td:nth-of-type(2):before { content: "Session"; }
+  .session td:nth-of-type(3):before { content: "Details"; }
+
+  .news td:nth-of-type(1):before { content: "Date"; }
+  .news td:nth-of-type(2):before { content: "News"; }
+
+}
