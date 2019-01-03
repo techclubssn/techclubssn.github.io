@@ -165,9 +165,10 @@ class Sessions extends Component{
             </tr>))}
           </table>
         }
-      </div>
-    */}
-              <h1 className="sessionsSticky">Sessions</h1>
+      </div>*/}
+           <div className="sessionsSticky">
+              <h1>Sessions</h1>
+            </div>
            </div>
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
               <Timeline>
