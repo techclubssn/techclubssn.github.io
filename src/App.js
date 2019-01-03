@@ -6,6 +6,7 @@ import Particles from 'react-particles-js';
 import particlesJSON from './particles.json';
 import {Route, Link, Switch} from 'react-router-dom';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
+import { StickyContainer, Sticky } from 'react-sticky';
 
 const particleParams = particlesJSON
 
@@ -135,57 +136,97 @@ class CustomMarkdown extends Component{
 
 }
 
+/*
+Add Loading feature.
+
+<div className="sessionsStyle">
+  <h1>Session Details</h1>
+  {this.props.data.length === 0 ? <p>Loading Session Information...</p> : 
+    <table className="session">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Session</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+    {this.props.data.slice(0).reverse().map((object, i) => (
+      <tr key={i}>
+        <td>{object.date}</td> 
+        <td>{object.sessionName}</td>
+        <td><CustomMarkdown data={object.details} /></td>
+      </tr>))}
+    </table>
+  }
+</div>
+
+*/
+
 class Sessions extends Component{
 
+  displayPara(){
+    return
+  }
+
+  sessionHeaderSticky(){
+    return(<div>
+    {this.props.sticky === true ?
+        <Sticky>
+          {({ style }) => (
+            <div style={{...style, paddingTop:"30px"}}>
+              <h1>Sessions</h1>
+              <div style={{display:""}}>
+                <p>
+                  Sessions are weekly activities organized by the TechClub members. It usually involves
+                  tutorials and classes on a particular area of concentration, or it could be any other
+                  events. All sessions are open to everyone, however they might happen during class hours
+                  of other departments. Attend at your own discretion.
+                </p>
+                <p>
+                  Sessions are mostly conducted during TechClub hours, which are usually kept at the last
+                  few periods of Thursday or Tuesday. It may change every semester. Please refer to your
+                  timetable for the latest update.
+                </p>
+              </div>
+              <button>
+                Collapse
+              </button>
+            </div>
+            )}
+        </Sticky> :
+        <h1>Sessions</h1>}
+    </div>)
+  }
+
   render() {
+    console.log(this.props.sticky)
     return(
     <div className="container-fluid">
+      <StickyContainer>
         <LinkNavbar ref={this.props.myRef} />
-        <div className="row">
-          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader"> 
-      {/*
-      <div className="sessionsStyle">
-        <h1>Session Details</h1>
-        {this.props.data.length === 0 ? <p>Loading Session Information...</p> : 
-          <table className="session">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Session</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-          {this.props.data.slice(0).reverse().map((object, i) => (
-            <tr key={i}>
-              <td>{object.date}</td> 
-              <td>{object.sessionName}</td>
-              <td><CustomMarkdown data={object.details} /></td>
-            </tr>))}
-          </table>
-        }
-      </div>*/}
-           <div className="sessionsSticky">
-              <h1>Sessions</h1>
-            </div>
-           </div>
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
-              <Timeline>
-                {
-                  this.props.data.slice(0).reverse().map((object, i) =>
-                    (
-                      <TimelineEvent title={object.sessionName}
-                                     container="card"
-                                     subtitle={object.date}
-                                     cardHeaderStyle={{background: "orange"}}
-                      >
-                        <CustomMarkdown data={object.details} />
-                      </TimelineEvent>
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
+                {this.sessionHeaderSticky()}
+             </div>
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
+                <Timeline>
+                  {
+                    this.props.data.slice(0).reverse().map((object, i) =>
+                      (
+                        <TimelineEvent title={object.sessionName}
+                                       container="card"
+                                       subtitle={object.date}
+                                       cardHeaderStyle={{background: "orange"}}
+                        >
+                          <CustomMarkdown data={object.details} />
+                        </TimelineEvent>
+                      )
                     )
-                  )
-                }
-              </Timeline>
-            </div>
-        </div>
+                  }
+                </Timeline>
+              </div>
+          </div>
+        </StickyContainer>
       </div>
       )
   }
@@ -347,6 +388,13 @@ const particleStyle = {
 
 class Home extends Component {
 
+    constructor(props) {
+      super(props)
+      this.state = {
+        currentDest: 'home'
+      }
+    }
+
     componentDidMount() {
       //Handles scroll from other pages
       this.handleScroll();
@@ -358,12 +406,21 @@ class Home extends Component {
     }
 
     handleScroll(){
-      if(this.props.dest === 'news')
+      if(this.state.currentDest != 'news' && this.props.dest === 'news')
+      {
         this.scrollToMyRef(this.props.myRef.news);
-      else if(this.props.dest === 'sessions')
+        this.setState({currentDest: 'news'});
+      }
+      else if(this.state.currentDest != 'sessions' && this.props.dest === 'sessions')
+      {
         this.scrollToMyRef(this.props.myRef.sessions);
-      else if(this.props.dest === 'home')
+        this.setState({currentDest: 'sessions'});
+      }
+      else if(this.state.currentDest != 'home' && this.props.dest === 'home')
+      {
         this.scrollToMyRef(this.props.myRef.home);
+        this.setState({currentDest: 'home'});
+      }
     }
 
     scrollToMyRef(ref){
@@ -382,7 +439,7 @@ class Home extends Component {
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
           </div>
         </div>
-        <Sessions data={this.props.sessionData} myRef={this.props.myRef.sessions} />
+        <Sessions data={this.props.sessionData} myRef={this.props.myRef.sessions} sticky={this.props.sticky} />
         <News data={this.props.newsData} myRef={this.props.myRef.news} />
       </div>
     );
@@ -395,13 +452,25 @@ class Pages extends Component{
     return(
       <Switch>
         <Route exact path='/' render={
-          (props) => <Home myRef={this.props.allRef} newsData={this.props.data.newsData} sessionData={this.props.data.sessionData} dest="home" />}/>
+          (props) => <Home myRef={this.props.allRef} 
+                           newsData={this.props.data.newsData} 
+                           sessionData={this.props.data.sessionData} 
+                           sticky={this.props.data.sticky} 
+                           dest="home" />}/>
         
         <Route path='/news' render={
-          (props) => <Home myRef={this.props.allRef} newsData={this.props.data.newsData} sessionData={this.props.data.sessionData} dest="news" />}/>
+          (props) => <Home myRef={this.props.allRef} 
+                           newsData={this.props.data.newsData} 
+                           sessionData={this.props.data.sessionData} 
+                           sticky={this.props.data.sticky} 
+                           dest="news" />}/>
         
         <Route path='/sessions' render={
-          (props) => <Home myRef={this.props.allRef} newsData={this.props.data.newsData} sessionData={this.props.data.sessionData} dest="sessions" />}/>
+          (props) => <Home myRef={this.props.allRef} 
+                           newsData={this.props.data.newsData} 
+                           sessionData={this.props.data.sessionData} 
+                           sticky={this.props.data.sticky} 
+                           dest="sessions" />}/>
         
         <Route path='/about' component={About}/>
 
@@ -428,10 +497,21 @@ class App extends Component {
           sessionData: [],
           newsData: [],
           teamData: [],
+          sticky:window.innerWidth > 768 ? true : false,
         };
+        this.updateWidth = this.updateWidth.bind(this);
     }
 
+  updateWidth() {
+  if(this.state.sticky === false && window.innerWidth > 768)
+    this.setState({sticky: true});
+  else if(this.state.sticky === true && window.innerWidth <= 768)
+    this.setState({sticky: false});
+  }
+
   componentDidMount() {
+
+      window.addEventListener('resize', this.updateWidth);
 
       Tabletop.init({
       key: '1nWsyn1isF7gl2A1dMLiIpp0mAR6QVvIuNfg2nEn54rc',
@@ -443,8 +523,11 @@ class App extends Component {
         })
       },
       simpleSheet: false
-    })
-      
+    })   
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWidth);
   }
 
   render() {
