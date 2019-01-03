@@ -9,6 +9,7 @@
     "react": "^16.6.3",
     "react-collapse": "^4.0.3",
     "react-dom": "^16.6.3",
+    "react-event-timeline": "^1.6.2",
     "react-google-sheets": "^0.4.0",
     "react-motion": "^0.5.2",
     "react-particles-js": "^2.4.2",
@@ -16,6 +17,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "react-scroll-to-element": "^0.2.0",
+    "react-sticky": "^6.0.3",
     "tabletop": "^1.5.2"
   },
   "scripts": {

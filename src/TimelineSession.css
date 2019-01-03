@@ -19,7 +19,7 @@
   background-color: black;
   top: 0;
   bottom: 0;
-  left: 31px;
+  left: 11.3%;
   margin-left: -3px;
 }
 
@@ -100,7 +100,7 @@
 /* The actual content */
 .content {
   padding: 20px 30px;
-  background-color: black;
+  background-color: transparent;
   color: white;
   position: relative;
   border-radius: 6px;
