@@ -164,18 +164,33 @@ Add Loading feature.
 
 class Sessions extends Component{
 
-  displayPara(){
-    return
+  constructor(props){
+    super(props)
+    this.state = {
+      displayPara: this.props.sticky === true ? '' : 'none',
+    }
+  }
+
+  toggleDisplayPara(){
+    let sticky = this.props.sticky;
+    let displayPara = this.state.displayPara;
+    if(sticky === false && displayPara === '')
+      this.setState({displayPara: 'none'});
+    else if(sticky === false && displayPara === 'none')
+      this.setState({displayPara: ''});
   }
 
   sessionHeaderSticky(){
+    let displayPara = this.state.displayPara;
+    let displayButton = this.props.sticky === true ? 'none' : '';
     return(<div>
-    {this.props.sticky === true ?
+    {
+      this.props.sticky === true ?
         <Sticky>
           {({ style }) => (
             <div style={{...style, paddingTop:"30px"}}>
               <h1>Sessions</h1>
-              <div style={{display:""}}>
+              <div>
                 <p>
                   Sessions are weekly activities organized by the TechClub members. It usually involves
                   tutorials and classes on a particular area of concentration, or it could be any other
@@ -188,13 +203,29 @@ class Sessions extends Component{
                   timetable for the latest update.
                 </p>
               </div>
-              <button>
-                Collapse
-              </button>
             </div>
             )}
         </Sticky> :
-        <h1>Sessions</h1>}
+        <div>
+          <h1>Sessions</h1>
+          <div style={{display:displayPara, transition: "0.4s"}}>
+            <p>
+              Sessions are weekly activities organized by the TechClub members. It usually involves
+              tutorials and classes on a particular area of concentration, or it could be any other
+              events. All sessions are open to everyone, however they might happen during class hours
+              of other departments. Attend at your own discretion.
+            </p>
+            <p>
+              Sessions are mostly conducted during TechClub hours, which are usually kept at the last
+              few periods of Thursday or Tuesday. It may change every semester. Please refer to your
+              timetable for the latest update.
+            </p>
+          </div>
+          <button onClick={() => this.toggleDisplayPara()} className='btn btn-warning'>
+            {displayPara === '' ? 'Less' : 'More'}
+          </button>
+        </div>
+    }
     </div>)
   }
 
