@@ -7,6 +7,7 @@ import particlesJSON from './particles.json';
 import {Route, Link, Switch} from 'react-router-dom';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
 import { StickyContainer, Sticky } from 'react-sticky';
+import {Collapse} from 'react-collapse';
 
 const particleParams = particlesJSON
 
@@ -167,22 +168,39 @@ class Sessions extends Component{
   constructor(props){
     super(props)
     this.state = {
-      displayPara: this.props.sticky === true ? '' : 'none',
+      displayPara: this.props.sticky,
     }
+  }
+
+  paraContent(){
+    return(
+      <div style={{paddingBottom: "5px"}}>
+        <p>
+          Sessions are weekly activities organized by the TechClub members. It usually involves
+          tutorials and classes on a particular area of concentration, or it could be any other
+          events. All sessions are open to everyone, however they might happen during class hours
+          of other departments. Attend at your own discretion.
+        </p>
+        <p>
+          Sessions are mostly conducted during TechClub hours, which are usually kept at the last
+          few periods of Thursday or Tuesday. It may change every semester. Please refer to your
+          timetable for the latest update.
+        </p>
+      </div>
+    )
   }
 
   toggleDisplayPara(){
     let sticky = this.props.sticky;
     let displayPara = this.state.displayPara;
-    if(sticky === false && displayPara === '')
-      this.setState({displayPara: 'none'});
-    else if(sticky === false && displayPara === 'none')
-      this.setState({displayPara: ''});
+    if(sticky === false && displayPara === true)
+      this.setState({displayPara: false});
+    else if(sticky === false && displayPara === false)
+      this.setState({displayPara: true});
   }
 
   sessionHeaderSticky(){
     let displayPara = this.state.displayPara;
-    let displayButton = this.props.sticky === true ? 'none' : '';
     return(<div>
     {
       this.props.sticky === true ?
@@ -190,39 +208,17 @@ class Sessions extends Component{
           {({ style }) => (
             <div style={{...style, paddingTop:"30px"}}>
               <h1>Sessions</h1>
-              <div>
-                <p>
-                  Sessions are weekly activities organized by the TechClub members. It usually involves
-                  tutorials and classes on a particular area of concentration, or it could be any other
-                  events. All sessions are open to everyone, however they might happen during class hours
-                  of other departments. Attend at your own discretion.
-                </p>
-                <p>
-                  Sessions are mostly conducted during TechClub hours, which are usually kept at the last
-                  few periods of Thursday or Tuesday. It may change every semester. Please refer to your
-                  timetable for the latest update.
-                </p>
-              </div>
+              {this.paraContent()}
             </div>
             )}
         </Sticky> :
         <div>
           <h1>Sessions</h1>
-          <div style={{display:displayPara, transition: "0.4s"}}>
-            <p>
-              Sessions are weekly activities organized by the TechClub members. It usually involves
-              tutorials and classes on a particular area of concentration, or it could be any other
-              events. All sessions are open to everyone, however they might happen during class hours
-              of other departments. Attend at your own discretion.
-            </p>
-            <p>
-              Sessions are mostly conducted during TechClub hours, which are usually kept at the last
-              few periods of Thursday or Tuesday. It may change every semester. Please refer to your
-              timetable for the latest update.
-            </p>
-          </div>
+          <Collapse isOpened={displayPara}>
+            {this.paraContent()}
+          </Collapse>
           <button onClick={() => this.toggleDisplayPara()} className='btn btn-warning'>
-            {displayPara === '' ? 'Less' : 'More'}
+            {displayPara === true ? 'Less' : 'More'}
           </button>
         </div>
     }
