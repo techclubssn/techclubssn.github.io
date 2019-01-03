@@ -23,10 +23,20 @@ body {
     overflow: hidden;
 }
 
+const introPage = {
+
+}
+
 .aboutUsStyle {
   text-align: center;
   color: white;
   padding-top: 70px;
+  height: 100vh;
+  border: 3px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px;
 }
 
 .teamStyle {
@@ -82,16 +92,6 @@ body {
   color: #333;
   text-align: center;
   font-family: "Cabin"; 
-}
-
-.sessionsDisplayPara{
-  display: ;
-  transition: 0.4s;
-}
-
-.sessionsRemovePara{
-  display: none;
-  transition: 0.4s;
 }
 
 /*

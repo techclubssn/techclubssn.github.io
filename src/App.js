@@ -257,54 +257,112 @@ class Sessions extends Component{
       </div>
       )
   }
-
 }
 
+/*
+
+<div className="newsStyle">
+  <h1>News Details</h1>
+  {this.props.data.length === 0 ? <p>Loading News...</p> : 
+    <table className="news">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>News</th>
+        </tr>
+      </thead>
+    {this.props.data.slice(0).reverse().map((object, i) => (
+      <tr key={i}>
+        <td>{object.date}</td>
+        <td><CustomMarkdown data={object.news} /></td>
+      </tr>))}
+    </table>
+  }
+</div>
+
+*/
+
 class News extends Component{
+
+  constructor(props){
+    super(props)
+    this.state = {
+      displayPara: this.props.sticky,
+    }
+  }
+
+  paraContent(){
+    return(
+      <div style={{paddingBottom: "5px"}}>
+        <p>
+          Information on the latest news regarding TechClub, Events and Hackathons. 
+        </p>
+      </div>
+    )
+  }
+
+  toggleDisplayPara(){
+    let sticky = this.props.sticky;
+    let displayPara = this.state.displayPara;
+    if(sticky === false && displayPara === true)
+      this.setState({displayPara: false});
+    else if(sticky === false && displayPara === false)
+      this.setState({displayPara: true});
+  }
+
+  newsHeaderSticky(){
+    let displayPara = this.state.displayPara;
+    return(<div>
+    {
+      this.props.sticky === true ?
+        <Sticky>
+          {({ style }) => (
+            <div style={{...style, paddingTop:"30px"}}>
+              <h1>Anouncements</h1>
+              {this.paraContent()}
+            </div>
+            )}
+        </Sticky> :
+        <div>
+          <h1>Anouncements</h1>
+          <Collapse isOpened={displayPara}>
+            {this.paraContent()}
+          </Collapse>
+          <button onClick={() => this.toggleDisplayPara()} className='btn btn-warning'>
+            {displayPara === true ? 'Less' : 'More'}
+          </button>
+        </div>
+    }
+    </div>)
+  }
 
   render() {
     return(
       <div className="container-fluid">
+      <StickyContainer>
         <div className="row">
           <LinkNavbar ref={this.props.myRef} />
-          <div className="col-sm-6 col-sm-push-6 sessionsHeader">
-      {/*<div className="newsStyle">
-        <h1>News Details</h1>
-        {this.props.data.length === 0 ? <p>Loading News...</p> : 
-          <table className="news">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>News</th>
-              </tr>
-            </thead>
-          {this.props.data.slice(0).reverse().map((object, i) => (
-            <tr key={i}>
-              <td>{object.date}</td>
-              <td><CustomMarkdown data={object.news} /></td>
-            </tr>))}
-          </table>
-        }
-      </div>*/}
-              <h1>Anouncements</h1>
-          </div> 
-          <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
-            <Timeline orientation="right">
-              {
-                this.props.data.slice(0).reverse().map((object, i) =>
-                  (
-                    <TimelineEvent title={object.date}
-                                   container="card"
-                                   cardHeaderStyle={{background: "red"}}
-                    >
-                      <CustomMarkdown data={object.news} />
-                    </TimelineEvent>
+            <div className="col-sm-6 col-sm-push-6 sessionsHeader">
+                {this.newsHeaderSticky()}
+            </div> 
+            <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
+              <Timeline orientation="right">
+                {
+                  this.props.data.slice(0).reverse().map((object, i) =>
+                    (
+                      <TimelineEvent title={object.date}
+                                     container="card"
+                                     cardHeaderStyle={{background: "red"}}
+                      >
+                        <CustomMarkdown data={object.news} />
+                      </TimelineEvent>
+                    )
                   )
-                )
-              }
-            </Timeline>   
+                }
+              </Timeline>   
+            </div>
           </div>
-      </div>
+        </StickyContainer>
       </div>
       )
   }
@@ -362,6 +420,17 @@ class Team extends Component{
 }
 
 */
+
+
+class Footer extends Component{
+  render(){
+    return(
+      <div style={{height: "100px", textAlign: "center", paddingTop: "15px", color: "white"}}>
+        <h2>TechClubSSN</h2>
+      </div>
+    )
+  }
+}
 
 class Team extends Component{
 
@@ -467,7 +536,7 @@ class Home extends Component {
           </div>
         </div>
         <Sessions data={this.props.sessionData} myRef={this.props.myRef.sessions} sticky={this.props.sticky} />
-        <News data={this.props.newsData} myRef={this.props.myRef.news} />
+        <News data={this.props.newsData} myRef={this.props.myRef.news} sticky={this.props.sticky} />
       </div>
     );
   }
@@ -564,6 +633,7 @@ class App extends Component {
           <Navbar myRef={this.allRef} />
         </div>
         <Pages allRef={this.allRef} data={this.state}/>
+        <Footer />
       </div>
     );
   }
