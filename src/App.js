@@ -1,7 +1,5 @@
 import './Logo.css';
 import './Navbar.css';
-import './TimelineSession.css';
-import './TimelineNews.css';
 import Tabletop from 'tabletop';
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
