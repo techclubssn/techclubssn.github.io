@@ -11,6 +11,11 @@ import {Collapse} from 'react-collapse';
 
 const particleParams = particlesJSON
 
+
+class 
+
+/*
+
 class Navbar extends Component {
 
   constructor(props) {
@@ -47,13 +52,7 @@ class Navbar extends Component {
   }
 }
 
-const LinkNavbar = React.forwardRef((props, ref)=>{
-    return (
-      <section ref={ref} className='section'>
-      </section>
-    );
-  });
-
+*/
 
 class CustomMarkdown extends Component{
 
@@ -276,7 +275,6 @@ class Sessions extends Component{
     return(
     <div className="container-fluid">
       <StickyContainer>
-        <LinkNavbar ref={this.props.myRef} />
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
                 {this.sessionHeaderSticky()}
@@ -417,7 +415,6 @@ class News extends Component{
       <div className="container-fluid">
       <StickyContainer>
         <div className="row">
-          <LinkNavbar ref={this.props.myRef} />
             <div className="col-sm-6 col-sm-push-6 sessionsHeader">
                 {this.newsHeaderSticky()}
             </div> 
@@ -576,7 +573,6 @@ class Team extends Component{
   }
 
   renderTeam(){
-    let paddingLoaderTop = this.props.sticky ? "0px" : "0px";
     if(this.props.data.length === 0){
       return(
         <div align="center" style={{paddingBottom: "15px"}}>
@@ -621,49 +617,10 @@ const particleStyle = {
 
 class Home extends Component {
 
-    constructor(props) {
-      super(props)
-      this.state = {
-        currentDest: 'home'
-      }
-    }
-
-    componentDidMount() {
-      //Handles scroll from other pages
-      this.handleScroll();
-    }
-
-    componentDidUpdate(){
-      //Handles scroll within the same page
-      this.handleScroll();
-    }
-
-    handleScroll(){
-      if(this.state.currentDest !== 'news' && this.props.dest === 'news')
-      {
-        this.scrollToMyRef(this.props.myRef.news);
-        this.setState({currentDest: 'news'});
-      }
-      else if(this.state.currentDest !== 'sessions' && this.props.dest === 'sessions')
-      {
-        this.scrollToMyRef(this.props.myRef.sessions);
-        this.setState({currentDest: 'sessions'});
-      }
-      else if(this.state.currentDest !== 'home' && this.props.dest === 'home')
-      {
-        this.scrollToMyRef(this.props.myRef.home);
-        this.setState({currentDest: 'home'});
-      }
-    }
-
-    scrollToMyRef(ref){
-      ref.current.scrollIntoView({behavior: 'smooth'});
-    }
 
   render() {
     return (
       <div>
-        <LinkNavbar ref={this.props.myRef.home} /> 
         <div style={introPage}>
           <div>
             <Particles params={particleParams} style={particleStyle}/>
@@ -672,8 +629,8 @@ class Home extends Component {
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
           </div>
         </div>
-        <Sessions data={this.props.sessionData} myRef={this.props.myRef.sessions} sticky={this.props.sticky} />
-        <News data={this.props.newsData} myRef={this.props.myRef.news} sticky={this.props.sticky} />
+        <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
+        <News data={this.props.newsData} sticky={this.props.sticky} />
       </div>
     );
   }
@@ -685,22 +642,19 @@ class Pages extends Component{
     return(
       <Switch>
         <Route exact path='/' render={
-          (props) => <Home myRef={this.props.allRef} 
-                           newsData={this.props.data.newsData} 
+          (props) => <Home newsData={this.props.data.newsData} 
                            sessionData={this.props.data.sessionData} 
                            sticky={this.props.data.sticky} 
                            dest="home" />}/>
         
         <Route path='/news' render={
-          (props) => <Home myRef={this.props.allRef} 
-                           newsData={this.props.data.newsData} 
+          (props) => <Home newsData={this.props.data.newsData} 
                            sessionData={this.props.data.sessionData} 
                            sticky={this.props.data.sticky} 
                            dest="news" />}/>
         
         <Route path='/sessions' render={
-          (props) => <Home myRef={this.props.allRef} 
-                           newsData={this.props.data.newsData} 
+          (props) => <Home newsData={this.props.data.newsData} 
                            sessionData={this.props.data.sessionData} 
                            sticky={this.props.data.sticky} 
                            dest="sessions" />}/>
@@ -718,14 +672,6 @@ class App extends Component {
 
   constructor(props) {
         super(props)
-        this.sessionRef = React.createRef();
-        this.newsRef = React.createRef();
-        this.homeRef = React.createRef();
-        this.allRef = {
-          'sessions': this.sessionRef,
-          'news': this.newsRef,
-          'home': this.homeRef
-        };
         this.state = {
           sessionData: [],
           newsData: [],
@@ -767,9 +713,9 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Navbar myRef={this.allRef} />
+          <Navbar />
         </div>
-        <Pages allRef={this.allRef} data={this.state}/>
+        <Pages data={this.state}/>
         <Footer />
       </div>
     );
