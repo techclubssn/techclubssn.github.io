@@ -430,6 +430,10 @@ class News extends Component{
 
 class About extends Component{
 
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
   render() {
     return(
       <div className='aboutUsStyle'>
@@ -502,6 +506,10 @@ class Footer extends Component{
 }
 
 class Team extends Component{
+
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
 
   noUrlHandler(url, name) {
     if(url === '')
