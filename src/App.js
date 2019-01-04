@@ -362,7 +362,8 @@ class News extends Component{
                 {
                   this.props.data.slice(0).reverse().map((object, i) =>
                     (
-                      <TimelineEvent title={object.date}
+                      <TimelineEvent title={object.headline} 
+                                     subtitle={object.date}
                                      container="card"
                                      cardHeaderStyle={{background: "orange"}}
                                      bubbleStyle={{
@@ -373,6 +374,10 @@ class News extends Component{
                                      titleStyle={{
                                         fontSize: '16px',
                                         color: '#333'
+                                       }}
+                                     subtitleStyle={{
+                                        fontSize: '10px',
+                                        color: 'white'
                                        }}
                       >
                         <CustomMarkdown data={object.news} />
