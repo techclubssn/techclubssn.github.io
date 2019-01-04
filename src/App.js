@@ -8,11 +8,41 @@ import {Route, Link, Switch} from 'react-router-dom';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
 import { StickyContainer, Sticky } from 'react-sticky';
 import {Collapse} from 'react-collapse';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 const particleParams = particlesJSON
 
 
-class 
+class NavbarTC extends Component {
+  render() {
+    return(
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#home">TechClubSSN</a>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav pullRight>
+          <NavItem eventKey={1} href="#">
+            Sessions
+          </NavItem>
+          <NavItem eventKey={2} href="#">
+            News
+          </NavItem>
+          <NavItem eventKey={3} href="#">
+            About Us
+          </NavItem>
+          <NavItem eventKey={4} href="#">
+            Team
+          </NavItem>
+          <NavItem eventKey={5} href="https://github.com/Tech-Club-SSN" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </NavItem>
+        </Nav>
+      </Navbar>
+    )
+  }
+}
 
 /*
 
