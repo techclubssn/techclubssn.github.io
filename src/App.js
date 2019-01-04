@@ -14,6 +14,8 @@ import * as Scroll from 'react-scroll';
 let ScrollLink = Scroll.Link;
 let Element = Scroll.Element;
 let scroller = Scroll.scroller;
+let scroll     = Scroll.animateScroll;
+let homeDebounceCounter = 0; //Required to prevent spurious scrolling
 const particleParams = particlesJSON
 
 
@@ -75,7 +77,7 @@ class NavbarTC extends Component {
             <NavItem style={{paddingRight: '10px'}} 
                      className='navbar-link-style' 
                      eventKey={5} 
-                     href="https://github.com/Tech-Club-SSN" 
+                     href="https://github.com/techclubssn" 
                      target="_blank" 
                      rel="noopener noreferrer">
               GitHub
@@ -86,46 +88,6 @@ class NavbarTC extends Component {
     )
   }
 }
-
-/*
-
-class Navbar extends Component {
-
-  constructor(props) {
-    super(props);
-    this.navbarRef = React.createRef();
-  }
-
-  render() {
-    return(
-
-       <nav className="navbar navbar-default navbar-fixed-top">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <Link className="navbar-brand" to="/">TechClubSSN</Link>
-          </div>
-            <div className="collapse navbar-collapse" id="myNavbar" ref={this.navbarRef}>
-              <ul className="nav navbar-nav navbar-right">
-                <li><Link to="/sessions">Sessions</Link></li>
-                <li><Link to="/news">News</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/team">Team</Link></li>
-                <li><a href="https://github.com/Tech-Club-SSN" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              </ul>
-            </div>
-        </div>
-      </nav> 
-
-      )
-  }
-}
-
-*/
 
 class CustomMarkdown extends Component{
 
@@ -194,7 +156,10 @@ class CustomMarkdown extends Component{
           {fragments.type.map((data, i) => (
             <span key={i}>
               {data === 'p' ? <span>{fragments.content.data[i]}</span> : 
-              <a href={fragments.content.link[i]} target="_blank" rel="noopener noreferrer">{fragments.content.data[i]}</a>}
+              <a className='footer-link' 
+                 href={fragments.content.link[i]} 
+                 target="_blank" 
+                 rel="noopener noreferrer"><b>{fragments.content.data[i]}</b></a>}
             </span>
             ))}
         </span>
@@ -300,13 +265,19 @@ class Sessions extends Component{
                                 borderWidth: '4px'
                                }}
                                titleStyle={{
-                                fontSize: '16px',
-                                color: '#333'
+                                fontSize: '18px',
+                                color: '#333',
+                                fontFamily:'Cabin'
                                }}
                                subtitleStyle={{
-                                fontSize: '10px',
+                                fontSize: '11px',
                                 color: 'white'
                                }}
+                               contentStyle={{
+                                fontFamily:'Cabin',
+                                fontSize:'14px'
+                               }}
+
                 >
                   <CustomMarkdown data={object.details} />
                 </TimelineEvent>
@@ -407,7 +378,7 @@ class News extends Component{
             this.props.data.slice(0).reverse().map((object, i) =>
               (
                 <TimelineEvent title={object.headline} 
-                               subtitle={object.date}
+                               subtitle={'Date: ' + object.date }
                                container="card"
                                cardHeaderStyle={{background: "orange"}}
                                bubbleStyle={{
@@ -416,13 +387,18 @@ class News extends Component{
                                   borderWidth: '4px'
                                  }} 
                                titleStyle={{
-                                  fontSize: '16px',
-                                  color: '#333'
+                                  fontSize: '18px',
+                                  color: '#333',
+                                  fontFamily:'Cabin'
                                  }}
                                subtitleStyle={{
-                                  fontSize: '10px',
+                                  fontSize: '11px',
                                   color: 'white'
                                  }}
+                                contentStyle={{
+                                fontFamily:'Cabin',
+                                fontSize:'14px'
+                               }}
                 >
                   <CustomMarkdown data={object.news} />
                 </TimelineEvent>
@@ -462,10 +438,11 @@ class About extends Component{
           <img className='aboutImg' src={this.props.largeScreen ? "/cover_large.jpg" : "/cover_small.jpg"} alt="Hackathon" />
           <div className='aboutHeading'><h1>A B O U T</h1></div>
         </div>
-        <div style={{padding:"0 5% 0 5%"}}>
+        <div className='aboutContent'>
           <h4>
              Tech Club SSN is a student run organization of the department of ECE in SSN College of Engineering.
           </h4>
+          <hr />
           <h1>Our Mission</h1>
           <p> 
              Since its inception in 2014, Tech Club SSN serves to enhance  
@@ -474,6 +451,7 @@ class About extends Component{
              apply their newly acquired skills. Moreover, we guide students to pursue their aspirations in their fields of interest by preparing them for internships, 
              independant research work, significant technical events and hackathons.  
           </p>
+          <hr />
           <h1>Join Us</h1>
           <p>
             Let's build something great together. We conduct weekly sessions and lots of events throughout the year. Sessions are mostly conducted during TechClub hours, 
@@ -486,6 +464,7 @@ class About extends Component{
             since most sessions are conducted on Tech Club hours which are only available on ECE timetables (from 3rd semester and above), we cannot guarantee OD for regular 
             sessions for students belonging to other departments and first years. OD will be provided for almost every other acitivity for everyone!
           </p>
+          <hr />
           <h1>Study Guides</h1>
           <p>
             We document the materials used in our sessions so that students can refer to it even if miss out on the sessions. Also, we document information regarding 
@@ -498,10 +477,26 @@ class About extends Component{
 }
 
 class Footer extends Component{
+
+  scrollToTop(){
+    scroll.scrollToTop();
+  }
+
   render(){
     return(
-      <div style={{height: "100px", textAlign: "center", paddingTop: "15px", color: "white"}}>
-        <h2>TechClubSSN</h2>
+      <div className='footer'>
+        
+        <button onClick={this.scrollToTop} className='footer-chevron'>
+          <i className="fas fa-chevron-up"></i>
+        </button>
+        <hr width='80%' style={{marginTop: '7px'}} />
+        <h3>TechClubSSN</h3>
+        <p>Built using React. Fork the website 
+            <a href="https://github.com/techclubssn/techclubssn.github.io" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className='footer-link'> here</a>.
+        </p>
       </div>
     )
   }
@@ -579,7 +574,7 @@ class Team extends Component{
   render() {
     return(
       <div className="teamStyle">
-        <h1>Meet the Team</h1>
+        <h1 style={{fontFamily:'Cabin'}}>Meet the Team</h1>
         {this.renderTeam()}
       </div>
       )
@@ -600,8 +595,6 @@ const particleStyle = {
   position:"absolute",
   top: "5%"
 }
-
-let counter = 0;
 
 class Home extends Component {
 
@@ -640,20 +633,11 @@ class Home extends Component {
       this.scrollToElement('news')
     if(this.props.dest == 'home')
     {
-      if(counter < 1)
-        counter += 1
+      if(homeDebounceCounter < 1)
+        homeDebounceCounter += 1
       else
         this.scrollToElement('home')
     }
-    
-    /*
-    if(counter > 2 && !this.state.enableHomeScroll)
-    {
-      this.setState({enableHomeScroll: true})
-      counter
-    }
-    */
-
   }
 
   render() {
