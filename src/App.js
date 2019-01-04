@@ -235,7 +235,7 @@ class Sessions extends Component{
                 {this.sessionHeaderSticky()}
              </div>
               <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
-                <Timeline>
+                <Timeline lineColor="#333" lineStyle={{width: "4px"}} >
                   {
                     this.props.data.slice(0).reverse().map((object, i) =>
                       (
@@ -243,6 +243,19 @@ class Sessions extends Component{
                                        container="card"
                                        subtitle={object.date}
                                        cardHeaderStyle={{background: "orange"}}
+                                       bubbleStyle={{
+                                        background: 'orange',
+                                        borderColor: '#333',
+                                        borderWidth: '4px'
+                                       }}
+                                       titleStyle={{
+                                        fontSize: '16px',
+                                        color: '#333'
+                                       }}
+                                       subtitleStyle={{
+                                        fontSize: '10px',
+                                        color: 'white'
+                                       }}
                         >
                           <CustomMarkdown data={object.details} />
                         </TimelineEvent>
@@ -345,13 +358,22 @@ class News extends Component{
                 {this.newsHeaderSticky()}
             </div> 
             <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
-              <Timeline orientation="right">
+              <Timeline orientation="right" lineColor="#333" lineStyle={{width: "4px"}} >
                 {
                   this.props.data.slice(0).reverse().map((object, i) =>
                     (
                       <TimelineEvent title={object.date}
                                      container="card"
-                                     cardHeaderStyle={{background: "red"}}
+                                     cardHeaderStyle={{background: "orange"}}
+                                     bubbleStyle={{
+                                        background: 'orange',
+                                        borderColor: '#333',
+                                        borderWidth: '4px'
+                                       }} 
+                                     titleStyle={{
+                                        fontSize: '16px',
+                                        color: '#333'
+                                       }}
                       >
                         <CustomMarkdown data={object.news} />
                       </TimelineEvent>
