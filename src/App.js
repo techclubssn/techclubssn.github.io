@@ -9,7 +9,11 @@ import {Timeline, TimelineEvent} from 'react-event-timeline';
 import { StickyContainer, Sticky } from 'react-sticky';
 import {Collapse} from 'react-collapse';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import * as Scroll from 'react-scroll';
 
+let ScrollLink = Scroll.Link;
+let Element = Scroll.Element;
+let scroller = Scroll.scroller;
 const particleParams = particlesJSON
 
 
@@ -38,9 +42,10 @@ class NavbarTC extends Component {
 
   render() {
     return(
-      <Navbar fixedTop 
-               onToggle={this.setNavExpanded} 
-               expanded={this.state.navExpanded}>
+      <Navbar inverse
+              fixedTop 
+              onToggle={this.setNavExpanded} 
+              expanded={this.state.navExpanded}>
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/" onClick={this.closeNav}>
@@ -49,23 +54,30 @@ class NavbarTC extends Component {
               </button>
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle />
+          <Navbar.Toggle style={{marginRight: '27px'}} />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
             <NavItem eventKey={1} href="#">
-              <Link to="/sessions" onClick={this.closeNav}>Sessions</Link>
+              <Link to="/sessions" onClick={this.closeNav} className='navbar-link-style'>
+                Sessions
+              </Link>
             </NavItem>
             <NavItem eventKey={2} href="#">
-              <Link to="/news" onClick={this.closeNav}>News</Link>
+              <Link to="/news" onClick={this.closeNav} className='navbar-link-style'>News</Link>
             </NavItem>
             <NavItem eventKey={3} href="#">
-              <Link to="/about" onClick={this.closeNav}>About Us</Link>
+              <Link to="/about" onClick={this.closeNav} className='navbar-link-style'>About Us</Link>
             </NavItem>
             <NavItem eventKey={4} href="#">
-              <Link to="/team" onClick={this.closeNav}>Team</Link>
+              <Link to="/team" onClick={this.closeNav} className='navbar-link-style'>Team</Link>
             </NavItem>
-            <NavItem eventKey={5} href="https://github.com/Tech-Club-SSN" target="_blank" rel="noopener noreferrer">
+            <NavItem style={{paddingRight: '10px'}} 
+                     className='navbar-link-style' 
+                     eventKey={5} 
+                     href="https://github.com/Tech-Club-SSN" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
               GitHub
             </NavItem>
           </Nav>
@@ -444,7 +456,6 @@ class News extends Component{
 class About extends Component{
 
   render() {
-    console.log(this.props.largeScreen)
     return(
       <div className='aboutUsStyle'>
         <div className='aboutContainer'>
@@ -590,13 +601,66 @@ const particleStyle = {
   top: "5%"
 }
 
+let counter = 0;
+
 class Home extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      enableHomeScroll: false
+    }
+  }
+
+  scrollToElement(element, disableSmooth = false) {
+    
+    let options = {}
+    if(!disableSmooth){
+      options = {
+      smooth: true,
+      offset: -50,
+      }
+    }
+    scroller.scrollTo(element, options)
+  }
+
+  componentDidMount(){
+    if(this.props.dest == 'sessions')
+      this.scrollToElement('sess')
+    if(this.props.dest == 'news')
+      this.scrollToElement('news')
+    if(this.props.dest == 'home')
+      this.scrollToElement('home', true)
+  }
+
+  componentDidUpdate(){
+    if(this.props.dest == 'sessions')
+      this.scrollToElement('sess')
+    if(this.props.dest == 'news')
+      this.scrollToElement('news')
+    if(this.props.dest == 'home')
+    {
+      if(counter < 1)
+        counter += 1
+      else
+        this.scrollToElement('home')
+    }
+    
+    /*
+    if(counter > 2 && !this.state.enableHomeScroll)
+    {
+      this.setState({enableHomeScroll: true})
+      counter
+    }
+    */
+
+  }
 
   render() {
     return (
       <div>
         <div style={introPage}>
+          <Element name="home"></Element>
           <div>
             <Particles params={particleParams} style={particleStyle}/>
           </div>
@@ -604,13 +668,16 @@ class Home extends Component {
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
           </div>
         </div>
-        <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
-        <News data={this.props.newsData} sticky={this.props.sticky} />
+        <Element name="sess">
+          <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
+        </Element>
+        <Element name="news">
+          <News data={this.props.newsData} sticky={this.props.sticky} />
+        </Element>
       </div>
     );
   }
 }
-
 
 class Pages extends Component{
   render() {

@@ -35,6 +35,16 @@ body {
     margin-bottom: -100%;
 }
 
+.navbar-link-style{
+  color: #aaa;
+  padding-left: 10px;
+}
+
+.navbar-link-style:hover{
+  color: white;
+  text-decoration: none;
+}
+
 .row {
     overflow: hidden;
 }
