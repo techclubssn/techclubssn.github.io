@@ -226,7 +226,6 @@ class Sessions extends Component{
   }
 
   render() {
-    console.log(this.props.sticky)
     return(
     <div className="container-fluid">
       <StickyContainer>
@@ -372,16 +371,43 @@ class News extends Component{
 class About extends Component{
 
   render() {
+    console.log(this.props.largeScreen)
     return(
       <div className='aboutUsStyle'>
-        <h1>
-          About Us
-        </h1>
-        <p>
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at rhoncus eros. Cras dignissim, nibh sed lacinia pretium, risus lectus malesuada leo, vel vestibulum lorem nisi at ipsum. Aliquam consectetur vel erat in facilisis. Integer varius erat sed orci dapibus, at hendrerit leo mattis. Fusce facilisis purus orci, pellentesque pharetra turpis laoreet sit amet. Aenean est urna, commodo id pellentesque sed, tincidunt non erat. Nulla id mauris vitae lectus scelerisque laoreet.
-
-Sed pulvinar rutrum eros ac blandit. Cras id enim at lacus finibus lacinia quis eu lectus. Curabitur ut magna orci. Sed lobortis a justo in viverra. Donec eleifend in est posuere semper. In varius auctor urna non condimentum. Proin ipsum mi, malesuada venenatis lacus nec, luctus faucibus risus. Sed sed turpis enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam pulvinar, felis ut dictum tristique, dolor ex pharetra felis, vel euismod magna metus consectetur urna. Duis consequat in ligula sed auctor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque eget mattis nunc. Mauris in neque ante. Pellentesque rhoncus vitae sapien nec auctor. 
-        </p>
+        <div className='aboutContainer'>
+          <img className='aboutImg' src={this.props.largeScreen ? "/cover_large.jpg" : "/cover_small.jpg"} alt="Hackathon" />
+          <div className='aboutHeading'><h1>A B O U T</h1></div>
+        </div>
+        <div style={{padding:"0 5% 0 5%"}}>
+          <h4>
+             Tech Club SSN is a student run organization of the department of ECE in SSN College of Engineering.
+          </h4>
+          <h1>Our Mission</h1>
+          <p> 
+             Since its inception in 2014, Tech Club SSN serves to enhance  
+             student involvement in fields revolving around Electronics and Computer Science. We do this by conducting tutorials, classes and events on practical 
+             concepts in fields such as Computer Vision, IoT, Robotics and Machine Learning. We organize technical events around the year where students can 
+             apply their newly acquired skills. Moreover, we guide students to pursue their aspirations in their fields of interest by preparing them for internships, 
+             independant research work, significant technical events and hackathons.  
+          </p>
+          <h1>Join Us</h1>
+          <p>
+            Let's build something great together. We conduct weekly sessions and lots of events throughout the year. Sessions are mostly conducted during TechClub hours, 
+            which are usually kept at the last few periods of Thursday or Tuesday. Details of upcoming sessions will be updated on the website. Stay tuned to the news 
+            section of the website for information on exciting events!
+          </p>
+          <p>
+            Tech Club SSN is a welcoming community that is open for all. No pre-requisite knowledge is required! a desire to learn and build something is more than enough. 
+            Even though Tech Club is an organization based in the department of ECE, students of all departments are welcome to join our activities! However,
+            since most sessions are conducted on Tech Club hours which are only available on ECE timetables (from 3rd semester and above), we cannot guarantee OD for regular 
+            sessions for students belonging to other departments and first years. OD will be provided for almost every other acitivity for everyone!
+          </p>
+          <h1>Study Guides</h1>
+          <p>
+            We document the materials used in our sessions so that students can refer to it even if miss out on the sessions. Also, we document information regarding 
+            internships, technical oppurnities, MS application process and much more. Checkout our GitHub page for all such materials.
+          </p>
+        </div>
       </div>
       );
   }
@@ -432,6 +458,8 @@ class Footer extends Component{
   }
 }
 
+/* Need to handle loading here as well! */
+
 class Team extends Component{
 
   noUrlHandler(url, name) {
@@ -448,20 +476,52 @@ class Team extends Component{
       return <img src={src} alt={name} className='teamImg' />
   }
 
+  rowBuilder(data) {
+    let len = data.length;
+    let rows = Math.ceil(len / 3);
+    let imgRows = [];
+
+    for(let i = 0; i < rows; i++){  
+      let imageCols = [];
+      for(let j = 0; j < 3; j++){
+        let idx = i * 3 + j;
+        if(idx < len){
+          imageCols.push(
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div key={idx}>
+                {this.noImgHandler(data[idx].name, data[idx].dp)}
+                {this.noUrlHandler(data[idx].web, data[idx].name)}
+                <h5>{data[idx].role}</h5>
+              </div>
+            </div>
+          );
+        }
+      }
+      imgRows.push(
+        <div className="row" style={{paddingTop: "20px"}}>
+          {imageCols}
+        </div>
+      );
+    }
+
+    return(
+      <div className="container">
+        {imgRows}
+      </div>
+    );
+
+  }
+
   render() {
     return(
       <div className="teamStyle">
         <h1>Meet the Team</h1>
-        {this.props.data.length === 0 ? <p>Fetching details...</p> :
-        <div> 
-          {this.props.data.map((object, i) => (
-            <div key={i}>
-              {this.noImgHandler(object.name, object.dp)}
-              {this.noUrlHandler(object.web, object.name)}
-              <h5>{object.role}</h5>
-            </div>))}
-        </div>
-        }
+          {
+            this.props.data.length === 0 ? <p>Fetching details...</p> :
+            <div> 
+              {this.rowBuilder(this.props.data)} 
+            </div>
+          }
       </div>
       )
   }
@@ -502,17 +562,17 @@ class Home extends Component {
     }
 
     handleScroll(){
-      if(this.state.currentDest != 'news' && this.props.dest === 'news')
+      if(this.state.currentDest !== 'news' && this.props.dest === 'news')
       {
         this.scrollToMyRef(this.props.myRef.news);
         this.setState({currentDest: 'news'});
       }
-      else if(this.state.currentDest != 'sessions' && this.props.dest === 'sessions')
+      else if(this.state.currentDest !== 'sessions' && this.props.dest === 'sessions')
       {
         this.scrollToMyRef(this.props.myRef.sessions);
         this.setState({currentDest: 'sessions'});
       }
-      else if(this.state.currentDest != 'home' && this.props.dest === 'home')
+      else if(this.state.currentDest !== 'home' && this.props.dest === 'home')
       {
         this.scrollToMyRef(this.props.myRef.home);
         this.setState({currentDest: 'home'});
@@ -568,7 +628,7 @@ class Pages extends Component{
                            sticky={this.props.data.sticky} 
                            dest="sessions" />}/>
         
-        <Route path='/about' component={About}/>
+        <Route path='/about' render={(props) => <About largeScreen={this.props.data.sticky} />} />
 
         <Route path='/team' render={(props) => <Team data={this.props.data.teamData} dest="team" />} />
 
