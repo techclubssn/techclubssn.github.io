@@ -697,7 +697,7 @@ class App extends Component {
       window.addEventListener('resize', this.updateWidth);
 
       Tabletop.init({
-      key: '1nWsyn1isF7gl2A1dMLiIpp0mAR6QVvIuNfg2nEn54rc',
+      key: '1AOZhova18bEDHNjI7OfdqzxtVyZg6Mg5ECAuMERHwD4',
       callback: (googleData, tabletop) => {
         this.setState({
           sessionData: googleData.Sessions.elements,
