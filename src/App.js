@@ -14,31 +14,62 @@ const particleParams = particlesJSON
 
 
 class NavbarTC extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      navExpanded:false 
+    }
+    this.setNavExpanded = this.setNavExpanded.bind(this)
+    this.closeNav = this.closeNav.bind(this)
+  }
+
+  setNavExpanded(value) {
+    this.setState({
+      navExpanded: value
+    });
+  }
+
+  closeNav() {
+    this.setState({
+      navExpanded: false
+    });
+  }
+
   render() {
     return(
-      <Navbar>
+      <Navbar fixedTop 
+               onToggle={this.setNavExpanded} 
+               expanded={this.state.navExpanded}>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home">TechClubSSN</a>
+            <Link to="/" onClick={this.closeNav}>
+              <button style={{background: 'transparent', borderColor:'transparent'}}>
+                TechClubSSN
+              </button>
+            </Link>
           </Navbar.Brand>
+          <Navbar.Toggle />
         </Navbar.Header>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="#">
-            Sessions
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            News
-          </NavItem>
-          <NavItem eventKey={3} href="#">
-            About Us
-          </NavItem>
-          <NavItem eventKey={4} href="#">
-            Team
-          </NavItem>
-          <NavItem eventKey={5} href="https://github.com/Tech-Club-SSN" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </NavItem>
-        </Nav>
+        <Navbar.Collapse>
+          <Nav pullRight>
+            <NavItem eventKey={1} href="#">
+              <Link to="/sessions" onClick={this.closeNav}>Sessions</Link>
+            </NavItem>
+            <NavItem eventKey={2} href="#">
+              <Link to="/news" onClick={this.closeNav}>News</Link>
+            </NavItem>
+            <NavItem eventKey={3} href="#">
+              <Link to="/about" onClick={this.closeNav}>About Us</Link>
+            </NavItem>
+            <NavItem eventKey={4} href="#">
+              <Link to="/team" onClick={this.closeNav}>Team</Link>
+            </NavItem>
+            <NavItem eventKey={5} href="https://github.com/Tech-Club-SSN" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </NavItem>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     )
   }
@@ -657,7 +688,7 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Navbar />
+          <NavbarTC />
         </div>
         <Pages data={this.state}/>
         <Footer />
