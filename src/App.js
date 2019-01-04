@@ -206,7 +206,7 @@ class Sessions extends Component{
       this.props.sticky === true ?
         <Sticky>
           {({ style }) => (
-            <div style={{...style, paddingTop:"30px"}}>
+            <div style={{...style, paddingTop:"30px", paddingBottom:"47px"}}>
               <h1>Sessions</h1>
               {this.paraContent()}
             </div>
@@ -226,10 +226,10 @@ class Sessions extends Component{
   }
 
   renderTimeLine(){
-    let padding = this.props.sticky ? "50px" : "0px";
+    let paddingLoaderTop = this.props.sticky ? "87px" : "0px";
     if(this.props.data.length === 0){
       return(
-        <div align="center" style={{paddingTop: padding}}>
+        <div align="center" style={{paddingTop: paddingLoaderTop}}>
           <h4>Fetching latest information</h4>
           <div className="loader"></div> 
         </div>
@@ -349,7 +349,7 @@ class News extends Component{
       this.props.sticky === true ?
         <Sticky>
           {({ style }) => (
-            <div style={{...style, paddingTop:"30px"}}>
+            <div style={{...style, paddingTop:"30px", paddingBottom:"30px"}}>
               <h1>Anouncements</h1>
               {this.paraContent()}
             </div>
@@ -368,6 +368,50 @@ class News extends Component{
     </div>)
   }
 
+  renderTimeLine(){
+    let paddingLoaderTop = this.props.sticky ? "37px" : "0px";
+    if(this.props.data.length === 0){
+      return(
+        <div align="center" style={{paddingTop: paddingLoaderTop}}>
+          <h4>Fetching latest information</h4>
+          <div className="loader"></div> 
+        </div>
+      )
+    }
+    else{
+      return(
+        <Timeline orientation="right" lineColor="#333" lineStyle={{width: "4px"}} >
+          {
+            this.props.data.slice(0).reverse().map((object, i) =>
+              (
+                <TimelineEvent title={object.headline} 
+                               subtitle={object.date}
+                               container="card"
+                               cardHeaderStyle={{background: "orange"}}
+                               bubbleStyle={{
+                                  background: 'orange',
+                                  borderColor: '#333',
+                                  borderWidth: '4px'
+                                 }} 
+                               titleStyle={{
+                                  fontSize: '16px',
+                                  color: '#333'
+                                 }}
+                               subtitleStyle={{
+                                  fontSize: '10px',
+                                  color: 'white'
+                                 }}
+                >
+                  <CustomMarkdown data={object.news} />
+                </TimelineEvent>
+              )
+            )
+          }
+        </Timeline>
+      )
+    }
+  }
+
   render() {
     return(
       <div className="container-fluid">
@@ -378,34 +422,7 @@ class News extends Component{
                 {this.newsHeaderSticky()}
             </div> 
             <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
-              <Timeline orientation="right" lineColor="#333" lineStyle={{width: "4px"}} >
-                {
-                  this.props.data.slice(0).reverse().map((object, i) =>
-                    (
-                      <TimelineEvent title={object.headline} 
-                                     subtitle={object.date}
-                                     container="card"
-                                     cardHeaderStyle={{background: "orange"}}
-                                     bubbleStyle={{
-                                        background: 'orange',
-                                        borderColor: '#333',
-                                        borderWidth: '4px'
-                                       }} 
-                                     titleStyle={{
-                                        fontSize: '16px',
-                                        color: '#333'
-                                       }}
-                                     subtitleStyle={{
-                                        fontSize: '10px',
-                                        color: 'white'
-                                       }}
-                      >
-                        <CustomMarkdown data={object.news} />
-                      </TimelineEvent>
-                    )
-                  )
-                }
-              </Timeline>   
+                {this.renderTimeLine()}
             </div>
           </div>
         </StickyContainer>
