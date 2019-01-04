@@ -136,32 +136,6 @@ class CustomMarkdown extends Component{
 
 }
 
-/*
-Add Loading feature.
-
-<div className="sessionsStyle">
-  <h1>Session Details</h1>
-  {this.props.data.length === 0 ? <p>Loading Session Information...</p> : 
-    <table className="session">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Session</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-    {this.props.data.slice(0).reverse().map((object, i) => (
-      <tr key={i}>
-        <td>{object.date}</td> 
-        <td>{object.sessionName}</td>
-        <td><CustomMarkdown data={object.details} /></td>
-      </tr>))}
-    </table>
-  }
-</div>
-
-*/
-
 class Sessions extends Component{
 
   constructor(props){
@@ -288,29 +262,6 @@ class Sessions extends Component{
       )
   }
 }
-
-/*
-
-<div className="newsStyle">
-  <h1>News Details</h1>
-  {this.props.data.length === 0 ? <p>Loading News...</p> : 
-    <table className="news">
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>News</th>
-        </tr>
-      </thead>
-    {this.props.data.slice(0).reverse().map((object, i) => (
-      <tr key={i}>
-        <td>{object.date}</td>
-        <td><CustomMarkdown data={object.news} /></td>
-      </tr>))}
-    </table>
-  }
-</div>
-
-*/
 
 class News extends Component{
 
@@ -474,41 +425,6 @@ class About extends Component{
   }
 }
 
-/*
-class Team extends Component{
-
-  render() {
-    return(
-      <div classname="aboutUsStyle">
-        <h1>Meet the Team</h1>
-        {this.props.data.length === 0 ? <p>Fetching details...</p> : 
-          <table className="session">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Role</th>
-                <th>Webpage</th>
-                <th>Picture</th>
-              </tr>
-            </thead>
-          {this.props.data.slice(0).reverse().map((object, i) => (
-            <tr key={i}>
-              <td>{object.name}</td> 
-              <td>{object.role}</td>
-              <td>{object.web}</td>
-              <td>{object.dp}</td>
-            </tr>))}
-          </table>
-        }
-      </div>
-      )
-  }
-
-}
-
-*/
-
-
 class Footer extends Component{
   render(){
     return(
@@ -518,8 +434,6 @@ class Footer extends Component{
     )
   }
 }
-
-/* Need to handle loading here as well! */
 
 class Team extends Component{
 
