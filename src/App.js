@@ -225,6 +225,53 @@ class Sessions extends Component{
     </div>)
   }
 
+  renderTimeLine(){
+    let padding = this.props.sticky ? "50px" : "0px";
+    if(this.props.data.length === 0){
+      return(
+        <div align="center" style={{paddingTop: padding}}>
+          <h4>Fetching latest information</h4>
+          <div className="loader"></div> 
+        </div>
+      )
+    }
+    else{
+      return(
+        <Timeline lineColor="#333" lineStyle={{width: "4px"}} >
+          {
+            this.props.data.slice(0).reverse().map((object, i) =>
+              (
+                <TimelineEvent title={object.sessionName}
+                               container="card"
+                               subtitle={ <div>
+                                            <p style={{margin: "0"}}> {'Date: ' + object.date } </p> 
+                                            <p style={{margin: "0"}}>{'Venue: TBD'}</p> 
+                                          </div>}
+                               cardHeaderStyle={{background: "orange"}}
+                               bubbleStyle={{
+                                background: 'orange',
+                                borderColor: '#333',
+                                borderWidth: '4px'
+                               }}
+                               titleStyle={{
+                                fontSize: '16px',
+                                color: '#333'
+                               }}
+                               subtitleStyle={{
+                                fontSize: '10px',
+                                color: 'white'
+                               }}
+                >
+                  <CustomMarkdown data={object.details} />
+                </TimelineEvent>
+              )
+            )
+          }
+        </Timeline>
+      )
+    }
+  }
+
   render() {
     return(
     <div className="container-fluid">
@@ -235,37 +282,7 @@ class Sessions extends Component{
                 {this.sessionHeaderSticky()}
              </div>
               <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
-                <Timeline lineColor="#333" lineStyle={{width: "4px"}} >
-                  {
-                    this.props.data.slice(0).reverse().map((object, i) =>
-                      (
-                        <TimelineEvent title={object.sessionName}
-                                       container="card"
-                                       subtitle={ <div>
-                                                    <p style={{margin: "0 0 0 0"}}> {'Date: ' + object.date } </p> 
-                                                    <p style={{margin: "0 0 0 0"}}>{'Venue: TBD'}</p> 
-                                                  </div>}
-                                       cardHeaderStyle={{background: "orange"}}
-                                       bubbleStyle={{
-                                        background: 'orange',
-                                        borderColor: '#333',
-                                        borderWidth: '4px'
-                                       }}
-                                       titleStyle={{
-                                        fontSize: '16px',
-                                        color: '#333'
-                                       }}
-                                       subtitleStyle={{
-                                        fontSize: '10px',
-                                        color: 'white'
-                                       }}
-                        >
-                          <CustomMarkdown data={object.details} />
-                        </TimelineEvent>
-                      )
-                    )
-                  }
-                </Timeline>
+                {this.renderTimeLine()}
               </div>
           </div>
         </StickyContainer>
