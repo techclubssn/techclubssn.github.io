@@ -75,25 +75,25 @@ body {
 }
 
 .teamStyle a{
-  color:white;
+  color: black;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .teamStyle a:visited{
   color:black;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .teamStyle a:hover {
-  color:red;
+  color:orange;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .teamStyle a:active{
-  color:white;
+  color:black;
   font-weight: bold;
   text-decoration: none;
 }

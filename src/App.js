@@ -241,7 +241,10 @@ class Sessions extends Component{
                       (
                         <TimelineEvent title={object.sessionName}
                                        container="card"
-                                       subtitle={object.date}
+                                       subtitle={ <div>
+                                                    <p style={{margin: "0 0 0 0"}}> {'Date: ' + object.date } </p> 
+                                                    <p style={{margin: "0 0 0 0"}}>{'Venue: TBD'}</p> 
+                                                  </div>}
                                        cardHeaderStyle={{background: "orange"}}
                                        bubbleStyle={{
                                         background: 'orange',
@@ -491,7 +494,7 @@ class Team extends Component{
 
   noUrlHandler(url, name) {
     if(url === '')
-      return <h4>{name}</h4>
+      return <h4><b>{name}</b></h4>
     else
       return <h4><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h4>
   }
@@ -518,7 +521,7 @@ class Team extends Component{
               <div key={idx}>
                 {this.noImgHandler(data[idx].name, data[idx].dp)}
                 {this.noUrlHandler(data[idx].web, data[idx].name)}
-                <h5>{data[idx].role}</h5>
+                <h5 style={{marginTop: "-5px"}}>{data[idx].role}</h5>
               </div>
             </div>
           );
