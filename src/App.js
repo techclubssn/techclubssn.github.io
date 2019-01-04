@@ -11,7 +11,6 @@ import {Collapse} from 'react-collapse';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 import * as Scroll from 'react-scroll';
 
-let ScrollLink = Scroll.Link;
 let Element = Scroll.Element;
 let scroller = Scroll.scroller;
 let scroll     = Scroll.animateScroll;
@@ -618,20 +617,20 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    if(this.props.dest == 'sessions')
+    if(this.props.dest === 'sessions')
       this.scrollToElement('sess')
-    if(this.props.dest == 'news')
+    if(this.props.dest === 'news')
       this.scrollToElement('news')
-    if(this.props.dest == 'home')
+    if(this.props.dest === 'home')
       this.scrollToElement('home', true)
   }
 
   componentDidUpdate(){
-    if(this.props.dest == 'sessions')
+    if(this.props.dest === 'sessions')
       this.scrollToElement('sess')
-    if(this.props.dest == 'news')
+    if(this.props.dest === 'news')
       this.scrollToElement('news')
-    if(this.props.dest == 'home')
+    if(this.props.dest === 'home')
     {
       if(homeDebounceCounter < 1)
         homeDebounceCounter += 1
