@@ -573,19 +573,32 @@ class Team extends Component{
         {imgRows}
       </div>
     );
+  }
 
+  renderTeam(){
+    let paddingLoaderTop = this.props.sticky ? "0px" : "0px";
+    if(this.props.data.length === 0){
+      return(
+        <div align="center" style={{paddingBottom: "15px"}}>
+          <h4>Fetching team information</h4>
+          <div className="loader"></div> 
+        </div>
+      )
+    }
+    else{
+      return(
+        <div> 
+          {this.rowBuilder(this.props.data)} 
+        </div>
+      )
+    }
   }
 
   render() {
     return(
       <div className="teamStyle">
         <h1>Meet the Team</h1>
-          {
-            this.props.data.length === 0 ? <p>Fetching details...</p> :
-            <div> 
-              {this.rowBuilder(this.props.data)} 
-            </div>
-          }
+        {this.renderTeam()}
       </div>
       )
   }
