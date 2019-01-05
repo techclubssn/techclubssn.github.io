@@ -13,7 +13,7 @@ import * as Scroll from 'react-scroll';
 
 let Element = Scroll.Element;
 let scroller = Scroll.scroller;
-let scroll     = Scroll.animateScroll;
+let scroll = Scroll.animateScroll;
 let homeDebounceCounter = 0; //Required to prevent spurious scrolling
 const particleParams = particlesJSON
 
@@ -255,7 +255,7 @@ class Sessions extends Component{
                                container="card"
                                subtitle={ <div>
                                             <p style={{margin: "0"}}> {'Date: ' + object.date } </p> 
-                                            <p style={{margin: "0"}}>{'Venue: TBD'}</p> 
+                                            <p style={{margin: "0"}}>{object.venue === '' ? 'Venue: TBD' : 'Venue: ' + object.venue}</p> 
                                           </div>}
                                cardHeaderStyle={{background: "orange"}}
                                bubbleStyle={{
