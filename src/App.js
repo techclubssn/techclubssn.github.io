@@ -186,15 +186,13 @@ class Sessions extends Component{
     return(
       <div style={{paddingBottom: "5px"}}>
         <p>
-          Sessions are weekly activities organized by the TechClub members. It usually involves
-          tutorials and classes on a particular area of concentration, or it could be any other
-          events. All sessions are open to everyone, however they might happen during class hours
-          of other departments. Attend at your own discretion.
+          Sessions are weekly activities organized by the TechClub members. They are usually comprised of tutorials and classes on a particular 
+          area of concentration. We also organize talks and provide guidance on technical events, projects and opportunities. 
         </p>
         <p>
-          Sessions are mostly conducted during TechClub hours, which are usually kept at the last
-          few periods of Thursday or Tuesday. It may change every semester. Please refer to your
-          timetable for the latest update.
+          Sessions are mostly conducted during TechClub hours, which are usually kept at the last few periods of Thursday or Tuesday. All sessions 
+          are open to everyone, however they might happen during class hours of other departments. This section lists out the date and venue of upcoming 
+          and past sessions.
         </p>
       </div>
     )
@@ -451,7 +449,7 @@ class About extends Component{
              Since its inception in 2014, Tech Club SSN serves to enhance  
              student involvement in fields revolving around Electronics and Computer Science. We do this by conducting tutorials, classes and events on practical 
              concepts in fields such as Computer Vision, IoT, Robotics and Machine Learning. We organize technical events around the year where students can 
-             apply their newly acquired skills. Moreover, we guide students to pursue their aspirations in their fields of interest by preparing them for internships, 
+             apply their newly acquired skills. Moreover, we guide students to pursue their aspirations in the fields of their interest by preparing them for internships, 
              independant research work, significant technical events and hackathons.  
           </p>
           <hr />
@@ -462,16 +460,16 @@ class About extends Component{
             section of the website for information on exciting events!
           </p>
           <p>
-            Tech Club SSN is a welcoming community that is open for all. No pre-requisite knowledge is required! a desire to learn and build something is more than enough. 
+            Tech Club SSN is a welcoming community that is open for all. No pre-requisite knowledge is required! A desire to learn and build something is more than enough. 
             Even though Tech Club is an organization based in the department of ECE, students of all departments are welcome to join our activities! However,
             since most sessions are conducted on Tech Club hours which are only available on ECE timetables (from 3rd semester and above), we cannot guarantee OD for regular 
-            sessions for students belonging to other departments and first years. OD will be provided for almost every other acitivity for everyone!
+            sessions for students belonging to other departments (and first years students). OD will be provided for almost every other acitivity for everyone!
           </p>
           <hr />
           <h1>Study Guides</h1>
           <p>
-            We document the materials used in our sessions so that students can refer to it even if miss out on the sessions. Also, we document information regarding 
-            internships, technical oppurnities, MS application process and much more. Checkout our GitHub page for all such materials.
+            We document the materials used in our sessions so that students can refer to it even if they miss out on the sessions. Also, we document information regarding 
+            internships, technical opportunities, MS application process and much more. Checkout our GitHub page for all such materials.
           </p>
         </div>
       </div>
