@@ -60,12 +60,12 @@ class NavbarTC extends Component {
         <Navbar.Collapse>
           <Nav pullRight>
             <NavItem eventKey={1} href="#">
+              <Link to="/news" onClick={this.closeNav} className='navbar-link-style'>News</Link>
+            </NavItem>
+            <NavItem eventKey={2} href="#">
               <Link to="/sessions" onClick={this.closeNav} className='navbar-link-style'>
                 Sessions
               </Link>
-            </NavItem>
-            <NavItem eventKey={2} href="#">
-              <Link to="/news" onClick={this.closeNav} className='navbar-link-style'>News</Link>
             </NavItem>
             <NavItem eventKey={3} href="#">
               <Link to="/about" onClick={this.closeNav} className='navbar-link-style'>About Us</Link>
@@ -245,7 +245,7 @@ class Sessions extends Component{
     }
     else{
       return(
-        <Timeline lineColor="#333" lineStyle={{width: "4px"}} >
+        <Timeline orientation='right' lineColor="#333" lineStyle={{width: "4px"}} >
           {
             this.props.data.slice(0).reverse().map((object, i) =>
               (
@@ -291,10 +291,10 @@ class Sessions extends Component{
     <div className="container-fluid">
       <StickyContainer>
           <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
+            <div className="col-sm-6 col-sm-push-6 sessionsHeader">
                 {this.sessionHeaderSticky()}
              </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
+              <div className="col-sm-6 col-sm-pull-6 sessionsStyle"> 
                 {this.renderTimeLine()}
               </div>
           </div>
@@ -303,6 +303,21 @@ class Sessions extends Component{
       )
   }
 }
+
+/*
+Original Sessions Code
+
+          <div className="row">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
+                {this.sessionHeaderSticky()}
+             </div>
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
+                {this.renderTimeLine()}
+              </div>
+          </div>
+
+*/
+
 
 class News extends Component{
 
@@ -370,7 +385,7 @@ class News extends Component{
     }
     else{
       return(
-        <Timeline orientation="right" lineColor="#333" lineStyle={{width: "4px"}} >
+        <Timeline orientation="left" lineColor="#333" lineStyle={{width: "4px"}} >
           {
             this.props.data.slice(0).reverse().map((object, i) =>
               (
@@ -412,10 +427,10 @@ class News extends Component{
       <div className="container-fluid">
       <StickyContainer>
         <div className="row">
-            <div className="col-sm-6 col-sm-push-6 sessionsHeader">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
                 {this.newsHeaderSticky()}
             </div> 
-            <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle">
                 {this.renderTimeLine()}
             </div>
           </div>
@@ -425,6 +440,17 @@ class News extends Component{
   }
 
 }
+
+/*
+Original News Code
+            <div className="col-sm-6 col-sm-push-6 sessionsHeader">
+                {this.newsHeaderSticky()}
+            </div> 
+            <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
+                {this.renderTimeLine()}
+            </div>
+
+*/
 
 class About extends Component{
 
@@ -657,11 +683,11 @@ class Home extends Component {
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
           </div>
         </div>
-        <Element name="sess">
-          <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
-        </Element>
         <Element name="news">
           <News data={this.props.newsData} sticky={this.props.sticky} />
+        </Element>
+        <Element name="sess">
+          <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
         </Element>
       </div>
     );
