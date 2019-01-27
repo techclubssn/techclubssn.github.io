@@ -304,21 +304,6 @@ class Sessions extends Component{
   }
 }
 
-/*
-Original Sessions Code
-
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
-                {this.sessionHeaderSticky()}
-             </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle"> 
-                {this.renderTimeLine()}
-              </div>
-          </div>
-
-*/
-
-
 class News extends Component{
 
   constructor(props){
@@ -440,17 +425,6 @@ class News extends Component{
   }
 
 }
-
-/*
-Original News Code
-            <div className="col-sm-6 col-sm-push-6 sessionsHeader">
-                {this.newsHeaderSticky()}
-            </div> 
-            <div className="col-sm-6 col-sm-pull-6 sessionsStyle">
-                {this.renderTimeLine()}
-            </div>
-
-*/
 
 class About extends Component{
 
