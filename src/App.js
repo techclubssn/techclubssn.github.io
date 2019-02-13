@@ -73,6 +73,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={4} href="#">
               <Link to="/team" onClick={this.closeNav} className='navbar-link-style'>Team</Link>
             </NavItem>
+            <NavItem eventKey={6} href="#">
+              <Link to="/forms" onClick={this.closeNav} className='navbar-link-style'>Hax</Link>
+            </NavItem>
             <NavItem style={{paddingRight: '10px'}} 
                      className='navbar-link-style' 
                      eventKey={5} 
@@ -503,6 +506,28 @@ class Footer extends Component{
   }
 }
 
+class Forms extends Component{
+
+  componentDidMount(){
+      window.scrollTo(0,0);
+    }
+
+  render(){
+    return(
+      <div className='formsStyle' style={{paddingTop: '50px'}}>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfuXfq5aiSbaGlLwUOP7IXaUMj-725bL7lHJddr3Q9zEXFfQA/viewform?embedded=true" 
+            width="100%" 
+            height="1887"
+            title="Hackathon Forms" 
+            frameborder="0" 
+            marginheight="100px" 
+            marginwidth="0">Loading...
+        </iframe>
+      </div>
+    )
+  }
+}
+
 class Team extends Component{
 
   componentDidMount(){
@@ -693,6 +718,8 @@ class Pages extends Component{
         <Route path='/about' render={(props) => <About largeScreen={this.props.data.sticky} />} />
 
         <Route path='/team' render={(props) => <Team data={this.props.data.teamData} dest="team" />} />
+
+        <Route path='/forms' render={(props) => <Forms />} />
 
       </Switch>
     )

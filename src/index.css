@@ -150,6 +150,15 @@ body {
   text-align: justify;
 }
 
+.formsStyle{
+  text-align: center;
+  background: #CCC;
+  color: #333;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px;
+}
+
 .teamStyle {
   text-align: center;
   background: #CCC;
