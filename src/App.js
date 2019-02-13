@@ -74,7 +74,7 @@ class NavbarTC extends Component {
               <Link to="/team" onClick={this.closeNav} className='navbar-link-style'>Team</Link>
             </NavItem>
             <NavItem eventKey={6} href="#">
-              <Link to="/forms" onClick={this.closeNav} className='navbar-link-style'>Hax</Link>
+              <Link to="/reg" onClick={this.closeNav} className='navbar-link-style'>Hax</Link>
             </NavItem>
             <NavItem style={{paddingRight: '10px'}} 
                      className='navbar-link-style' 
@@ -480,6 +480,36 @@ class About extends Component{
   }
 }
 
+class Register extends Component{
+
+  componentDidMount(){
+    window.scrollTo(0,0);
+  }
+
+  render() {
+    return(
+      <div className='aboutUsStyle'>
+        <div className='aboutContainer'>
+          <img className='aboutImg' src={this.props.largeScreen ? "/cover_large.jpg" : "/cover_small.jpg"} alt="Hackathon" />
+          <div className='aboutHeading'><h1>H A C K A T H O N</h1></div>
+        </div>
+        <div className='aboutContent'>
+          <h4>
+             Tech Club SSN and SSN Lakshya are proud to present Placeholder Hackathon 2019.
+          </h4>
+          <hr />
+          <h1>Register Now</h1>
+          <Link to="/forms" className='navbar-link-style' >
+            <button className="btn btn-warning">
+              Sign Up
+            </button>
+          </Link>
+        </div>
+      </div>
+      );
+  }
+}
+
 class Footer extends Component{
 
   scrollToTop(){
@@ -718,6 +748,8 @@ class Pages extends Component{
         <Route path='/about' render={(props) => <About largeScreen={this.props.data.sticky} />} />
 
         <Route path='/team' render={(props) => <Team data={this.props.data.teamData} dest="team" />} />
+
+        <Route path='/reg' render={(props) => <Register largeScreen={this.props.data.sticky} />} />
 
         <Route path='/forms' render={(props) => <Forms />} />
 
