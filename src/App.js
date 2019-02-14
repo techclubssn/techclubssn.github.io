@@ -74,7 +74,7 @@ class NavbarTC extends Component {
               <Link to="/team" onClick={this.closeNav} className='navbar-link-style'>Team</Link>
             </NavItem>
             <NavItem eventKey={6} href="#">
-              <Link to="/reg" onClick={this.closeNav} className='navbar-link-style'>Hax</Link>
+              <Link to="/hackerspace" onClick={this.closeNav} className='navbar-link-style'>HackerSpace</Link>
             </NavItem>
             <NavItem style={{paddingRight: '10px'}} 
                      className='navbar-link-style' 
@@ -482,8 +482,35 @@ class About extends Component{
 
 class Register extends Component{
 
+  constructor(props){
+    super(props);
+    this.state = {
+      'formOpen': false
+    };
+    this.revealForm = this.revealForm.bind(this)
+  }
+
   componentDidMount(){
     window.scrollTo(0,0);
+  }
+
+  revealForm(){
+    let currentState = this.state.formOpen;
+    this.setState({'formOpen': !currentState});
+  }
+
+  renderTitle(){
+    let largeScreen = this.props.largeScreen;
+    if(largeScreen){
+      return(<h1>H A C K E R S P A C E</h1>)
+    }
+    else{
+      return(<p style={{fontSize: "24px",
+                        fontWeight: "bold", 
+                        paddingTop: "30px", 
+                        marginLeft: "-100px", 
+                        marginRight: "-100px"}}>H A C K E R S P A C E</p>)
+    }
   }
 
   render() {
@@ -491,19 +518,110 @@ class Register extends Component{
       <div className='aboutUsStyle'>
         <div className='aboutContainer'>
           <img className='aboutImg' src={this.props.largeScreen ? "/cover_large.jpg" : "/cover_small.jpg"} alt="Hackathon" />
-          <div className='aboutHeading'><h1>H A C K A T H O N</h1></div>
+          <div className='aboutHeading'>{this.renderTitle()}</div>
         </div>
         <div className='aboutContent'>
           <h4>
-             Tech Club SSN and SSN Lakshya are proud to present Placeholder Hackathon 2019.
+             HackerSpace 2019 is a 24hr intracollege hackathon hosted by TechClubSSN and SSN Lakshya.
           </h4>
           <hr />
+          <h1>HackerSpace 2019</h1>
+          <p style={{fontSize: "15px"}}> 
+             HackerSpace 2019 is a 24hr overnight Hackathon aimed to test the development and entrepreneurial skills of students. Participants 
+             are invited to send in an abstract of a product they can build in 24 hours and potentially pitch it to investors. Finalists will 
+             be invited to actually build and showcase their product to the same. Products can be made in any one of these below themes and are  
+             encouraged to use technologies such as AI, IoT, AR/VR and Blockchain. Prizes worth 20000 await for the winners! (and swag for all 
+            finalists!).
+          </p>
+          <hr />
+          <h1>Themes</h1>
+          <div style={{paddingTop:"25px"}} className="container">
+            <div className="row">
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <i style={{fontSize: "70px"}} class="fas fa-shield-alt"></i>
+                <h3>Security</h3>
+              </div>
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <i style={{fontSize: "70px"}} class="fas fa-cogs"></i>
+                <h3>Development</h3>
+              </div>
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <i style={{fontSize: "70px"}} class="fas fa-map-marked-alt"></i>
+                <h3>Logistics</h3>
+              </div>
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <i style={{fontSize: "70px"}} class="fab fa-pagelines"></i>
+                <h3>Agriculture</h3>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <h1>Rules</h1>
+          <div style={{textAlign: "left"}}>
+            <ul style={{fontSize: "18px"}}>
+              <li>Teams of 3 people</li>
+              <li>Participants are supposed to build their product during the Hackathon</li>
+              <li>Rule 3</li>
+              <li>Rule 4</li>
+              <li>Rule 5</li>
+              <li>Rule 6</li>
+              <li>Rule 7</li>
+              <li>Rule 8</li>
+              <li>Participants are allowed to use existing libraries or components, however only the work done during the 24hrs will be considered for evaluation.</li>
+            </ul>
+          </div>
+          <hr />
           <h1>Register Now</h1>
+          <p style={{color:"red", "textAlign": "center"}}>Registrations close at 10pm on 18th February 2019</p>
           <Link to="/forms" className='navbar-link-style' >
             <button className="btn btn-warning">
               Sign Up
             </button>
           </Link>
+          <div style={{paddingTop: "10px", paddingLeft: "7px"}}>
+            <button className="btn btn-warning" onClick={this.revealForm}>
+              {this.state.formOpen ? "Collapse Form" : "Reveal Form"}
+            </button>
+          </div>
+          <Collapse isOpened={this.state.formOpen}>
+            <div className='formsStyle' style={{paddingTop: '50px'}}>
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfuXfq5aiSbaGlLwUOP7IXaUMj-725bL7lHJddr3Q9zEXFfQA/viewform?embedded=true" 
+                  width="100%" 
+                  height="1887"
+                  title="Hackathon Forms" 
+                  frameborder="0" 
+                  marginheight="100px" 
+                  marginwidth="0">Loading...
+              </iframe>
+            </div>
+          </Collapse>
+          <hr />
+          <h1>Sponsors</h1>
+          <div style={{paddingTop:"25px"}} className="container">
+            <div className="row">
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <img src="https://codingninjas.in/assets-landing/images/CNLOGO.svg" alt="coding ninjas" className="img-responsive" />
+              </div>
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <img src="https://www.jcount.com/wp-content/uploads/2015/11/h2oailogo.png" alt="h2o" className="img-responsive" />
+              </div>
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <img src="http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" alt="fruit" className="img-responsive" />
+              </div>
+              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <img src="http://africanouveau.com/wp-content/uploads/2019/01/UberEats-Logo-OnWhite-Color-H.png" alt="ub" className="img-responsive" />
+              </div>
+            </div>
+          </div>
+          <h1>Contact</h1>
+          <div style={{textAlign: "left"}}>
+            <ul style={{fontSize: "18px"}}>
+              <li>Person 1: +91-xxxxxxxxxx</li>
+              <li>Person 2: +91-xxxxxxxxxx</li>
+              <li>Person 3: +91-xxxxxxxxxx</li>
+              <li>Email: email@email.com</li>
+            </ul>
+          </div>
         </div>
       </div>
       );
@@ -749,7 +867,7 @@ class Pages extends Component{
 
         <Route path='/team' render={(props) => <Team data={this.props.data.teamData} dest="team" />} />
 
-        <Route path='/reg' render={(props) => <Register largeScreen={this.props.data.sticky} />} />
+        <Route path='/hackerspace' render={(props) => <Register largeScreen={this.props.data.sticky} />} />
 
         <Route path='/forms' render={(props) => <Forms />} />
 
