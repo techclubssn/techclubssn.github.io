@@ -592,19 +592,14 @@ class Register extends Component{
           <hr />
           <h1>Register Now</h1>
           <p style={{color:"red", "textAlign": "center"}}>Registrations close at 10pm on 18th February 2019</p>
-          <Link to="/forms" className='navbar-link-style' >
-            <button className="btn btn-warning">
-              Sign Up
-            </button>
-          </Link>
           <div style={{paddingTop: "10px", paddingLeft: "7px"}}>
             <button className="btn btn-warning" onClick={this.revealForm}>
-              {this.state.formOpen ? "Collapse Form" : "Reveal Form"}
+              {this.state.formOpen ? "Collapse Form" : "Click Here"}
             </button>
           </div>
           <Collapse isOpened={this.state.formOpen}>
             <div className='formsStyle' style={{paddingTop: '50px'}}>
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfuXfq5aiSbaGlLwUOP7IXaUMj-725bL7lHJddr3Q9zEXFfQA/viewform?embedded=true" 
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfujJHB_sgH2GbQXgosWB6pkJo-gO9AbkN_FMKSyO5B91GAQ/viewform?embedded=true" 
                   width="100%" 
                   height="1887"
                   title="Hackathon Forms" 
@@ -682,7 +677,7 @@ class Forms extends Component{
   render(){
     return(
       <div className='formsStyle' style={{paddingTop: '50px'}}>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfuXfq5aiSbaGlLwUOP7IXaUMj-725bL7lHJddr3Q9zEXFfQA/viewform?embedded=true" 
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfujJHB_sgH2GbQXgosWB6pkJo-gO9AbkN_FMKSyO5B91GAQ/viewform?embedded=true" 
             width="100%" 
             height="1887"
             title="Hackathon Forms" 
