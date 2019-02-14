@@ -556,7 +556,7 @@ class Register extends Component{
             </div>
           </div>
           <hr />
-          <h1>Rules</h1>
+          <h1>Details</h1>
           <div style={{textAlign: "left"}}>
             <ul style={{fontSize: "18px"}}>
               <li>Teams of 3 people</li>
@@ -568,6 +568,25 @@ class Register extends Component{
               <li>Rule 7</li>
               <li>Rule 8</li>
               <li>Participants are allowed to use existing libraries or components, however only the work done during the 24hrs will be considered for evaluation.</li>
+            </ul>
+          </div>
+          <hr />
+          <h1>Agenda</h1>
+          <div style={{textAlign: "left"}}>
+            <ul style={{fontSize: "18px"}}>
+              <li>Venue: Mini Auditorium</li>
+              <li>Day 1:
+                <ul>
+                  <li>Event 1</li>
+                  <li>Event 2</li>
+                </ul>
+              </li>
+              <li>Day 2:
+                <ul>
+                  <li>Event 1</li>
+                  <li>Event 2</li>
+                </ul>
+              </li>
             </ul>
           </div>
           <hr />
@@ -609,7 +628,7 @@ class Register extends Component{
                 <img src="http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" alt="fruit" className="img-responsive" />
               </div>
               <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <img src="http://africanouveau.com/wp-content/uploads/2019/01/UberEats-Logo-OnWhite-Color-H.png" alt="ub" className="img-responsive" />
+                <img src="http://www.altsense.co.in/wp-content/uploads/2017/06/altsense.jpg" alt="altsense" className="img-responsive" />
               </div>
             </div>
           </div>
