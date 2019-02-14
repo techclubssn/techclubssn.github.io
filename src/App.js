@@ -522,69 +522,81 @@ class Register extends Component{
         </div>
         <div className='aboutContent'>
           <h4>
-             HackerSpace 2019 is a 24hr intracollege hackathon hosted by TechClubSSN and SSN Lakshya.
+             HackerSpace is a 24 hour intracollege hackathon hosted by TechClubSSN and SSN Lakshya.
           </h4>
           <hr />
-          <h1>HackerSpace 2019</h1>
+          <h1>HackerSpace</h1>
           <p style={{fontSize: "15px"}}> 
-             HackerSpace 2019 is a 24hr overnight Hackathon aimed to test the development and entrepreneurial skills of students. Participants 
-             are invited to send in an abstract of a product they can build in 24 hours and potentially pitch it to investors. Finalists will 
-             be invited to actually build and showcase their product to the same. Products can be made in any one of these below themes and are  
-             encouraged to use technologies such as AI, IoT, AR/VR and Blockchain. Prizes worth 20000 await for the winners! (and swag for all 
-            finalists!).
-          </p>
+             HackerSpace is a 24 hour overnight Hackathon that aims to test the technical and entrepreneurial skills of students in SSN. Participants 
+             are invited to send in an abstract of a product that they can build in 24 hours and then pitch it to investors. Participants are  
+             encouraged to use technologies such as AI, IoT, AR/VR and Blockchain to build products that can solve problems in the domains of Security, 
+             Development, Logistics and Agriculture. Exciting prizes worth Rs.20000 await!</p>
           <hr />
           <h1>Themes</h1>
           <div style={{paddingTop:"25px"}} className="container">
             <div className="row">
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <div style={{padding:"10px 10px 10px 10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "70px"}} class="fas fa-shield-alt"></i>
                 <h3>Security</h3>
+                <i>Safeguarding a community through feasible, reliable and scalable technology.</i>
               </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <div style={{padding:"10px 10px 10px 10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "70px"}} class="fas fa-cogs"></i>
                 <h3>Development</h3>
+                <i>Enhancing the facilities of a community through intelligent innovations.</i>
               </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <div style={{padding:"10px 10px 10px 10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "70px"}} class="fas fa-map-marked-alt"></i>
                 <h3>Logistics</h3>
+                <i>Solving critical problems in transport, delivery and related services.</i>
               </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <div style={{padding:"10px 10px 10px 10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "70px"}} class="fab fa-pagelines"></i>
                 <h3>Agriculture</h3>
+                <i>Providing realistic and feasible solutions to enhance agricultural productivity.</i>
               </div>
             </div>
           </div>
           <hr />
           <h1>Details</h1>
           <div style={{textAlign: "left"}}>
-            <ul style={{fontSize: "18px"}}>
-              <li>Teams of 3 people</li>
-              <li>Participants are supposed to build their product during the Hackathon</li>
-              <li>Rule 3</li>
-              <li>Rule 4</li>
-              <li>Rule 5</li>
-              <li>Rule 6</li>
-              <li>Rule 7</li>
-              <li>Rule 8</li>
+            <ul style={{fontSize: "16px"}}>
+              <li>The teams with the best abstracts will be shortlisted for the Hackathon.</li>
+              <li>Dinner on Day 1 and Breakfast on Day 2 will be provided.</li>
+              <li>Refreshments will be provided during the course of the event.</li>
+              <li>Teams of a minimum of 2 and a maximum of 3 people are allowed.</li>
+              <li>Extension boxes, if needed, must be brought by the participants</li>
+              <li>Participants are required to bring the components that they require.</li>
+              <li>Mentorship for both technical and entrepreneurial skills will be given</li>
+              <li>Product will be judged based on Innovation, Impact, Feasibility and Marketability.</li>
+              <li>Participants are requested to register their team and send in their abstract before the deadline using the form below.</li>
+              <li>Finalists are required to pay Rs.500 as registration fee on the day of the Hackathon. Payment can be made using cash or Google Pay.</li>
+              <li>Participants are supposed to build their product during the Hackathon.</li>
+              <li>Product can be a mix of hardware and software technologies, but can be purely software or hardware based as well.</li>
               <li>Participants are allowed to use existing libraries or components, however only the work done during the 24hrs will be considered for evaluation.</li>
             </ul>
           </div>
           <hr />
           <h1>Agenda</h1>
           <div style={{textAlign: "left"}}>
-            <ul style={{fontSize: "18px"}}>
+            <ul style={{fontSize: "16px"}}>
               <li>Venue: Mini Auditorium</li>
-              <li>Day 1:
+              <li>Day 1 - 20th February 2019:
                 <ul>
-                  <li>Event 1</li>
-                  <li>Event 2</li>
+                  <li>10:30AM - Registration</li>
+                  <li>11:30AM - Introduction</li>
+                  <li>12:00PM - Hackathon Starts</li>
+                  <li>5:00PM - Refreshments</li>
+                  <li>8:30PM - Dinner</li>
                 </ul>
               </li>
-              <li>Day 2:
+              <li>Day 2 - 21st February 2019:
                 <ul>
-                  <li>Event 1</li>
-                  <li>Event 2</li>
+                  <li>12:00AM - Refreshments</li>
+                  <li>8:00AM - Breakfast</li>
+                  <li>12:00PM - Hackathon Stops</li>
+                  <li>12:30PM - Product Pitching</li>
+                  <li>3:00PM - Valedictory</li>
                 </ul>
               </li>
             </ul>
@@ -600,8 +612,8 @@ class Register extends Component{
           <Collapse isOpened={this.state.formOpen}>
             <div className='formsStyle' style={{paddingTop: '50px'}}>
               <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfujJHB_sgH2GbQXgosWB6pkJo-gO9AbkN_FMKSyO5B91GAQ/viewform?embedded=true" 
-                  width="100%" 
-                  height="1887"
+                  width="75%" 
+                  height="650"
                   title="Hackathon Forms" 
                   frameborder="0" 
                   marginheight="100px" 
@@ -630,10 +642,10 @@ class Register extends Component{
           <h1>Contact</h1>
           <div style={{textAlign: "left"}}>
             <ul style={{fontSize: "18px"}}>
-              <li>Person 1: +91-xxxxxxxxxx</li>
-              <li>Person 2: +91-xxxxxxxxxx</li>
-              <li>Person 3: +91-xxxxxxxxxx</li>
-              <li>Email: email@email.com</li>
+              <li>Rakesh: +919884706702</li>
+              <li>Swati: +919884682869</li>
+              <li>Bharath Raj: +919841069732</li>
+              <li>Pratheesh: +91-xxxxxxxxxx</li>
             </ul>
           </div>
         </div>
