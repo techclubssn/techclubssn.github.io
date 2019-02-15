@@ -643,7 +643,7 @@ class Register extends Component{
               </div>
               <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Coding Partner</i>
-                <img src = "https://codingninjas.in/assets-landing/images/CNLOGO.svg" 
+                <img src = "/coding_ninjas_logo.png" 
                      alt = "Coding Ninjas" 
                      className = "img-responsive"
                      style = {{
