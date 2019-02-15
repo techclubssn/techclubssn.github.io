@@ -710,28 +710,6 @@ class Footer extends Component{
   }
 }
 
-class Forms extends Component{
-
-  componentDidMount(){
-      window.scrollTo(0,0);
-    }
-
-  render(){
-    return(
-      <div className='formsStyle' style={{paddingTop: '50px'}}>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdfujJHB_sgH2GbQXgosWB6pkJo-gO9AbkN_FMKSyO5B91GAQ/viewform?embedded=true" 
-            width="100%" 
-            height="1887"
-            title="Hackathon Forms" 
-            frameborder="0" 
-            marginheight="100px" 
-            marginwidth="0">Loading...
-        </iframe>
-      </div>
-    )
-  }
-}
-
 class Team extends Component{
 
   componentDidMount(){
@@ -924,8 +902,6 @@ class Pages extends Component{
         <Route path='/team' render={(props) => <Team data={this.props.data.teamData} dest="team" />} />
 
         <Route path='/hackerspace' render={(props) => <Register largeScreen={this.props.data.sticky} />} />
-
-        <Route path='/forms' render={(props) => <Forms />} />
 
       </Switch>
     )
