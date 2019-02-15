@@ -570,7 +570,7 @@ class Register extends Component{
               <li>Mentorship for both technical and entrepreneurial skills will be given</li>
               <li>Product will be judged based on Innovation, Impact, Feasibility and Marketability.</li>
               <li>Participants are requested to register their team and send in their abstract before the deadline using the form below.</li>
-              <li>Finalists are required to pay Rs.500 as registration fee on the day of the Hackathon. Payment can be made using cash or Google Pay.</li>
+              <li>Finalists are required to pay Rs.500 (per team) as registration fee once they get a confirmation mail. Payment can be made using cash or Google Pay.</li>
               <li>Participants are supposed to build their product during the Hackathon.</li>
               <li>Product can be a mix of hardware and software technologies, but can be purely software or hardware based as well.</li>
               <li>Participants are allowed to use existing libraries or components, however only the work done during the 24hrs will be considered for evaluation.</li>
@@ -625,27 +625,46 @@ class Register extends Component{
           <h1>Sponsors</h1>
           <div style={{paddingTop:"25px"}} className="container">
             <div className="row">
+              {/*
               <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <img src="https://codingninjas.in/assets-landing/images/CNLOGO.svg" alt="coding ninjas" className="img-responsive" />
+              </div> 
+              */}
+              <div style={{paddingBottom:"10px"}} 
+                   className="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+                <img src="http://www.altsense.co.in/wp-content/uploads/2017/06/altsense.jpg" 
+                     alt="AltSense" 
+                     className="img-responsive" 
+                     style = {{
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      width: "70%"
+                     }}
+                      />
               </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <img src="https://www.jcount.com/wp-content/uploads/2015/11/h2oailogo.png" alt="h2o" className="img-responsive" />
-              </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <img src="http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" alt="fruit" className="img-responsive" />
-              </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <img src="http://www.altsense.co.in/wp-content/uploads/2017/06/altsense.jpg" alt="altsense" className="img-responsive" />
+              <div style={{paddingBottom:"10px"}} className="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <img src = "http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" 
+                     alt = "Fruit Shop" 
+                     className = "img-responsive" 
+                     style = {{
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      width: "70%"
+                     }}
+                      />
               </div>
             </div>
           </div>
+          <hr />
           <h1>Contact</h1>
           <div style={{textAlign: "left"}}>
             <ul style={{fontSize: "18px"}}>
               <li>Rakesh: +919884706702</li>
               <li>Swati: +919884682869</li>
               <li>Bharath Raj: +919841069732</li>
-              <li>Pratheesh: +91-xxxxxxxxxx</li>
+              <li>Pratheessh Kumar: +919677519902</li>
             </ul>
           </div>
         </div>
