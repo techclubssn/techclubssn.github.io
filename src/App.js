@@ -526,11 +526,14 @@ class Register extends Component{
           </h4>
           <hr />
           <h1>HackerSpace</h1>
-          <p style={{fontSize: "15px"}}> 
-             HackerSpace is a 24 hour overnight Hackathon that aims to test the technical and entrepreneurial skills of students in SSN. Participants 
-             are invited to send in an abstract of a product that they can build in 24 hours and then pitch it to investors. Participants are  
-             encouraged to use technologies such as AI, IoT, AR/VR and Blockchain to build products that can solve problems in the domains of Security, 
-             Development, Logistics and Agriculture. Exciting prizes worth Rs.20000 await!</p>
+          <div>
+            <p style={{fontSize: "15px"}}> 
+               HackerSpace is a 24 hour overnight Hackathon that aims to test the technical and entrepreneurial skills of students in SSN. Participants 
+               are invited to send in an abstract of a product that they can build in 24 hours and then pitch it to investors. Participants are  
+               encouraged to use technologies such as AI, IoT, AR/VR and Blockchain to build products that can solve problems in the domains of Security, 
+               Development, Logistics and Agriculture. Exciting prizes worth Rs.30000 await! <i style={{fontSize: "13px"}}>(inclusive of vouchers and swag)</i>
+            </p> 
+          </div>
           <hr />
           <h1>Themes</h1>
           <div style={{paddingTop:"25px"}} className="container">
@@ -625,13 +628,8 @@ class Register extends Component{
           <h1>Sponsors</h1>
           <div style={{paddingTop:"25px"}} className="container">
             <div className="row">
-              {/*
-              <div style={{paddingBottom:"10px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                <img src="https://codingninjas.in/assets-landing/images/CNLOGO.svg" alt="coding ninjas" className="img-responsive" />
-              </div> 
-              */}
-              <div style={{paddingBottom:"10px"}} 
-                   className="col-lg-5 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+              <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <i style={{fontSize: "15px"}}>Sponsor</i>
                 <img src="http://www.altsense.co.in/wp-content/uploads/2017/06/altsense.jpg" 
                      alt="AltSense" 
                      className="img-responsive" 
@@ -643,7 +641,20 @@ class Register extends Component{
                      }}
                       />
               </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+              <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <i style={{fontSize: "15px"}}>Official Coding Partner</i>
+                <img src = "https://codingninjas.in/assets-landing/images/CNLOGO.svg" 
+                     alt = "Coding Ninjas" 
+                     className = "img-responsive"
+                     style = {{
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      width: "70%"
+                     }} />
+              </div> 
+              <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <i style={{fontSize: "15px"}}>Official Food Partner</i>
                 <img src = "http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" 
                      alt = "Fruit Shop" 
                      className = "img-responsive" 
@@ -660,7 +671,7 @@ class Register extends Component{
           <hr />
           <h1>Contact</h1>
           <div style={{textAlign: "left"}}>
-            <ul style={{fontSize: "18px"}}>
+            <ul style={{fontSize: "16px"}}>
               <li>Rakesh: +919884706702</li>
               <li>Swati: +919884682869</li>
               <li>Bharath Raj: +919841069732</li>
