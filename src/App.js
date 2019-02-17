@@ -606,7 +606,7 @@ class Register extends Component{
           </div>
           <hr />
           <h1>Register Now</h1>
-          <p style={{color:"red", "textAlign": "center"}}>Registrations close at 10pm on 18th February 2019</p>
+          <p style={{color:"red", "textAlign": "center"}}>Registrations close at 12 noon on 19th February 2019</p>
           <div style={{paddingTop: "10px", paddingLeft: "7px"}}>
             <button className="btn btn-warning" onClick={this.revealForm}>
               {this.state.formOpen ? "Collapse Form" : "Click Here"}
@@ -628,7 +628,7 @@ class Register extends Component{
           <h1>Sponsors</h1>
           <div style={{paddingTop:"25px"}} className="container">
             <div className="row">
-              <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div style={{paddingBottom:"25px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <i style={{fontSize: "15px"}}>Sponsor</i>
                 <img src="http://www.altsense.co.in/wp-content/uploads/2017/06/altsense.jpg" 
                      alt="AltSense" 
@@ -641,7 +641,7 @@ class Register extends Component{
                      }}
                       />
               </div>
-              <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div style={{paddingBottom:"25px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Coding Partner</i>
                 <img src = "/coding_ninjas_logo.png" 
                      alt = "Coding Ninjas" 
@@ -653,7 +653,7 @@ class Register extends Component{
                       width: "70%"
                      }} />
               </div> 
-              <div style={{paddingBottom:"10px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div style={{paddingBottom:"20px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Food Partner</i>
                 <img src = "http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" 
                      alt = "Fruit Shop" 
