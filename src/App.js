@@ -628,8 +628,8 @@ class Register extends Component{
           <h1>Sponsors</h1>
           <div style={{paddingTop:"25px"}} className="container">
             <div className="row">
-              <div style={{paddingBottom:"25px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <i style={{fontSize: "15px"}}>Sponsor</i>
+              <div style={{paddingBottom:"25px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <i style={{fontSize: "15px"}}>Associate Sponsor</i>
                 <img src="http://www.altsense.co.in/wp-content/uploads/2017/06/altsense.jpg" 
                      alt="AltSense" 
                      className="img-responsive" 
@@ -641,7 +641,7 @@ class Register extends Component{
                      }}
                       />
               </div>
-              <div style={{paddingBottom:"25px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div style={{paddingBottom:"25px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Coding Partner</i>
                 <img src = "/coding_ninjas_logo.png" 
                      alt = "Coding Ninjas" 
@@ -653,8 +653,21 @@ class Register extends Component{
                       width: "70%"
                      }} />
               </div> 
-              <div style={{paddingBottom:"20px"}} className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <div style={{paddingBottom:"25px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Food Partner</i>
+                <img src = "/something_fishy_logo.jpg" 
+                     alt = "Something Fishy" 
+                     className = "img-responsive" 
+                     style = {{
+                      display: "block",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      width: "70%"
+                     }}
+                      />
+              </div>
+              <div style={{paddingBottom:"20px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <i style={{fontSize: "15px"}}>Official Beverage Partner</i>
                 <img src = "http://assets.limetray.com/assets/user_images/logos/original/1486040953_Logod.png" 
                      alt = "Fruit Shop" 
                      className = "img-responsive" 
