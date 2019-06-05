@@ -1,360 +1,15 @@
-import './Logo.css';
 import Tabletop from 'tabletop';
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
-import particlesJSON from './particles.json';
 import {Route, Switch} from 'react-router-dom';
-import {Timeline, TimelineEvent} from 'react-event-timeline';
-import { StickyContainer, Sticky } from 'react-sticky';
-import {Collapse} from 'react-collapse';
 import * as Scroll from 'react-scroll';
 
 import NavbarTC from './Components/Navbar/Navbar.js';
 import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
+import Home from './Components/Home/Landing.js';
 
-let Element = Scroll.Element;
-let scroller = Scroll.scroller;
+// let Element = Scroll.Element;
+// let scroller = Scroll.scroller;
 let scroll = Scroll.animateScroll;
-let homeDebounceCounter = 0; //Required to prevent spurious scrolling
-const particleParams = particlesJSON
-
-class CustomMarkdown extends Component{
-
-    customMarkdownParse(data){
-
-    let paragraphStart = 0, aStart=0, aEnd=0;
-    let paragraphEnd = 0;
-    let fetchLink = false;
-    let linkStart = -1;
-    let fragments = {
-      type: [],
-      content: {
-        data: [],
-        link:[]
-      }
-    }
-
-    for(let i=0; i<data.length; i++)
-    {
-      if(data[i] === '[' && !fetchLink)
-      {
-        paragraphEnd = i;
-        aStart = i+1;
-      }
-      if(data[i] === ']' && data[i+1] === '(' && !fetchLink)
-      {
-        fragments.type.push('p');
-        fragments.content.data.push(data.substr(paragraphStart, paragraphEnd - paragraphStart));
-        fragments.content.link.push('');
-
-        aEnd = i;
-        linkStart = i+1;
-        fetchLink = true;
-      }
-      if(data[i] === ')' && fetchLink)
-      {
-        fragments.type.push('a');
-        fragments.content.data.push(data.substr(aStart, aEnd - aStart));
-        fragments.content.link.push(data.substr(linkStart+1, i-linkStart-1));
-        fetchLink = false;
-        paragraphStart = i+1;
-      }
-    }
-
-    //Handling final paragraph if any
-    fragments.type.push('p');
-    fragments.content.data.push(data.substr(paragraphStart, data.length));
-    fragments.content.link.push('');
-
-    /* Useful for debugging
-    let customString = '';
-    for(let i=0; i<fragments.type.length; i++)
-    {
-      if(fragments.type[i] === 'p')
-        customString += fragments.content.data[i];
-      else if(fragments.type[i] === 'a')
-        customString += '<a href="' + fragments.content.link[i] + '">' + fragments.content.data[i] + '</a>';
-    }
-
-    console.log(fragments);
-    console.log(customString);
-    */
-
-      return(
-        <span>
-          {fragments.type.map((data, i) => (
-            <span key={i}>
-              {data === 'p' ? <span>{fragments.content.data[i]}</span> : 
-              <a className='footer-link' 
-                 href={fragments.content.link[i]} 
-                 target="_blank" 
-                 rel="noopener noreferrer"><b>{fragments.content.data[i]}</b></a>}
-            </span>
-            ))}
-        </span>
-        );
-    }
-
-    render(){
-      return(
-        <span>{this.customMarkdownParse(this.props.data)}</span>
-        );
-    }
-
-}
-
-class Sessions extends Component{
-
-  constructor(props){
-    super(props)
-    this.state = {
-      displayPara: this.props.sticky,
-    }
-  }
-
-  paraContent(){
-    return(
-      <div style={{paddingBottom: "5px"}}>
-        <p>
-          Sessions are weekly activities organized by the TechClub members. They are usually comprised of tutorials and classes on a particular 
-          area of concentration. We also organize talks and provide guidance on technical events, projects and opportunities. 
-        </p>
-        <p>
-          Sessions are mostly conducted during TechClub hours, which are usually kept at the last few periods of Thursday or Tuesday. All sessions 
-          are open to everyone, however they might happen during class hours of other departments. This section lists out the date and venue of upcoming 
-          and past sessions.
-        </p>
-      </div>
-    )
-  }
-
-  toggleDisplayPara(){
-    let sticky = this.props.sticky;
-    let displayPara = this.state.displayPara;
-    if(sticky === false && displayPara === true)
-      this.setState({displayPara: false});
-    else if(sticky === false && displayPara === false)
-      this.setState({displayPara: true});
-  }
-
-  sessionHeaderSticky(){
-    let displayPara = this.state.displayPara;
-    return(<div>
-    {
-      this.props.sticky === true ?
-        <Sticky>
-          {({ style }) => (
-            <div style={{...style, paddingTop:"30px", paddingBottom:"47px"}}>
-              <h1>Sessions</h1>
-              {this.paraContent()}
-            </div>
-            )}
-        </Sticky> :
-        <div>
-          <h1>Sessions</h1>
-          <Collapse isOpened={displayPara}>
-            {this.paraContent()}
-          </Collapse>
-          <button onClick={() => this.toggleDisplayPara()} className='btn btn-warning'>
-            {displayPara === true ? 'Less' : 'More'}
-          </button>
-        </div>
-    }
-    </div>)
-  }
-
-  renderTimeLine(){
-    let paddingLoaderTop = this.props.sticky ? "87px" : "0px";
-    if(this.props.data.length === 0){
-      return(
-        <div align="center" style={{paddingTop: paddingLoaderTop}}>
-          <h4>Fetching latest information</h4>
-          <div className="loader"></div> 
-        </div>
-      )
-    }
-    else{
-      return(
-        <Timeline orientation='right' lineColor="#333" lineStyle={{width: "4px"}} >
-          {
-            this.props.data.slice(0).reverse().map((object, i) =>
-              (
-                <TimelineEvent title={object.sessionName}
-                               container="card"
-                               subtitle={ <div>
-                                            <p style={{margin: "0"}}> {'Date: ' + object.date } </p> 
-                                            <p style={{margin: "0"}}>{object.venue === '' ? 'Venue: TBD' : 'Venue: ' + object.venue}</p> 
-                                          </div>}
-                               cardHeaderStyle={{background: "orange"}}
-                               bubbleStyle={{
-                                background: 'orange',
-                                borderColor: '#333',
-                                borderWidth: '4px'
-                               }}
-                               titleStyle={{
-                                fontSize: '18px',
-                                color: '#333',
-                                fontFamily:'Cabin'
-                               }}
-                               subtitleStyle={{
-                                fontSize: '11px',
-                                color: 'white'
-                               }}
-                               contentStyle={{
-                                fontFamily:'Cabin',
-                                fontSize:'14px'
-                               }}
-
-                >
-                  <CustomMarkdown data={object.details} />
-                </TimelineEvent>
-              )
-            )
-          }
-        </Timeline>
-      )
-    }
-  }
-
-  render() {
-    return(
-    <div className="container-fluid">
-      <StickyContainer>
-          <div className="row">
-            <div className="col-sm-6 col-sm-push-6 sessionsHeader">
-                {this.sessionHeaderSticky()}
-             </div>
-              <div className="col-sm-6 col-sm-pull-6 sessionsStyle"> 
-                {this.renderTimeLine()}
-              </div>
-          </div>
-        </StickyContainer>
-      </div>
-      )
-  }
-}
-
-class News extends Component{
-
-  constructor(props){
-    super(props)
-    this.state = {
-      displayPara: this.props.sticky,
-    }
-  }
-
-  paraContent(){
-    return(
-      <div style={{paddingBottom: "5px"}}>
-        <p>
-          Information on the latest news regarding TechClub, Events and Hackathons. 
-        </p>
-      </div>
-    )
-  }
-
-  toggleDisplayPara(){
-    let sticky = this.props.sticky;
-    let displayPara = this.state.displayPara;
-    if(sticky === false && displayPara === true)
-      this.setState({displayPara: false});
-    else if(sticky === false && displayPara === false)
-      this.setState({displayPara: true});
-  }
-
-  newsHeaderSticky(){
-    let displayPara = this.state.displayPara;
-    return(<div>
-    {
-      this.props.sticky === true ?
-        <Sticky>
-          {({ style }) => (
-            <div style={{...style, paddingTop:"30px", paddingBottom:"30px"}}>
-              <h1>Anouncements</h1>
-              {this.paraContent()}
-            </div>
-            )}
-        </Sticky> :
-        <div>
-          <h1>Anouncements</h1>
-          <Collapse isOpened={displayPara}>
-            {this.paraContent()}
-          </Collapse>
-          <button onClick={() => this.toggleDisplayPara()} className='btn btn-warning'>
-            {displayPara === true ? 'Less' : 'More'}
-          </button>
-        </div>
-    }
-    </div>)
-  }
-
-  renderTimeLine(){
-    let paddingLoaderTop = this.props.sticky ? "37px" : "0px";
-    if(this.props.data.length === 0){
-      return(
-        <div align="center" style={{paddingTop: paddingLoaderTop}}>
-          <h4>Fetching latest information</h4>
-          <div className="loader"></div> 
-        </div>
-      )
-    }
-    else{
-      return(
-        <Timeline orientation="left" lineColor="#333" lineStyle={{width: "4px"}} >
-          {
-            this.props.data.slice(0).reverse().map((object, i) =>
-              (
-                <TimelineEvent title={object.headline} 
-                               subtitle={'Date: ' + object.date }
-                               container="card"
-                               cardHeaderStyle={{background: "orange"}}
-                               bubbleStyle={{
-                                  background: 'orange',
-                                  borderColor: '#333',
-                                  borderWidth: '4px'
-                                 }} 
-                               titleStyle={{
-                                  fontSize: '18px',
-                                  color: '#333',
-                                  fontFamily:'Cabin'
-                                 }}
-                               subtitleStyle={{
-                                  fontSize: '11px',
-                                  color: 'white'
-                                 }}
-                                contentStyle={{
-                                fontFamily:'Cabin',
-                                fontSize:'14px'
-                               }}
-                >
-                  <CustomMarkdown data={object.news} />
-                </TimelineEvent>
-              )
-            )
-          }
-        </Timeline>
-      )
-    }
-  }
-
-  render() {
-    return(
-      <div className="container-fluid">
-      <StickyContainer>
-        <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsHeader">
-                {this.newsHeaderSticky()}
-            </div> 
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 sessionsStyle">
-                {this.renderTimeLine()}
-            </div>
-          </div>
-        </StickyContainer>
-      </div>
-      )
-  }
-
-}
 
 class About extends Component{
 
@@ -517,86 +172,86 @@ class Team extends Component{
 
 }
 
-const introPage = {
-  height: "100vh",
-  border: "3px",
-  boxSizing: "border-box",
-  overflowX: "hidden",
-  overflowY: "hidden",
-  margin: "0px"
-}
+// const introPage = {
+//   height: "100vh",
+//   border: "3px",
+//   boxSizing: "border-box",
+//   overflowX: "hidden",
+//   overflowY: "hidden",
+//   margin: "0px"
+// }
 
-const particleStyle = {
-  position:"absolute",
-  top: "5%"
-}
+// const particleStyle = {
+//   position:"absolute",
+//   top: "5%"
+// }
 
-class Home extends Component {
+// class Home extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      enableHomeScroll: false
-    }
-  }
+//   constructor(props){
+//     super(props);
+//     this.state = {
+//       enableHomeScroll: false
+//     }
+//   }
 
-  scrollToElement(element, disableSmooth = false) {
+//   scrollToElement(element, disableSmooth = false) {
     
-    let options = {}
-    if(!disableSmooth){
-      options = {
-      smooth: true,
-      offset: -50,
-      }
-    }
-    scroller.scrollTo(element, options)
-  }
+//     let options = {}
+//     if(!disableSmooth){
+//       options = {
+//       smooth: true,
+//       offset: -50,
+//       }
+//     }
+//     scroller.scrollTo(element, options)
+//   }
 
-  componentDidMount(){
-    if(this.props.dest === 'sessions')
-      this.scrollToElement('sess')
-    if(this.props.dest === 'news')
-      this.scrollToElement('news')
-    if(this.props.dest === 'home')
-      this.scrollToElement('home', true)
-  }
+//   componentDidMount(){
+//     if(this.props.dest === 'sessions')
+//       this.scrollToElement('sess')
+//     if(this.props.dest === 'news')
+//       this.scrollToElement('news')
+//     if(this.props.dest === 'home')
+//       this.scrollToElement('home', true)
+//   }
 
-  componentDidUpdate(){
-    if(this.props.dest === 'sessions')
-      this.scrollToElement('sess')
-    if(this.props.dest === 'news')
-      this.scrollToElement('news')
-    if(this.props.dest === 'home')
-    {
-      if(homeDebounceCounter < 1)
-        homeDebounceCounter += 1
-      else
-        this.scrollToElement('home')
-    }
-  }
+//   componentDidUpdate(){
+//     if(this.props.dest === 'sessions')
+//       this.scrollToElement('sess')
+//     if(this.props.dest === 'news')
+//       this.scrollToElement('news')
+//     if(this.props.dest === 'home')
+//     {
+//       if(homeDebounceCounter < 1)
+//         homeDebounceCounter += 1
+//       else
+//         this.scrollToElement('home')
+//     }
+//   }
 
-  render() {
-    return (
-      <div>
-        <div style={introPage}>
-          <Element name="home"></Element>
-          <div>
-            <Particles params={particleParams} style={particleStyle}/>
-          </div>
-          <div className="logoMobile">
-            <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
-          </div>
-        </div>
-        <Element name="news">
-          <News data={this.props.newsData} sticky={this.props.sticky} />
-        </Element>
-        <Element name="sess">
-          <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
-        </Element>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div>
+//         <div style={introPage}>
+//           <Element name="home"></Element>
+//           <div>
+//             <Particles params={particleParams} style={particleStyle}/>
+//           </div>
+//           <div className="logoMobile">
+//             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
+//           </div>
+//         </div>
+//         <Element name="news">
+//           <News data={this.props.newsData} sticky={this.props.sticky} />
+//         </Element>
+//         <Element name="sess">
+//           <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
+//         </Element>
+//       </div>
+//     );
+//   }
+// }
 
 class Pages extends Component{
   render() {

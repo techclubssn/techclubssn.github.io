@@ -1,0 +1,35 @@
+.newsStyle {
+  color: #BBB;
+  text-align: left;
+  background: black;
+}
+
+.newsStyle h1{
+  color: #BBB;
+  text-align: center;
+  font-family: "Cabin";
+}
+
+.newsStyle a{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle a:visited{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle a:hover {
+  color:red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.newsStyle a:active{
+  color:white;
+  font-weight: bold;
+  text-decoration: none;
+}
