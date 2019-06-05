@@ -1,0 +1,41 @@
+.teamStyle {
+  text-align: center;
+  background: #CCC;
+  color: #333;
+  padding-top: 50px;
+  height: 100%;
+  border: 3px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0px;
+}
+
+.teamImg {
+  width: 150px;
+  height: 150px;
+}
+
+.teamStyle a{
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.teamStyle a:visited{
+  color:black;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.teamStyle a:hover {
+  color:orange;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.teamStyle a:active{
+  color:black;
+  font-weight: bold;
+  text-decoration: none;
+}

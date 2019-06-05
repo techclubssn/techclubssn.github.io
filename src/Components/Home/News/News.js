@@ -5,7 +5,6 @@ import CustomMarkdown from '../../Markdown/Markdown.js';
 import {StickyContainer, Sticky} from 'react-sticky';
 import {Timeline, TimelineEvent} from 'react-event-timeline';
 
-
 class News extends Component{
 
   constructor(props){
