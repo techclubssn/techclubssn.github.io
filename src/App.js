@@ -439,7 +439,7 @@ class About extends Component{
     return(
       <div className='aboutUsStyle'>
         <div className='aboutContainer'>
-          <img className='aboutImg' src={this.props.largeScreen ? "/cover_large.jpg" : "/cover_small.jpg"} alt="Hackathon" />
+          <img className='aboutImg' src={this.props.largeScreen ? "/imgs/cover_large.jpg" : "/imgs/cover_small.jpg"} alt="Hackathon" />
           <div className='aboutHeading'><h1>A B O U T</h1></div>
         </div>
         <div className='aboutContent'>
@@ -517,7 +517,7 @@ class Register extends Component{
     return(
       <div className='aboutUsStyle'>
         <div className='aboutContainer'>
-          <img className='aboutImg' src={this.props.largeScreen ? "/cover_large.jpg" : "/cover_small.jpg"} alt="Hackathon" />
+          <img className='aboutImg' src={this.props.largeScreen ? "/imgs/cover_large.jpg" : "/imgs/cover_small.jpg"} alt="Hackathon" />
           <div className='aboutHeading'>{this.renderTitle()}</div>
         </div>
         <div className='aboutContent'>
@@ -643,7 +643,7 @@ class Register extends Component{
               </div>
               <div style={{paddingBottom:"25px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Coding Partner</i>
-                <img src = "/coding_ninjas_logo.png" 
+                <img src = "/imgs/coding_ninjas_logo.png" 
                      alt = "Coding Ninjas" 
                      className = "img-responsive"
                      style = {{
@@ -655,7 +655,7 @@ class Register extends Component{
               </div> 
               <div style={{paddingBottom:"25px"}} className="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <i style={{fontSize: "15px"}}>Official Food Partner</i>
-                <img src = "/something_fishy_logo.jpg" 
+                <img src = "/imgs/something_fishy_logo.jpg" 
                      alt = "Something Fishy" 
                      className = "img-responsive" 
                      style = {{
