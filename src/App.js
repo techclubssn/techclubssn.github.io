@@ -1,13 +1,13 @@
 import Tabletop from 'tabletop';
+import * as Scroll from 'react-scroll';
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
-import * as Scroll from 'react-scroll';
 
+import Team from './Components/Team/Team.js';
+import About from './Components/About/About.js';
+import Home from './Components/Home/Landing.js';
 import NavbarTC from './Components/Navbar/Navbar.js';
 import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
-import Home from './Components/Home/Landing.js';
-import About from './Components/About/About.js';
-import Team from './Components/Team/Team.js';
 
 let scroll = Scroll.animateScroll;
 
