@@ -35,30 +35,6 @@ body {
     margin-bottom: -100%;
 }
 
-.navbar-link-style{
-  color: #aaa;
-  padding-left: 10px;
-}
-
-.navbar-link-style:link{
-  text-decoration: none;
-}
-
-.navbar-link-style:visited{
-  color: #aaa;
-  text-decoration: none;
-}
-
-.navbar-link-style:hover{
-  color: white;
-  text-decoration: none;
-}
-
-.navbar-link-style:active{
-  color: #aaa;
-  text-decoration: none;
-}
-
 .footer-link:link{
   color: orange;
   text-decoration: none;
