@@ -15,7 +15,7 @@ Do you want to make the website better? Great! We welcome suggestions and pull r
 Follow these instructions to get the website running on your local system. Instructions are given assuming a linux (ubuntu 16.04 specifically) work environment. If you are using any other OS, please refer to the equivalent of these commands.
 
 1. Install Git, Node (>=10.2.1) and Npm (>=5.6.0).
-> **Note**: The versions mentioned in the instructions are the ones used during initial development. A lower version *maybe* compatible, so if you have them already installed you can give it a shot.
+> **Note**: The versions mentioned in the instructions were the ones used during initial development. A lower version *maybe* compatible, so if you have them already installed you can give it a shot.
 
 2. Clone the `master-readable` branch using the following command.
 ```
