@@ -1,9 +1,18 @@
-# tech-club-dev
-Trial development repo for the Tech Club website
+# Tech Club SSN
+Repository containing code for the official Tech Club SSN website. The `master` branch contains the production build version of the website. Switch to the `master-readable` branch to access the readable version of the code.
+
+## Contributing Guidelines
+Do you want to make the website better? Great! We welcome suggestions and pull requests. However, please follow these steps before attempting to make changes.
+
+1. Fork this repository.
+2. Complete the local setup (instructions given below) without any errors.
+3. Go through the [documentation](/public/docs) carefully.
+4. Make all modifications to the code in the `dev` branch.
+5. Submit a PR to the `dev` branch. Mention one of the contributors in your pull request (listed below).
 
 ## Local Setup
 
-Instructions are given assuming a linux (ubuntu 16.04 specifically) work environment. If you are using any other OS, please refer to the equivalent of these commands.
+Follow these instructions to get the website running on your local system. Instructions are given assuming a linux (ubuntu 16.04 specifically) work environment. If you are using any other OS, please refer to the equivalent of these commands.
 
 1. Install Git, Node (>=10.2.1) and Npm (>=5.6.0).
 > **Note**: The versions mentioned in the instructions are the ones used during initial development. A lower version *maybe* compatible, so if you have them already installed you can give it a shot.
