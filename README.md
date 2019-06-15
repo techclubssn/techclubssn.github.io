@@ -10,6 +10,6 @@ If you would like to contribute code (or documentation), go through the [documen
 
 ## Contributors
 In no particular order, contributors to the repository are listed below. Active contributors are people who still continue to maintain the repository:
-1. [Bharath Raj - @thatbrguy](https://thatbrguy.github.io) (Active)
+1. [Bharath Raj](https://thatbrguy.github.io) (@thatbrguy) (Active)
 
 
