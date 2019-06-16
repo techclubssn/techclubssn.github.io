@@ -74,11 +74,3 @@ Handles the layout of the home page by aligning the landing page, news and sessi
 10. `index.css` (and other css files):
 Has style components that are used globally by many files.
 > **Note:** Each individual stylesheet accompanying each `.js` file of the same name is imported by that file alone.
-
-## Writing New Code
-
-Before writing new code, make sure that you always maintain this basic structure displayed above. You can follow the below guidelines as a rule of thumb:
-
-- If you are making minor code changes, then just directly edit the respective files.
-- If you are adding an entirely new component and it is **different** from existing components (such as an Achievements section), then create new `.js` and `.css` files. Create a new directory and place these files in them.
-- If you are adding an entirely new component but it is **complementary** from existing components (such as pages for Corona or Tesla), then create new `.js` and `.css` files. Create a new directory and place these files in them. After that, place this new directory and the existing complementary code in the same parent directory (Such as Events/Tesla, Events/Corona or Events/Hackerspace).
