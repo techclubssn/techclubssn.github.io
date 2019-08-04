@@ -61,7 +61,10 @@ class Pages extends Component{
         
         <Route path='/about' render={(props) => <About largeScreen={this.props.data.sticky} />} />
 
-        <Route path='/team' render={(props) => <Team data={this.props.data.teamData} dest="team" />} />
+        <Route path='/team' render={
+          (props) => <Team teamData={this.props.data.teamData}
+                           alumniData={this.props.data.alumniData}
+                           dest="team" />} />
 
         <Route path='/hackerspace' render={(props) => <HackerSpace largeScreen={this.props.data.sticky} />} />
 
@@ -78,6 +81,7 @@ class App extends Component {
           sessionData: [],
           newsData: [],
           teamData: [],
+          alumniData: [],
           sticky:window.innerWidth > 768 ? true : false,
         };
         this.updateWidth = this.updateWidth.bind(this);
@@ -100,7 +104,8 @@ class App extends Component {
         this.setState({
           sessionData: googleData.Sessions.elements,
           newsData: googleData.News.elements,
-          teamData: googleData.Team.elements
+          teamData: googleData.Team.elements,
+          alumniData: googleData.Alumni.elements
         })
       },
       simpleSheet: false

@@ -57,7 +57,7 @@ class Team extends Component{
   }
 
   renderTeam(){
-    if(this.props.data.length === 0){
+    if(this.props.teamData.length === 0){
       return(
         <div align="center" style={{paddingBottom: "15px"}}>
           <h4>Fetching team information</h4>
@@ -68,7 +68,25 @@ class Team extends Component{
     else{
       return(
         <div> 
-          {this.rowBuilder(this.props.data)} 
+          {this.rowBuilder(this.props.teamData)} 
+        </div>
+      )
+    }
+  }
+
+  renderAlumni(){
+    if(this.props.alumniData.length === 0){
+      return(
+        <div align="center" style={{paddingBottom: "15px"}}>
+          <h4>Fetching alumni information</h4>
+          <div className="loader"></div> 
+        </div>
+      )
+    }
+    else{
+      return(
+        <div> 
+          {this.rowBuilder(this.props.alumniData)} 
         </div>
       )
     }
@@ -79,6 +97,8 @@ class Team extends Component{
       <div className="teamStyle">
         <h1 style={{fontFamily:'Cabin'}}>Meet the Team</h1>
         {this.renderTeam()}
+        <h1 style={{fontFamily:'Cabin'}}>Alumni</h1>
+        {this.renderAlumni()}
       </div>
       )
   }
