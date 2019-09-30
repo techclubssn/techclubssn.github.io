@@ -62,6 +62,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={6} href="#">
               <Link to="/hackerspace" onClick={this.closeNav} className='navbar-link-style'>HackerSpace</Link>
             </NavItem>
+            <NavItem eventKey={7} href="#">
+              <Link to="/corona" onClick={this.closeNav} className='navbar-link-style'>Corona</Link>
+            </NavItem>
             <NavItem style={{paddingRight: '10px'}} 
                      className='navbar-link-style' 
                      eventKey={5} 

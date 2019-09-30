@@ -68,6 +68,11 @@ class Pages extends Component{
 
         <Route path='/hackerspace' render={(props) => <HackerSpace largeScreen={this.props.data.sticky} />} />
 
+        <Route path='/corona' component={() => { 
+             window.location.href = 'https://ece-corona.github.io/'; 
+             return null;
+        }}/>
+
       </Switch>
     )
   }
