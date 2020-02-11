@@ -7,7 +7,7 @@ import Team from './Components/Team/Team.js';
 import About from './Components/About/About.js';
 import Home from './Components/Home/Landing.js';
 import NavbarTC from './Components/Navbar/Navbar.js';
-import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
+// import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
 
 let scroll = Scroll.animateScroll;
 
@@ -36,6 +36,10 @@ class Footer extends Component{
     )
   }
 }
+
+// To use the old hackerspace page, uncomment import Hackerspace on top and 
+// replace the hackerspace route with this:
+// <Route path='/hackerspace' render={(props) => <HackerSpace largeScreen={this.props.data.sticky} />} />
 
 class Pages extends Component{
   render() {
@@ -66,7 +70,10 @@ class Pages extends Component{
                            alumniData={this.props.data.alumniData}
                            dest="team" />} />
 
-        <Route path='/hackerspace' render={(props) => <HackerSpace largeScreen={this.props.data.sticky} />} />
+        <Route path='/hackerspace' component={() => { 
+             window.location.href = 'https://hackerspacessn.github.io/'; 
+             return null;
+        }}/>
 
         <Route path='/corona' component={() => { 
              window.location.href = 'https://ece-corona.github.io/'; 
