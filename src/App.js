@@ -1,4 +1,4 @@
-import Tabletop from 'tabletop';
+import Papa from 'papaparse';
 import * as Scroll from 'react-scroll';
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
@@ -108,20 +108,53 @@ class App extends Component {
 
   componentDidMount() {
 
-      window.addEventListener('resize', this.updateWidth);
+    window.addEventListener('resize', this.updateWidth);
 
-      Tabletop.init({
-      key: '1AOZhova18bEDHNjI7OfdqzxtVyZg6Mg5ECAuMERHwD4',
-      callback: (googleData, tabletop) => {
-        this.setState({
-          sessionData: googleData.Sessions.elements,
-          newsData: googleData.News.elements,
-          teamData: googleData.Team.elements,
-          alumniData: googleData.Alumni.elements
+    let news_file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSO8UIseC06UASzyokx8WyWULhGbQRWmvQTrVvndqfqroIX5MdibaTk5qdfamzREqHU2mQW9PHEkLma/pub?output=csv';
+    let sess_file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQv2tIv-50mvVbCfrlYvjWCXOIVa1GCeBARemqYIii44x_eWfy5hkad_r_K5FRuYhH2IeyWP9vJHZg5/pub?output=csv';
+    let team_file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQjNAApCm2CohJrqbyVWX61DIKzxOM8pyOoA4xxSmkwrMncQN4rbkw40lZ7Fh51BUluQc7hu2nY9BwI/pub?output=csv';
+    let alum_file = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT_pjXGCVgHyEOCBtapFt_sE7XMk6Rj-8qqW91zmdoifdBx8nGARMHgXsgUJqOMNFRUAaXVbzFeq5JJ/pub?output=csv';
+
+    Papa.parse(news_file, {
+        download: true,
+        header: true,
+        complete: (parsed) => {
+          this.setState({
+          newsData: parsed.data,
         })
-      },
-      simpleSheet: false
-    })   
+      }
+    })
+
+    Papa.parse(sess_file, {
+        download: true,
+        header: true,
+        complete: (parsed) => {
+          this.setState({
+          sessionData: parsed.data,
+        })
+      }
+    })
+
+    Papa.parse(team_file, {
+        download: true,
+        header: true,
+        complete: (parsed) => {
+          this.setState({
+          teamData: parsed.data,
+        })
+      }
+    })
+
+    Papa.parse(alum_file, {
+        download: true,
+        header: true,
+        complete: (parsed) => {
+          this.setState({
+          alumniData: parsed.data,
+        })
+      }
+    })
+
   }
 
   componentWillUnmount() {
