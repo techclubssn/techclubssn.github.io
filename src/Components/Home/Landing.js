@@ -2,14 +2,17 @@ import './Landing.css'
 import News from './News/News.js';
 import React, {Component} from 'react';
 import * as Scroll from 'react-scroll';
-import Particles from 'react-particles-js';
-import particlesJSON from './particles.json';
 import Sessions from './Sessions/Sessions.js';
+
+// Particle JS is commented out for now since it is not 
+// letting the site deploy.
+// import Particles from 'react-particles-js';
+// import particlesJSON from './particles.json';
 
 let homeDebounceCounter = 0; //Required to prevent spurious scrolling
 let Element = Scroll.Element;
 let scroller = Scroll.scroller;
-const particleParams = particlesJSON;
+// const particleParams = particlesJSON;
 
 const introPage = {
   height: "100vh",
@@ -74,9 +77,13 @@ class Home extends Component {
       <div>
         <div style={introPage}>
           <Element name="home"></Element>
-          <div>
-            <Particles params={particleParams} style={particleStyle}/>
-          </div>
+          {/*
+            // Particle JS is commented out for now since it is not 
+            // letting the site deploy.
+            <div>
+              <Particles params={particleParams} style={particleStyle}/>
+            </div>
+          */}
           <div className="logoMobile">
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
           </div>
