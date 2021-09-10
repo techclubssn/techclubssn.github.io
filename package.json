@@ -2,7 +2,7 @@
   "name": "background",
   "version": "0.1.0",
   "private": true,
-  "hompage": "https://thatbrguy.github.io/trial-webpage/",
+  "homepage": "https://techclubssn.github.io/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "markdown": "^0.5.0",
