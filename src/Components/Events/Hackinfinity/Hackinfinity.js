@@ -6,7 +6,7 @@ import climateIcon from './icons/climate.svg'
 import cyberIcon from './icons/cyber.svg'
 import fintechIcon from './icons/fintech.svg'
 import innovationIcon from './icons/innovation.svg'
-import medicalIcon from './icons/medical.svg'
+import medicalIcon from './icons/HealthcareIcon.svg'
 import womenIcon from './icons/women.svg'
 
 import phone from './icons/phone.svg'
@@ -63,7 +63,9 @@ const Hackinfinity = () => {
                 <p className='hi-about-para'>A 24-hour hackathon where you can prototype a groundbreaking solution to real-life problems. Brave against the time crunch and grab this opportunity to win exciting cash prizes upto <span style={{color: 'orange'}}>₹25,000</span>!!!</p>
                 <br/>
                 <p className='hi-about-para'>Participants are encouraged to use technologies such as AI, IoT, AR/VR and Blockchain to build products that can solve problems in the domains given below!</p>
-                <button className='hi-button' >REGISTER NOW!</button>
+                <a className='hi-link' href='https://ssninvente.com/' target='_blank' rel="noopener noreferrer">
+                    <button className='hi-button' >REGISTER NOW!</button>
+                </a>
             </div>
             <h1 className='hi-sub-title'>DOMAINS</h1>
             <div className='hi-domains-section'>

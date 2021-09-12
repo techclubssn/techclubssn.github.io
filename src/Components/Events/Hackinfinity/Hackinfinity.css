@@ -16,7 +16,7 @@
     font-size: 50px;
     letter-spacing: 5px;
     margin: 0 3%;
-    font-family: "Arvo";
+    font-family: 'Arvo', serif;
     color: white;
     text-align: center;
 }
@@ -30,30 +30,38 @@
     color: white;
     text-align: center;
     font-size: 22px;
+    font-family: "Cabin";
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hi-link {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8vh;
 }
 
 .hi-button {
     background-color: orange;
     border: 2px solid orange;
     font-size: 20px;
+    font-family: "Cabin";
+    color: black;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 4px;
     width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 8vh;
 }
 
 .hi-button:hover {
     border: 2px solid white;
+    color: black;
 }
 
 .hi-sub-title {
     font-size: 35px;
+    font-family: "Cabin";
     color: white;
     text-align: center;
     margin-top: 15vh;
@@ -61,7 +69,7 @@
 }
 
 .hi-domains-section {
-    padding: 0 10vw;
+    padding: 0 6vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -70,8 +78,7 @@
 .hi-domain-preview {
     display: flex;
     width: 50%;
-    margin-bottom: 40px;
-    padding-right: 30px;
+    padding: 0 4vw 4vw;
 }
 
 .hi-domain-icon {
@@ -85,11 +92,14 @@
     margin: 0 0 20px;
     color: white;
     font-size: 26px;
+    font-family: "Cabin";
 }
 
 .hi-domain-para {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    font-style: italic;
+    font-family: "Cabin";
 }
 
 .hi-details-section {
@@ -110,6 +120,7 @@
 .hi-date-title {
     color: orange;
     font-size: 26px;
+    font-family: "Cabin";
     text-align: center;
     margin-top: 0px;
 }
@@ -123,6 +134,7 @@
 .hi-details {
     color: white;
     font-size: 22px;
+    font-family: "Cabin";
     text-align: center;
     margin: 0 0 10px;
 }
@@ -142,6 +154,7 @@
 .hi-details-event {
     color: white;
     font-size: 22px;
+    font-family: "Cabin";
     text-align: start;
     margin: 0 0 10px;
 }
@@ -149,6 +162,7 @@
 .hi-details-time {
     color: white;
     font-size: 22px;
+    font-family: "Cabin";
     text-align: end;
     margin: 0 0 10px;
 }
@@ -175,6 +189,12 @@
 
 
 @media (max-width: 900px) {
+
+    .hi-header {
+        margin-top: 16vh;
+        margin-bottom: 8vh;
+    }
+    
     .hi-title {
         font-size: 32px;
         letter-spacing: 2px;
@@ -262,5 +282,9 @@
 
     .hi-prize-section {
         flex-direction: column;
+    }
+
+    .hi-instructions-section {
+        padding: 0 6vw;
     }
 }
