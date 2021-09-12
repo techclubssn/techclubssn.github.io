@@ -37,7 +37,7 @@ const domains = [
     {
         name: "Women's Safety",
         icon: womenIcon,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at diam in eros placerat mattis ac et erat. Curabitur at pharetra lectus.'
+        text: ' '
     },
     {
         name: 'Climate Change and Sustainability',
@@ -47,7 +47,7 @@ const domains = [
     {
         name: 'Student Innovation!   ( open idea ) ',
         icon: innovationIcon,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at diam in eros placerat mattis ac et erat. Curabitur at pharetra lectus.'
+        text: ' '
     },
 ]
 
