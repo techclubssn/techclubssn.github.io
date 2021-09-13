@@ -7,7 +7,6 @@ import Team from './Components/Team/Team.js';
 import About from './Components/About/About.js';
 import Home from './Components/Home/Landing.js';
 import NavbarTC from './Components/Navbar/Navbar.js';
-import Hackinfinity from './Components/Events/Hackinfinity/Hackinfinity.js';
 // import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
 
 let scroll = Scroll.animateScroll;
@@ -42,16 +41,6 @@ class Footer extends Component{
 // replace the hackerspace route with this:
 // <Route path='/hackerspace' render={(props) => <HackerSpace largeScreen={this.props.data.sticky} />} />
 
-// <Route path='/hackerspace' component={() => { 
-//   window.location.href = 'https://hackerspacessn.github.io/'; 
-//   return null;
-// }}/>
-
-// <Route path='/corona' component={() => { 
-//   window.location.href = 'https://ece-corona.github.io/'; 
-//   return null;
-// }}/>
-
 class Pages extends Component{
   render() {
     return(
@@ -80,7 +69,17 @@ class Pages extends Component{
           (props) => <Team teamData={this.props.data.teamData}
                            alumniData={this.props.data.alumniData}
                            dest="team" />} />
-        <Route exact path='/hackinfinity' component={Hackinfinity} />
+
+        <Route path='/hackerspace' component={() => { 
+             window.location.href = 'https://hackerspacessn.github.io/'; 
+             return null;
+        }}/>
+
+        <Route path='/corona' component={() => { 
+             window.location.href = 'https://ece-corona.github.io/'; 
+             return null;
+        }}/>
+
       </Switch>
     )
   }

@@ -4,13 +4,6 @@ import React, {Component} from 'react';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
 
 
-// <NavItem eventKey={6} href="#">
-//   <Link to="/hackerspace" onClick={this.closeNav} className='navbar-link-style'>HackerSpace</Link>
-// </NavItem>
-// <NavItem eventKey={7} href="#">
-//   <Link to="/corona" onClick={this.closeNav} className='navbar-link-style'>Corona</Link>
-// </NavItem>
-
 class NavbarTC extends Component {
 
   constructor(props) {
@@ -67,7 +60,10 @@ class NavbarTC extends Component {
               <Link to="/team" onClick={this.closeNav} className='navbar-link-style'>Team</Link>
             </NavItem>
             <NavItem eventKey={6} href="#">
-              <Link to="/hackinfinity" onClick={this.closeNav} className='navbar-link-style'>HackInfinity</Link>
+              <Link to="/hackerspace" onClick={this.closeNav} className='navbar-link-style'>HackerSpace</Link>
+            </NavItem>
+            <NavItem eventKey={7} href="#">
+              <Link to="/corona" onClick={this.closeNav} className='navbar-link-style'>Corona</Link>
             </NavItem>
             <NavItem style={{paddingRight: '10px'}} 
                      className='navbar-link-style' 
