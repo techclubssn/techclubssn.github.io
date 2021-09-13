@@ -22,7 +22,7 @@ const domains = [
     {
         name: 'AgriTech',
         icon: agriIcon,
-        text: 'Providing realistic and feasible solutions to enhance agricultural productivity using technological advancements'
+        text: 'Providing realistic and feasible solutions to enhance agricultural productivity using technological advancements.'
     },
     {
         name: 'Cyber Security',
@@ -32,22 +32,22 @@ const domains = [
     {
         name: 'Medical and Healthcare',
         icon: medicalIcon,
-        text: 'Enhancing medical facilities and healthcare solutions using intelligent technological innovation'
+        text: 'Enhancing medical facilities and healthcare solutions using intelligent technological innovation.'
     },
     {
         name: "Women's Safety",
         icon: womenIcon,
-        text: ' '
+        text: "Technological solutions that improve women's security."
     },
     {
         name: 'Climate Change and Sustainability',
         icon: climateIcon,
-        text: 'Innovative solutions to combat climate change and come up with sustainable ideas'
+        text: 'Innovative solutions to combat climate change and come up with sustainable ideas.'
     },
     {
         name: 'Student Innovation!   ( open idea ) ',
         icon: innovationIcon,
-        text: ' '
+        text: 'Creative ideas that solve real world problems.'
     },
 ]
 
