@@ -37,7 +37,7 @@ const domains = [
     {
         name: "Women's Safety",
         icon: womenIcon,
-        text: "Technological solutions that improve women's security."
+        text: "Harnessing the power of technology to develop solutions that provide women a sense of security, ranging from applications to wearables."
     },
     {
         name: 'Climate Change and Sustainability',
@@ -47,7 +47,7 @@ const domains = [
     {
         name: 'Student Innovation!   ( open idea ) ',
         icon: innovationIcon,
-        text: 'Creative ideas that solve real world problems.'
+        text: 'Creative ideas that utilise existing and evolving technologies to solve real world problems (apart from the six domains mentioned here)'
     },
 ]
 
@@ -121,7 +121,7 @@ const Hackinfinity = () => {
                     </div>
                     <div className='hi-align-center'>
                         <img className='hi-details-icon' src={calendar} alt='date' />
-                        <h1 className='hi-details' >8th Oct 2021</h1>
+                        <h1 className='hi-details' >8-9th Oct 2021</h1>
                     </div>
                     <div className='hi-align-center'>
                         <img className='hi-details-icon' src={phone} alt='contact' />
@@ -147,19 +147,18 @@ const Hackinfinity = () => {
             </div>
             <h1 className='hi-sub-title'>GENERAL INSTRUCTIONS</h1>
             <div className='hi-instructions-section'>
-            <ol>
-                <li className='hi-details-event'>It is not necessary that all participants must be from same institute.</li>
-                <li className='hi-details-event'>All the team members should have proper internet connection.</li>
-                <li className='hi-details-event'>Date and time: <span style={{color:'orange'}}>8th Oct 2021</span></li>
-                <li className='hi-details-event'>Teams of a minimum of 1 and a maximum of 6 people are allowed.</li>
-                <li className='hi-details-event'>Participants are required to have their own components and software.</li>
-                <li className='hi-details-event'>Mentorship for technical skills will be given.</li>
-                <li className='hi-details-event'>Participants are supposed to build their product during the Hackathon.</li>
-                <li className='hi-details-event'>Product will be judged based on Innovation, Impact, Feasibility and Marketability.</li>
-                <li className='hi-details-event'>Product can be a mix of hardware and software technologies, but can be purely software or hardware based as well.</li>
-                <li className='hi-details-event'>Participants are requested to register their team and send in their abstract before the deadline using the form (will be provided soon).</li>
-                <li className='hi-details-event'>Participants are allowed to use existing libraries or components, however only the work done during the 24hrs will be considered for evaluation.</li>
-            </ol>
+                <ol>
+                    <li className='hi-details-event'>It is not necessary that all participants must be from same institute.</li>
+                    <li className='hi-details-event'>All the team members should have proper internet connection.</li>
+                    <li className='hi-details-event'>Date and time: <span style={{color:'orange'}}>8th Oct 2021</span></li>
+                    <li className='hi-details-event'>Teams of a minimum of 1 and a maximum of 6 people are allowed.</li>
+                    <li className='hi-details-event'>Participants are required to have their own components and software.</li>
+                    <li className='hi-details-event'>Mentorship for technical skills will be given.</li>
+                    <li className='hi-details-event'>Participants are supposed to build their product during the Hackathon.</li>
+                    <li className='hi-details-event'>Product will be judged based on Innovation, Impact, Feasibility and Marketability.</li>
+                    <li className='hi-details-event'>Product can be a mix of hardware and software technologies, but can be purely software or hardware based as well.</li>
+                    <li className='hi-details-event'>Participants are allowed to use existing libraries or components, however only the work done during the 24hrs will be considered for evaluation.</li>
+                </ol>
             </div>
             <h1 className='hi-sub-title'>CONTACT</h1>
             <div className='hi-prize-section'>
