@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './Hackinfinity.css'
 
 import agriIcon from './icons/agritech.svg'
@@ -42,16 +43,19 @@ const domains = [
     {
         name: 'Climate Change and Sustainability',
         icon: climateIcon,
-        text: 'Innovative solutions to combat climate change and come up with sustainable ideas.'
+        text: 'Innovative solutions to combat climate change and improve sustainability.'
     },
     {
         name: 'Student Innovation!   ( open idea ) ',
         icon: innovationIcon,
-        text: 'Creative ideas that utilise existing and evolving technologies to solve real world problems (apart from the six domains mentioned here)'
+        text: 'Don’t want to be confined to the above domains? Feel free to choose your own topic and problem statement. Impress us!'
     },
 ]
 
 const Hackinfinity = () => {
+    useEffect(()=> {
+        window.scrollTo(0,0);
+    },[])
     return (
         <div>
             <div className='hi-header'>
