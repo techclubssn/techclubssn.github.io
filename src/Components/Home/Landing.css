@@ -9,6 +9,54 @@
 	width:22%;
 }
 
+.hi-link-div {
+	text-align: center;
+	height: 10vh;
+	background-color: orange;
+	width: 30vw;
+	margin-left: 35vw;
+	margin-bottom: 3vh;
+	border-radius: 4px;
+	border-right: 2px solid rgb(199, 130, 3);
+	border-bottom: 2px solid rgb(199, 130, 3);
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.hi-link-div:hover {
+	border: 2px solid orange;
+}
+
+.hi-link-text {
+	display: inline;
+	color: white;
+	font-size: 16px;
+	font-weight: bolder;
+	display: inline;
+	margin: 0;
+}
+
+.hi-link-title {
+	font-size: 17px;
+	font-family: 'Arvo', serif;
+	letter-spacing: 2px;
+	margin: 0;
+	color: black;
+}
+
+.hi-link-subtitle {
+	font-size: 12px;
+	font-family: 'Cabin';
+	font-weight: lighter;
+	margin: 0;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
@@ -22,6 +70,26 @@ left: 35%;
 .logoSize{
   height: 30%;
   width: 30%;
+}
+
+.hi-link-text {
+	font-size: 14px;
+}
+
+.hi-link-title {
+	font-size: 14px;
+	letter-spacing: 0;
+}
+
+.hi-link-subtitle {
+	font-size: 10px;
+}
+
+.hi-link-div {
+	height: 8vh;
+	width: 60vw;
+	margin-left: 20vw;
+	margin-bottom: 1vh;
 }
 
 }

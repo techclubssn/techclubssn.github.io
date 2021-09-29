@@ -82,8 +82,9 @@ class News extends Component{
                                bubbleStyle={{
                                   background: 'orange',
                                   borderColor: '#333',
-                                  borderWidth: '4px'
-                                 }} 
+                                  borderWidth: '4px',
+                                  
+                                 }}
                                titleStyle={{
                                   fontSize: '18px',
                                   color: '#333',
