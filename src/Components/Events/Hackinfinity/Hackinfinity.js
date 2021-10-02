@@ -92,24 +92,24 @@ const Hackinfinity = () => {
                             <h1 className='hi-details-time'>10.00 AM</h1>
                             <h1 className='hi-details-time'>11.00 AM</h1>
                             <h1 className='hi-details-time'>03.00 PM</h1>
+                            <h1 className='hi-details-time'>10.00 PM</h1>
                         </div>
                         <div>
                             <h1 className='hi-details-event'> Introduction</h1>
                             <h1 className='hi-details-event'> Hackathon Starts</h1>
                             <h1 className='hi-details-event'> First Review</h1>
+                            <h1 className='hi-details-event'>Second Review</h1>
                         </div>
                     </div>
                     <h1 className='hi-date-title'>DAY 2</h1>
                     <div className='hi-details-container'>
                         <div>
-                            <h1 className='hi-details-time'>10.00 PM</h1>
                             <h1 className='hi-details-time'>08.00 AM</h1>
                             <h1 className='hi-details-time'>11.00 AM</h1>
                             <h1 className='hi-details-time'>12.00 PM</h1>
                             <h1 className='hi-details-time'>03.00 PM</h1>
                         </div>
                         <div>
-                            <h1 className='hi-details-event'>Second Review</h1>
                             <h1 className='hi-details-event'>Third Review</h1>
                             <h1 className='hi-details-event'>Hackathon ends</h1>
                             <h1 className='hi-details-event'>Final Presentation</h1>
