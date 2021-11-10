@@ -17,7 +17,7 @@ let scroller = Scroll.scroller;
 // const particleParams = particlesJSON;
 
 const introPage = {
-  height: "90vh",
+  height: "100vh",
   border: "3px",
   boxSizing: "border-box",
   overflowX: "hidden",
@@ -27,7 +27,7 @@ const introPage = {
 
 const particleStyle = {
   position:"absolute",
-  bottom: '10vh'
+  bottom: '0vh'
 }
 
 class Home extends Component {
@@ -110,7 +110,7 @@ class Home extends Component {
               }
           }} />
         </div>
-        <Link to='/hackinfinity'>
+        {/*<Link to='/hackinfinity'>
           <div className='hi-link-div'>
               <h1 className='hi-link-text'>UPCOMING EVENTS : </h1>
               <div>
@@ -124,7 +124,7 @@ class Home extends Component {
         </Element>
         <Element name="sess">
           <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
-        </Element>
+        </Element>*/}
       </div>
     );
   }

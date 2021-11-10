@@ -1,0 +1,41 @@
+.team-card {
+    width: 160px;
+    height: 42vh;
+    margin: 0 15px;
+  }
+
+.member-name {
+  font-family: 'Raleway';
+  font-size: 18px;
+  color: white;
+  margin: 2px 0 0;
+}
+
+.role-text {
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 2px 0 0;
+}
+
+.domain-spec {
+  font-family: 'Raleway';
+  font-size: 14px;
+  font-style: italic;
+  color: white;
+  margin: 0;
+}
+
+.team-social-button {
+  border: 0;
+  background-color: transparent;
+  display: inline;
+  height: min-content;
+  margin: 2px 4px 0;
+}
+
+.team-social-button:hover {
+  color: white;
+  cursor: pointer;
+}

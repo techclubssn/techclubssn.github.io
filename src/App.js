@@ -169,7 +169,7 @@ class App extends Component {
           <NavbarTC />
         </div>
         <Pages data={this.state}/>
-        <Footer />
+        {/*<Footer />*/}
       </div>
     );
   }
