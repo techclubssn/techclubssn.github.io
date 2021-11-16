@@ -92,14 +92,12 @@ class NavbarTC extends Component {
               onToggle={this.setNavExpanded} 
               expanded={this.state.navExpanded}
               style={{backgroundColor:'black', padding:'1vh 2vw', border: '0'}}>
-        <Navbar.Header>
-          <div style={{display: 'flex', alignItems: 'center'}}>
+          <Navbar.Header style={{display: 'flex', alignItems: 'center'}} >
             <img src = "/imgs/logo.png" alt="logo" style={{height: '54px', width: '54px'}} />
             <h1 style={{ fontSize: '20px', color: 'white', fontWeight: 'bolder', margin: '0 0 0 10px'}}>
               TechClubSSN
             </h1>
-          </div>
-          <Navbar.Toggle style={{marginRight: '27px'}} />
+          <Navbar.Toggle style={{position: 'absolute', right: '0'}} />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>

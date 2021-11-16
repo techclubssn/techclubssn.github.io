@@ -1,19 +1,20 @@
 .team-card {
-    width: 160px;
+    width: 180px;
     height: 42vh;
-    margin: 0 15px;
+    margin: 7px 15px;
+    position: relative;
   }
 
 .member-name {
   font-family: 'Raleway';
-  font-size: 18px;
+  font-size: 16px;
   color: white;
   margin: 2px 0 0;
 }
 
 .role-text {
   font-family: 'Raleway';
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: white;
   margin: 2px 0 0;
@@ -38,4 +39,29 @@
 .team-social-button:hover {
   color: white;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .team-card {
+    width: 160px;
+}
+}
+
+@media only screen and (max-width: 576px) {
+  .team-card {
+    width: 152px;
+    margin: 7px 5px;
+  }
+
+  .member-name {
+    font-size: 14px;
+  }
+  
+  .role-text {
+    font-size: 12px;
+  }
+  
+  .domain-spec {
+    font-size: 12px;
+  }
 }

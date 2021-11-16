@@ -112,10 +112,6 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import './Team.css';
 
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import LanguageIcon from '@mui/icons-material/Language';
-
 import TeamCard from '../../Containers/TeamCard'
 
 
@@ -140,9 +136,9 @@ function useOnScreen(ref, rootMargin = "0px") {
 
 
 const Team = (data) => {
+
   const members = ['Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S']
   const alumni = ['Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S']
-
   const teamRef = useRef();
   const alumniRef = useRef();
   const teamOnScreen = useOnScreen(teamRef, "-50%");
@@ -152,82 +148,43 @@ const Team = (data) => {
     <div className='teams-page'>
       <div className='team-section' ref={teamRef} >
         <div className='section-title-div'>
-          <div className={teamOnScreen? 'bubble-bg bubble-left-in': 'bubble-bg bubble-left-out'}></div>
-          <div className={teamOnScreen? 'title-text-div': 'hidden'} >
+          <div className={teamOnScreen? 'bubble-bg bubble-left-in': 'hide-content'}></div>
+          <div className={teamOnScreen? 'title-text-div': 'title-text-div hide-content'} >
             <h1 className='section-title-text gray' >Meet</h1>
             <h1 className='section-title-text gray' >The</h1>
             <h1 className='section-title-text' >Team</h1>
           </div>
         </div>
-        <div className={teamOnScreen? 'team-contents': 'hidden'} >
-          <div style={{display: 'flex', width: '100%', justifyContent: 'center' }} >
-            {members.slice(0,2).map((item, idx) => {
+        <div className={teamOnScreen? 'team-contents': 'team-contents hide-content'} >
+          <div className='team-leaders-div'>
+            {data.teamData.slice(0,2).map((item, idx) => {
               return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
+                <TeamCard data={item} idx={idx}/>
               )
             })}
           </div>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,3).map((item, idx) => {
+            {data.teamData.slice(2).map((item, idx) => {
               return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
+                <TeamCard data={item} idx={idx}/>
               )
-            })}
-          </div>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,3).map((item, idx) => {
-              return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
-              )
-            })}
-          </div>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,4).map((item, idx) => {
-              return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
-              )
-            })}
-          </div>
+            })} 
         </div>
       </div>
       <div className='team-section' ref={alumniRef} >
-        <div className={teamOnScreen? 'hidden': 'alumni-contents'}>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,4).map((item, idx) => {
-              return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
-              )
-            })}
-          </div>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,4).map((item, idx) => {
-              return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
-              )
-            })}
-          </div>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,4).map((item, idx) => {
-              return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
-              )
-            })}
-          </div>
-          <div style={{display: 'flex'}} >
-            {members.slice(0,4).map((item, idx) => {
-              return(
-                <TeamCard data={item} dp={data.teamData[0].dp}/>
-              )
-            })}
-          </div>
-        </div>
         <div className='section-title-div-right'>
-          <div className={teamOnScreen? 'bubble-bg hidden': 'bubble-bg bubble-right-in'}></div>
-          <div className={teamOnScreen? 'hidden': 'title-text-div-right'} >
+          <div className={teamOnScreen? 'hide-content': 'bubble-bg bubble-right-in'}></div>
+          <div className={teamOnScreen? 'title-text-div-right hide-content': 'title-text-div-right'} >
             <h1 className='section-title-text gray' >Meet</h1>
             <h1 className='section-title-text gray' >Our</h1>
             <h1 className='section-title-text' >Alumni</h1>
           </div>
+        </div>
+        <div className={teamOnScreen? 'alumni-contents hide-content': 'alumni-contents'}>
+          {data.alumniData.map((item, idx) => {
+            return(
+              <TeamCard data={item} idx={idx}/>
+            )
+          })}
         </div>
       </div>
     </div>
