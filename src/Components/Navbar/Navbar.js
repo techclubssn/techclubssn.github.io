@@ -177,6 +177,19 @@ class NavbarTC extends Component {
                 Opportunities
               </Link>
             </NavItem>
+            <NavItem eventKey={6} href="#">
+              <Link
+                to="/kryptos"
+                onClick={() => this.closeNav(6)}
+                className={
+                  6 === this.state.activeState
+                    ? "navbar-link-style-active"
+                    : "navbar-link-style"
+                }
+              >
+                Kryptos
+              </Link>
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

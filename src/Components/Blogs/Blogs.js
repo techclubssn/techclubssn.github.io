@@ -68,7 +68,7 @@ const Blogs = () => {
         </div>
         <div class="blog-author">
           <div class="author-name">Shruti Jeyaraman</div>
-          <div class="author-info">3rd year, ECE</div>
+          <div class="author-info">2nd year, ECE</div>
         </div>
       </section>
     </div>

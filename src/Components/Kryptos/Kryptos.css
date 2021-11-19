@@ -1,0 +1,233 @@
+:root {
+  --primary: #000;
+  --secondary: #fff;
+  --disabled: #777;
+  --tertiary: #b7b7b7;
+  --bubble: #333;
+  --blogText: #dedede;
+
+  --bigtitle-big: 68px;
+  --bigtitle-medium: 52px;
+  --bigtitle-small: 36px;
+
+  --body1-big: 24px;
+  --body1-medium: 18px;
+  --body1-small: 16px;
+
+  --body2-big: 18px;
+  --body2-medium: 14px;
+  --body2-small: 10px;
+
+  --body3-big: 14px;
+  --body3-medium: 10px;
+  --body3-small: 8px;
+
+  --nav-big: 16px;
+  --nav-medium: 12px;
+  --nav-small: 8px;
+
+  --small-breakpoint: 576px;
+  --medium-breakpoint: 1000px;
+
+  --padding-v-big: 3vh;
+  --padding-h-big: 3vw;
+
+  --padding-v-medium: 3vh;
+  --padding-h-medium: 3vw;
+
+  --padding-v-small: 5vh;
+  --padding-h-small: 8vw;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  overflow-x: hidden;
+  padding: var(--padding-v-big) var(--padding-h-big);
+}
+
+section {
+  min-height: 100vh;
+}
+
+.kryptos {
+  text-align: center;
+  /* place-content: center; */
+}
+.kryptos-title {
+  font-family: "Allura", cursive;
+  font-size: 52px;
+  margin: 6vh 0;
+  border-top: 1px solid var(--disabled);
+  border-bottom: 1px solid var(--disabled);
+  animation: title-intro 1s ease-in-out;
+}
+
+.kryptos-content {
+  width: 80vw;
+  margin: auto;
+  animation: content-intro 2s ease-in-out;
+}
+.quote {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  padding-bottom: 4vh;
+  font-size: var(--body2-big);
+}
+
+.digit {
+  border: none;
+  display: inline;
+  background-color: transparent;
+  color: var(--disabled);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.write-up {
+  font-size: var(--body2-big);
+  color: var(--blogText);
+}
+.link {
+  /* pointer-events: none; */
+  padding: 4vh 0;
+  font-size: var(--body2-big);
+}
+.clue {
+  padding: 5vh 0;
+  font-family: "Allura", cursive;
+  font-size: 28px;
+  opacity: 60%;
+}
+.clue2 {
+  padding: 2vh;
+  width: 20vw;
+  margin: auto;
+}
+
+#key::after {
+  content: "key";
+  position: relative;
+  color: white;
+  left: -6%;
+  bottom: -2px;
+  font-family: "Open Sans";
+  font-size: var(--body1-big);
+  opacity: 40%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .kryptos-title {
+    font-size: 48px;
+    margin: 4vh 0;
+  }
+
+  .kryptos-content {
+    width: 70vw;
+  }
+
+  .write-up,
+  .quote {
+    font-size: var(--body2-medium);
+  }
+  .link {
+    /* pointer-events: none; */
+    padding: 6vh 0;
+    font-size: var(--body2-medium);
+  }
+
+  .clue {
+    padding: 4vh 0;
+    font-size: 22px;
+  }
+  .clue2 {
+    padding: 2vh;
+    width: 20vw;
+    margin: auto;
+  }
+
+  #key::after {
+    font-size: var(--body1-medium);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .kryptos-title {
+    font-size: 42px;
+    margin: 4vh 0;
+  }
+
+  .kryptos-content {
+    width: 80vw;
+  }
+
+  .write-up,
+  .quote {
+    font-size: var(--body2-small);
+  }
+  .link {
+    /* pointer-events: none; */
+    padding: 6vh 0;
+    font-size: var(--body2-small);
+  }
+  input.digit {
+    width: 15px;
+  }
+  .clue {
+    padding: 2vh 0;
+    font-size: 18px;
+  }
+  .clue2 {
+    padding: 2vh;
+    width: 50vw;
+    margin: auto;
+  }
+
+  #key::after {
+    font-size: var(--body1-small);
+  }
+}
+
+/* Animations */
+
+@keyframes title-intro {
+  0% {
+    opacity: 0%;
+    position: relative;
+    top: 0px;
+    left: -50vw;
+  }
+
+  100% {
+    opacity: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
+}
+
+@keyframes content-intro {
+  0% {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
