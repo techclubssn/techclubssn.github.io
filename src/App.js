@@ -11,6 +11,7 @@ import Events from "./Components/Events/Events.js";
 import Hackinfinity from "./Components/Events/Hackinfinity/Hackinfinity.js";
 import Blogs from "./Components/Blogs/Blogs.js";
 import Kryptos from "./Components/Kryptos/Kryptos.js";
+import Opportunities from './Components/Opportunities/Opportunities.js'
 // import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
 
 let scroll = Scroll.animateScroll;
@@ -120,6 +121,7 @@ class Pages extends Component {
         <Route exact path="/events" component={Events} />
         <Route exact path="/blogs" component={Blogs} />
         <Route exact path="/kryptos" component={Kryptos} />
+        <Route exact path="/opportunities" component={Opportunities} />
       </Switch>
     );
   }

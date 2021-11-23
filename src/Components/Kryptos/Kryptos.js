@@ -41,7 +41,7 @@ const Kryptos = () => {
           </div>
           <div className="clue2">
             To find their <span id="key">last,</span> <br />
-            one should never forget where they start
+            one should never <br/> forget where they <br /> start
           </div>
         </div>
       </div>

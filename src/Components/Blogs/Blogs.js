@@ -33,7 +33,7 @@ const Blogs = () => {
           <p>
             Transactions in blockchain are recorded along with a super secure
             and personalized
-            <span class="content-style">digital signature</span> which is
+            <span class="content-style"> digital signature</span> which is
             computationally and virtually impossible to reproduce. This means no
             one can make transaction entries in a blockchain under your name
             without having access to a very specific private key-public key
@@ -41,7 +41,7 @@ const Blogs = () => {
             itself is encoded in a monstrous 256-bit string which presents such
             a humongous number of possibilities (2256 to be exact), that not
             even the best computers in the world can finish iterating through
-            all the possibilities, in finite time
+            all the possibilities, in finite time.
           </p>
           <p>
             Information in the blockchain is transformed into ledgers accessible

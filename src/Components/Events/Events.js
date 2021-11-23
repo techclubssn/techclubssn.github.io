@@ -36,8 +36,8 @@ const Events = () => {
             <div className="event-img">
               {/* <img src="./Events_Workshop.png" alt="" /> */}
               <img
-                src="https://drive.google.com/file/d/1zrDLLgl4ibZwhyzl9tMdM1rPVtSRPCGp/view?usp=sharing"
-                alt=""
+                src="https://i.imgur.com/Wdv7tQ5.png"
+                alt="Interships 101"
               />
             </div>
           </div>

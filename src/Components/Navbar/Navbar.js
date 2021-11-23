@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
+import * as Scroll from "react-scroll";
 
 // <NavItem eventKey={6} href="#">
 //   <Link to="/hackerspace" onClick={this.closeNav} className='navbar-link-style'>HackerSpace</Link>
@@ -15,8 +16,9 @@ class NavbarTC extends Component {
     super(props);
     this.state = {
       navExpanded: false,
-      activeState: 1,
+      activeState: window.location.pathname,
     };
+    console.log(window.location.pathname);
     this.setNavExpanded = this.setNavExpanded.bind(this);
     this.closeNav = this.closeNav.bind(this);
   }
@@ -26,12 +28,12 @@ class NavbarTC extends Component {
       navExpanded: value,
     });
   }
-
   closeNav(eventKey) {
     this.setState({
       navExpanded: false,
       activeState: eventKey,
     });
+    Scroll.animateScroll.scrollToTop();
   }
 
   // render() {
@@ -115,9 +117,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={1} href="#">
               <Link
                 to="/"
-                onClick={() => this.closeNav(1)}
+                onClick={() => this.closeNav('/')}
                 className={
-                  1 === this.state.activeState
+                  '/' === this.state.activeState
                     ? "navbar-link-style-active"
                     : "navbar-link-style"
                 }
@@ -128,9 +130,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={2} href="#">
               <Link
                 to="/team"
-                onClick={() => this.closeNav(2)}
+                onClick={() => this.closeNav("/team")}
                 className={
-                  2 === this.state.activeState
+                  '/team' === this.state.activeState
                     ? "navbar-link-style-active"
                     : "navbar-link-style"
                 }
@@ -141,9 +143,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={3} href="#">
               <Link
                 to="/events"
-                onClick={() => this.closeNav(3)}
+                onClick={() => this.closeNav("/events")}
                 className={
-                  3 === this.state.activeState
+                  "/events" === this.state.activeState
                     ? "navbar-link-style-active"
                     : "navbar-link-style"
                 }
@@ -154,9 +156,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={4} href="#">
               <Link
                 to="/blogs"
-                onClick={() => this.closeNav(4)}
+                onClick={() => this.closeNav("/blogs")}
                 className={
-                  4 === this.state.activeState
+                  "/blogs" === this.state.activeState
                     ? "navbar-link-style-active"
                     : "navbar-link-style"
                 }
@@ -166,10 +168,10 @@ class NavbarTC extends Component {
             </NavItem>
             <NavItem eventKey={5} href="#">
               <Link
-                to="/"
-                onClick={() => this.closeNav(5)}
+                to="/opportunities"
+                onClick={() => this.closeNav("/opportunities")}
                 className={
-                  5 === this.state.activeState
+                  "/opportunities" === this.state.activeState
                     ? "navbar-link-style-active"
                     : "navbar-link-style"
                 }
@@ -180,9 +182,9 @@ class NavbarTC extends Component {
             <NavItem eventKey={6} href="#">
               <Link
                 to="/kryptos"
-                onClick={() => this.closeNav(6)}
+                onClick={() => this.closeNav("/kryptos")}
                 className={
-                  6 === this.state.activeState
+                  "/kryptos" === this.state.activeState
                     ? "navbar-link-style-active"
                     : "navbar-link-style"
                 }

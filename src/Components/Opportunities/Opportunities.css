@@ -1,0 +1,28 @@
+.opportunities-page {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: url("./bubble3.png") 50 50, auto;
+}
+
+.opportunities-title {
+    color: white;
+    width: min-content;
+    font-family: 'Raleway';
+    font-size: 64px;
+    font-weight: bolder;
+    cursor: default;
+    opacity: 0.1;
+}
+
+.opportunities-title:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 576px) {
+    .opportunities-title {
+        font-size: 32px;
+    }
+}
