@@ -148,8 +148,6 @@ const Team = (data) => {
     <div className='teams-page'>
       <div className='team-section' ref={teamRef} >
         <div className='section-title-div'>
-//           change1 : add DMC
-          <div><img src="imgs/dcm2.png" alt=""/></div>
           <div className={teamOnScreen? 'bubble-bg bubble-left-in': 'hide-content'}></div>
           <div className={teamOnScreen? 'title-text-div': 'title-text-div hide-content'} >
             <h1 className='section-title-text gray' >Meet</h1>
