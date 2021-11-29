@@ -8,7 +8,7 @@ const Kryptos = () => {
   const [showError, setShowError] = useState(false)
 
   const handleKeyDown = (event) => {
-    if(dmInput === '1234') {
+    if(dmInput === '1234' && event.key === 'Enter') {
       window.open("https://kryptos-cts.netlify.app/");
       changeDmInput('')
     } else if (dmInput !== '') {
