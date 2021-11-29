@@ -3,20 +3,20 @@ import "./Blog.css";
 
 const Blogs = () => {
   return (
-    <div class="blogs">
+    <div className="blogs">
       {/* Title  */}
-      <div class="title">
-        <span class="title-span">Blogs</span>
+      <div className="title">
+        <span className="title-span">Blogs</span>
       </div>
 
       {/* Content */}
-      <section class="blog" id="b1">
+      <section className="blog" id="b1">
         <div class="blog-number">
-          blogpost#<span class="b-number">1</span>
+          blogpost#<span className="b-number">1</span>
         </div>
-        <div class="blog-title">How does BT work?</div>
+        <div className="blog-title">How does BT work?</div>
         <hr />
-        <div class="blog-content">
+        <div className="blog-content">
           <p>
             BLOCKCHAIN has been a buzzword in the business, financial and tech
             world for years now and yet, what it really is and does remain
@@ -33,7 +33,7 @@ const Blogs = () => {
           <p>
             Transactions in blockchain are recorded along with a super secure
             and personalized
-            <span class="content-style"> digital signature</span> which is
+            <span className="content-style"> digital signature</span> which is
             computationally and virtually impossible to reproduce. This means no
             one can make transaction entries in a blockchain under your name
             without having access to a very specific private key-public key
@@ -66,9 +66,9 @@ const Blogs = () => {
             revolution.
           </p>
         </div>
-        <div class="blog-author">
-          <div class="author-name">Shruti Jeyaraman</div>
-          <div class="author-info">2nd year, ECE</div>
+        <div className="blog-author">
+          <div className="author-name">Shruti Jeyaraman</div>
+          <div className="author-info">2nd year, ECE</div>
         </div>
       </section>
     </div>

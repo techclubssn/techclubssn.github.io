@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
 import "./Events.css";
 
 // function useOnScreen(ref, rootMargin = "0px") {
@@ -28,7 +28,7 @@ const Events = () => {
 
       <div className="carousel">
         <div className="slide-left">
-          <img src="./left-button.svg" alt="" />
+          {/*<img src="./left-button.svg" alt="" />*/}
         </div>
 
         <div className="event">
@@ -52,7 +52,7 @@ const Events = () => {
             </div>
             <div className="event-button">
               <button className="primary-button">
-                <a href="https://forms.gle/MUK6ozrtosZZsKEM7" target="_blank">
+                <a href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
                   Register Now
                 </a>
               </button>
@@ -60,7 +60,7 @@ const Events = () => {
           </div>
         </div>
         <div className="slide-right">
-          <img src="./right-button.svg" alt="" />
+          {/*<img src="./right-button.svg" alt="" />*/}
         </div>
       </div>
     </div>

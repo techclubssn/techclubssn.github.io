@@ -18,7 +18,6 @@ class NavbarTC extends Component {
       navExpanded: false,
       activeState: window.location.pathname,
     };
-    console.log(window.location.pathname);
     this.setNavExpanded = this.setNavExpanded.bind(this);
     this.closeNav = this.closeNav.bind(this);
   }

@@ -2,27 +2,58 @@
     width: 100vw;
     height: 90vh;
     display: flex;
+    cursor: none;
+}
+
+.opportunities-title-div {
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    cursor: url("./bubble3.png") 50 50, auto;
+    align-self: center;
+    justify-self: center;
 }
 
 .opportunities-title {
-    color: white;
+    color: rgb(15, 15, 15);
     width: min-content;
     font-family: 'Raleway';
     font-size: 64px;
     font-weight: bolder;
-    cursor: default;
-    opacity: 0.1;
+    z-index: 2;
+    line-height: 60px;
 }
 
-.opportunities-title:hover {
-    opacity: 1;
+
+.mouse-bubble {
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
 }
 
 @media only screen and (max-width: 576px) {
+
+    .opportunities-page {
+        cursor: auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .opportunities-title-div {
+        width: fit-content;
+        position: relative;
+        left: 50px;
+    }
+
     .opportunities-title {
         font-size: 32px;
+        line-height: normal;
+        color: white;
+    }
+
+    .mouse-bubble {
+        position: static;
+        background-color: gray;
     }
 }

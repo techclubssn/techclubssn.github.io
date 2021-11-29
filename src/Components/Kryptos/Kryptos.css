@@ -103,14 +103,44 @@ input::-webkit-inner-spin-button {
 }
 .link {
   /* pointer-events: none; */
-  padding: 4vh 0;
+  padding-top: 4vh;
+  font-size: var(--body2-big);
+  color: white;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: rgb(153, 153, 250);
+}
+
+.link-text {
+  display: inline;
+  margin: 0;
   font-size: var(--body2-big);
 }
+
+.link-input {
+  display: inline;
+  background-color: black;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  width: 50px;
+  font-size: var(--body2-big);
+}
+
+.error-msg {
+  margin: 0;
+  color: red;
+  font-size: var(--body2-big);
+  padding: 1vh 0;
+}
+
 .clue {
   padding: 5vh 0;
   font-family: "Allura", cursive;
   font-size: 28px;
-  opacity: 60%;
+  opacity: 0.6;
 }
 .clue2 {
   padding: 2vh;
@@ -125,7 +155,7 @@ input::-webkit-inner-spin-button {
   left: -15px;
   font-family: "Open Sans";
   font-size: var(--body1-big);
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -144,7 +174,20 @@ input::-webkit-inner-spin-button {
   }
   .link {
     /* pointer-events: none; */
-    padding: 6vh 0;
+    padding-top: 6vh;
+    font-size: var(--body2-medium);
+  }
+
+  .link-text {
+    font-size: var(--body2-medium);
+  }
+
+  .link-input {
+    width: 40px;
+    font-size: var(--body2-medium);
+  }
+
+  .error-msg {
     font-size: var(--body2-medium);
   }
 
@@ -170,7 +213,7 @@ input::-webkit-inner-spin-button {
   }
 
   .kryptos-content {
-    width: 80vw;
+    width: 100%;
   }
 
   .write-up,
@@ -179,7 +222,20 @@ input::-webkit-inner-spin-button {
   }
   .link {
     /* pointer-events: none; */
-    padding: 6vh 0;
+    padding-top: 6vh;
+    font-size: var(--body2-small);
+  }
+
+  .link-text {
+    font-size: var(--body2-small);
+  }
+
+  .link-input {
+    width: 30px;
+    font-size: var(--body2-small);
+  }
+
+  .error-msg {
     font-size: var(--body2-small);
   }
   input.digit {
@@ -204,14 +260,14 @@ input::-webkit-inner-spin-button {
 
 @keyframes title-intro {
   0% {
-    opacity: 0%;
+    opacity: 0;
     position: relative;
     top: 0px;
     left: -50vw;
   }
 
   100% {
-    opacity: 100%;
+    opacity: 1;
     position: relative;
     top: 0px;
     left: 0px;
@@ -220,14 +276,14 @@ input::-webkit-inner-spin-button {
 
 @keyframes content-intro {
   0% {
-    opacity: 0%;
+    opacity: 0;
   }
 
   50% {
-    opacity: 0%;
+    opacity: 0;
   }
 
   100% {
-    opacity: 100%;
+    opacity: 1;
   }
 }

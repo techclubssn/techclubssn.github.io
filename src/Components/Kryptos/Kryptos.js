@@ -1,7 +1,37 @@
 import React from "react";
+import { useState } from "react";
 import "./Kryptos.css";
 
 const Kryptos = () => {
+
+  const [dmInput, changeDmInput] = useState('')
+  const [showError, setShowError] = useState(false)
+
+  const handleKeyDown = (event) => {
+    if(dmInput === '1234') {
+      window.open("https://kryptos-cts.netlify.app/");
+      changeDmInput('')
+    } else if (dmInput !== '') {
+      setShowError(true)
+    }
+  }
+
+  const changeUserInput = (e) => {
+    if(e.target.validity.valid && e.target.value.length <= 4) {
+      changeDmInput(e.target.value)
+    }
+    setShowError(false)
+  }
+
+  const submit = () => {
+    if(dmInput === '1234') {
+      window.open("https://kryptos-cts.netlify.app/");
+      changeDmInput('')
+    } else if (dmInput !== '') {
+      setShowError(true)
+    }
+  }
+
   return (
     <section className="kryptos">
       <div className="kryptos-title">Kryptos</div>
@@ -16,10 +46,11 @@ const Kryptos = () => {
           presents one's audience with the starting-point and the conclusion,
           one may produce a startling, though perhaps a meretricious, effect.”
         </div>
-        <div className="link">
-          <a href="">
-            https://tech-club-kryptos-
-            <div id="d1" className="digit">
+        <div className="link" onClick={submit} >
+          <h1 className='link-text'>https://tech-club-kryptos-</h1>
+          <input className='link-input' type="text" pattern="[0-9]*" value={dmInput} onChange={(e) => changeUserInput(e)} onKeyDown={handleKeyDown} />
+          <h1 className='link-text'>.netlify.app/</h1>
+            {/*<div id="d1" className="digit">
               _
             </div>
             <div id="d2" className="digit">
@@ -30,10 +61,9 @@ const Kryptos = () => {
             </div>
             <div id="d4" className="digit">
               _
-            </div>
-            .netlify.app/
-          </a>
+            </div>*/}
         </div>
+        {showError && <h1 className='error-msg'>*Incorrect password</h1>}
         <div className="clue">
           <div className="clue1">
             There are men dancing all around the website to help you reach the
