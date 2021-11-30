@@ -111,7 +111,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import './Team.css';
-
+import Dm3 from '../../Images/dcm2.png'
 import TeamCard from '../../Containers/TeamCard'
 
 
@@ -146,6 +146,7 @@ const Team = (data) => {
 
   return(
     <div className='teams-page'>
+      <img className='dm1' src={Dm3} alt='DM' />
       <div className='team-section' ref={teamRef} >
         <div className='section-title-div'>
           <div className={teamOnScreen? 'bubble-bg bubble-left-in': 'hide-content'}></div>

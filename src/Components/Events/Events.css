@@ -106,6 +106,13 @@ body {
   border: none;
 }
 
+.dm2 {
+  display: inline;
+  margin-left: 30px;
+  height: 60px;
+  width: 60px;
+}
+
 /* GENERAL DESIGN END */
 
 .carousel {
@@ -193,6 +200,10 @@ body {
 
   .primary-button {
     font-size: var(--body2-small);
+  }
+
+  .dm2 {
+    position: absolute;
   }
 }
 

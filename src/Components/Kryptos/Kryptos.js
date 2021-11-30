@@ -6,26 +6,38 @@ const Kryptos = () => {
 
   const [dmInput, changeDmInput] = useState('')
   const [showError, setShowError] = useState(false)
+  const [showEnter, setShowEnter] = useState(false)
 
   const handleKeyDown = (event) => {
-    if(dmInput === '1234' && event.key === 'Enter') {
-      window.open("https://kryptos-cts.netlify.app/");
-      changeDmInput('')
-    } else if (dmInput !== '') {
-      setShowError(true)
+    if(event.key === 'Enter') {
+      if(dmInput === '1234') {
+        window.open("https://tech-club-kryptos-1234.netlify.app/");
+        changeDmInput('')
+      } else if (dmInput !== '') {
+        setShowError(true)
+      } else {
+        setShowEnter(true)
+      }
     }
   }
 
   const changeUserInput = (e) => {
-    if(e.target.validity.valid && e.target.value.length <= 4) {
-      changeDmInput(e.target.value)
+    if(e.target.value.length <= 4) {
+      const input = e.target.value.toUpperCase()
+      changeDmInput(input)
+      setShowEnter(false)
     }
     setShowError(false)
   }
 
   const submit = () => {
+    if(dmInput === '') {
+      setShowEnter(true)
+    } else {
+      setShowEnter(false)
+    }
     if(dmInput === '1234') {
-      window.open("https://kryptos-cts.netlify.app/");
+      window.open("https://tech-club-kryptos-1234.netlify.app/");
       changeDmInput('')
     } else if (dmInput !== '') {
       setShowError(true)
@@ -37,7 +49,7 @@ const Kryptos = () => {
       <div className="kryptos-title">Kryptos</div>
       <div className="kryptos-content">
         <div className="quote">
-          Past secrets always have a way of coming back to haunt people
+          The End is in the Beginning
         </div>
         <div className="write-up">
           “It is not really difficult to construct a series of inferences, each
@@ -46,24 +58,23 @@ const Kryptos = () => {
           presents one's audience with the starting-point and the conclusion,
           one may produce a startling, though perhaps a meretricious, effect.”
         </div>
+        <h1 className='link-text' >Enter the 4 code key here-</h1>
         <div className="link" onClick={submit} >
           <h1 className='link-text'>https://tech-club-kryptos-</h1>
-          <input className='link-input' type="text" pattern="[0-9]*" value={dmInput} onChange={(e) => changeUserInput(e)} onKeyDown={handleKeyDown} />
+          <div className='div1' style={{display: 'inline'}} >
+            <input className='link-input' type="text" value={dmInput} onChange={(e) => changeUserInput(e)} onKeyDown={handleKeyDown} autoComplete='off' spellCheck='false' autoCorrect='off' />
+            <div className='div2' style={{display: 'flex'}} >
+              <div className='blank' />
+              <div className='blank' />
+              <div className='blank' />
+              <div className='blank' />
+            </div>
+          </div>
           <h1 className='link-text'>.netlify.app/</h1>
-            {/*<div id="d1" className="digit">
-              _
-            </div>
-            <div id="d2" className="digit">
-              _
-            </div>
-            <div id="d3" className="digit">
-              _
-            </div>
-            <div id="d4" className="digit">
-              _
-            </div>*/}
         </div>
         {showError && <h1 className='error-msg'>*Incorrect password</h1>}
+        {showEnter && <h1 className='error-msg'>*Enter password</h1>}
+        {!(showEnter || showError) && <h1 className='error-msg' style={{color: 'black'}} >No error</h1>}
         <div className="clue">
           <div className="clue1">
             There are men dancing all around the website to help you reach the

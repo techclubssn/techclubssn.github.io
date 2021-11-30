@@ -49,6 +49,16 @@
     display: flex;
     /* align-items: center; */
   }
+
+  .dm1 {
+    display: inline;
+    margin-left: 30px;
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    top: 25vh;
+    left: 15vw;
+  }
   
   .section-title-div {
     width: 40vw;
@@ -278,6 +288,16 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .dm1 {
+    display: inline;
+    margin-left: 30px;
+    height: 80px;
+    width: 40px;
+    position: absolute;
+    top: 20vh;
+    left: 0vw;
+  }
+
   .section-title-div {
     margin-top: 15vh;
     margin-bottom: 5vh;

@@ -1,6 +1,7 @@
 import React from "react";
 // import { useState, useEffect, useRef } from "react";
 import "./Events.css";
+import Dm from '../../Images/dcm3.png';
 
 // function useOnScreen(ref, rootMargin = "0px") {
 //   const [isIntersecting, setIntersecting] = useState(false);
@@ -56,6 +57,7 @@ const Events = () => {
                   Register Now
                 </a>
               </button>
+              <img className='dm2' src={Dm} alt='dm2' />
             </div>
           </div>
         </div>
