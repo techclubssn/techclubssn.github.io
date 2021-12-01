@@ -51,6 +51,9 @@ const Kryptos = () => {
         <div className="quote">
           The End is in the Beginning
         </div>
+        <div className="quote">
+          hint: The last dancing men may have gone on a vacation to our Instagram page
+        </div>
         <div className="write-up">
           “It is not really difficult to construct a series of inferences, each
           dependent upon its predecessor and each simple in itself. If, after
