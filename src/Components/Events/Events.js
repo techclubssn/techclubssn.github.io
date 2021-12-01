@@ -1,7 +1,7 @@
 import React from "react";
 // import { useState, useEffect, useRef } from "react";
 import "./Events.css";
-import Dm from '../../Images/dcm3.png';
+import Dm from '../../Images/dcm2.png';
 
 // function useOnScreen(ref, rootMargin = "0px") {
 //   const [isIntersecting, setIntersecting] = useState(false);

@@ -2,16 +2,29 @@ import React from "react";
 import { useState } from "react";
 import "./Kryptos.css";
 
+import Modal from '../../Containers/Modal/Modal.component'
+
 const Kryptos = () => {
 
   const [dmInput, changeDmInput] = useState('')
   const [showError, setShowError] = useState(false)
   const [showEnter, setShowEnter] = useState(false)
 
+  const [showModal, setShowModal]= useState(false)
+
+  const onClose = () => {
+    setShowModal(false)
+    document.body.style.overflow = 'unset'
+  }
+
+  const showHint = () => {
+    setShowModal(true)
+  }
+
   const handleKeyDown = (event) => {
     if(event.key === 'Enter') {
-      if(dmInput === '1234') {
-        window.open("https://tech-club-kryptos-1234.netlify.app/");
+      if(dmInput === '7231') {
+        window.open("https://tech-club-kryptos-7231.netlify.app/");
         changeDmInput('')
       } else if (dmInput !== '') {
         setShowError(true)
@@ -36,8 +49,8 @@ const Kryptos = () => {
     } else {
       setShowEnter(false)
     }
-    if(dmInput === '1234') {
-      window.open("https://tech-club-kryptos-1234.netlify.app/");
+    if(dmInput === '7231') {
+      window.open("https://tech-club-kryptos-7231.netlify.app/");
       changeDmInput('')
     } else if (dmInput !== '') {
       setShowError(true)
@@ -45,6 +58,8 @@ const Kryptos = () => {
   }
 
   return (
+    <React.Fragment>
+    {showModal && <Modal onClose={onClose}/>}
     <section className="kryptos">
       <div className="kryptos-title">Kryptos</div>
       <div className="kryptos-content">
@@ -77,16 +92,17 @@ const Kryptos = () => {
         {!(showEnter || showError) && <h1 className='error-msg' style={{color: 'black'}} >No error</h1>}
         <div className="clue">
           <div className="clue1">
-            There are men dancing all around the website to help you reach the
-            end
+            There are men dancing all around the website to help you decipher the key.
           </div>
           <div className="clue2">
             To find their <span id="key">last,</span> <br />
             one should never <br/> forget where they <br /> start
           </div>
         </div>
+        {!showModal && <button className='hint' onClick={showHint} >HINT</button>}
       </div>
     </section>
+    </React.Fragment>
   );
 };
 

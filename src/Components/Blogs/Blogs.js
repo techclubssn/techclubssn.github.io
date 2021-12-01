@@ -1,6 +1,6 @@
 import React from "react";
 import "./Blog.css";
-import Dm from '../../Images/dcm4.png'
+import Dm from '../../Images/dcm3.png'
 
 const Blogs = () => {
   return (

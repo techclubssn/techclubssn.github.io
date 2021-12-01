@@ -111,7 +111,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import './Team.css';
-import Dm3 from '../../Images/dcm2.png'
+import Dm3 from '../../Images/dcm7.png'
 import TeamCard from '../../Containers/TeamCard'
 
 
