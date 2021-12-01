@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b5973e17.chunk.css",
-    "main.js": "/static/js/main.af9bf6d7.chunk.js",
-    "main.js.map": "/static/js/main.af9bf6d7.chunk.js.map",
+    "main.css": "/static/css/main.b391ccc6.chunk.css",
+    "main.js": "/static/js/main.deeb75eb.chunk.js",
+    "main.js.map": "/static/js/main.deeb75eb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.59f117ad.js",
     "runtime-main.js.map": "/static/js/runtime-main.59f117ad.js.map",
-    "static/js/2.eb4adcf1.chunk.js": "/static/js/2.eb4adcf1.chunk.js",
-    "static/js/2.eb4adcf1.chunk.js.map": "/static/js/2.eb4adcf1.chunk.js.map",
+    "static/js/2.1ef3d632.chunk.js": "/static/js/2.1ef3d632.chunk.js",
+    "static/js/2.1ef3d632.chunk.js.map": "/static/js/2.1ef3d632.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9ca850ef48f7eaea6b62cf23278d2b41.js": "/precache-manifest.9ca850ef48f7eaea6b62cf23278d2b41.js",
+    "precache-manifest.439edf73f79194c03b124a3bdca14113.js": "/precache-manifest.439edf73f79194c03b124a3bdca14113.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.b5973e17.chunk.css.map": "/static/css/main.b5973e17.chunk.css.map",
-    "static/js/2.eb4adcf1.chunk.js.LICENSE.txt": "/static/js/2.eb4adcf1.chunk.js.LICENSE.txt",
+    "static/css/main.b391ccc6.chunk.css.map": "/static/css/main.b391ccc6.chunk.css.map",
+    "static/js/2.1ef3d632.chunk.js.LICENSE.txt": "/static/js/2.1ef3d632.chunk.js.LICENSE.txt",
     "static/media/HealthcareIcon.svg": "/static/media/HealthcareIcon.cdaf4eb6.svg",
     "static/media/agritech.svg": "/static/media/agritech.77e4f8fc.svg",
     "static/media/calendar.svg": "/static/media/calendar.d72db218.svg",
@@ -25,8 +25,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.59f117ad.js",
-    "static/js/2.eb4adcf1.chunk.js",
-    "static/css/main.b5973e17.chunk.css",
-    "static/js/main.af9bf6d7.chunk.js"
+    "static/js/2.1ef3d632.chunk.js",
+    "static/css/main.b391ccc6.chunk.css",
+    "static/js/main.deeb75eb.chunk.js"
   ]
 }
