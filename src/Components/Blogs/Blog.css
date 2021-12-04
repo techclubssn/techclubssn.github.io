@@ -49,7 +49,7 @@ body {
   color: white;
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
-  padding: var(--padding-v-big) var(--padding-h-big);
+  /* padding: var(--padding-v-big) var(--padding-h-big); */
 }
 
 section {
@@ -82,9 +82,9 @@ section {
   background-color: rgb(39, 39, 39);
 }
 
-/* .blogs {
-  padding: 0 2vw;
-} */
+.blogs {
+  padding: var(--padding-v-big) var(--padding-h-big);
+}
 
 .blog {
   animation: content-intro 2s ease-in-out;
@@ -155,7 +155,7 @@ hr {
 /* Small screen */
 @media only screen and (max-width: 576px) {
   body {
-    padding: var(--padding-v-small) var(--padding-h-small);
+    /* padding: var(--padding-v-small) var(--padding-h-small); */
   }
 
   .title {

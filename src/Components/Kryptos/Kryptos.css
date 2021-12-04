@@ -53,11 +53,12 @@ body {
   color: white;
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
-  padding: var(--padding-v-big) var(--padding-h-big);
+  /* padding: var(--padding-v-big) var(--padding-h-big); */
 }
 
 section {
   min-height: 100vh;
+  padding: var(--padding-v-big) var(--padding-h-big);
 }
 
 .kryptos {
@@ -67,7 +68,7 @@ section {
 .kryptos-title {
   font-family: "Allura", cursive;
   font-size: 52px;
-  margin: 10vh 0 6vh;
+  margin: 10vh 0 2vh;
   border-top: 1px solid var(--disabled);
   border-bottom: 1px solid var(--disabled);
   animation: title-intro 1s ease-in-out;
@@ -79,6 +80,11 @@ section {
   margin: auto;
   animation: content-intro 2s ease-in-out;
 }
+
+.sherlock-img {
+  width: 30%;
+}
+
 .quote {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
@@ -100,7 +106,8 @@ input::-webkit-inner-spin-button {
 .write-up {
   font-size: var(--body2-big);
   color: var(--blogText);
-  margin-bottom: 6vh;
+  margin-top: 2vh;
+  margin-bottom: 4vh;
 }
 .link {
   /* pointer-events: none; */
@@ -199,6 +206,10 @@ input::-webkit-inner-spin-button {
     width: 70vw;
   }
 
+  .sherlock-img {
+    width: 50%;
+  }
+
   .write-up,
   .quote {
     font-size: var(--body2-medium);
@@ -254,7 +265,7 @@ input::-webkit-inner-spin-button {
 
   .write-up,
   .quote {
-    font-size: var(--body2-small);
+    font-size: 12px;
   }
   .link {
     /* pointer-events: none; */
@@ -262,7 +273,7 @@ input::-webkit-inner-spin-button {
   }
 
   .link-text {
-    font-size: var(--body2-small);
+    font-size: 11px;
   }
 
   .link-input {

@@ -107,7 +107,7 @@ class NavbarTC extends Component {
               margin: "0 0 0 10px",
             }}
           >
-            TechClubSSN
+            Tech Club
           </h1>
           <Navbar.Toggle style={{ position: "absolute", right: "0" }} />
         </Navbar.Header>
@@ -178,7 +178,7 @@ class NavbarTC extends Component {
                 Opportunities
               </Link>
             </NavItem>
-            <NavItem eventKey={6} href="#">
+            {/*<NavItem eventKey={6} href="#">
               <Link
                 to="/kryptos"
                 onClick={() => this.closeNav("/kryptos")}
@@ -190,7 +190,7 @@ class NavbarTC extends Component {
               >
                 Kryptos
               </Link>
-            </NavItem>
+              </NavItem>*/}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

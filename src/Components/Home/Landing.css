@@ -1,12 +1,14 @@
 .logoMobile{
-	position: relative;
-	top: 29%;
-	left: 38%;
+	height: 100%;
+	width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logoSize{
-	height:22%;
-	width:22%;
+	height: 50%;
+	margin-top: 25vh;
 }
 
 .hi-link-div {
@@ -57,19 +59,106 @@ a:hover {
 	text-decoration: none;
 }
 
+.motto-text {
+	font-size: 24px;
+	margin-top: 10vh;
+	letter-spacing: 5px;
+}
+
+.about-section {
+	width: 100vw;
+	min-height: 100vh;
+	background-color: white;
+	color: black;
+	padding: 0 10vw;
+}
+
+.about-title {
+	text-align: left;
+	padding-top: 20vh;
+	font-size: 30px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.about-flex-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.about-content {
+	font-size: 24px;
+	font-family: "Raleway", sans-serif;
+	width: 70%;
+	padding-top: 5vh;
+}
+
+.about-right {
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.about-socials {
+	width: 100%;
+	background-color: black;
+	margin-top: 15vh;
+	padding: 5px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.github-button {
+	border: 1px solid black;
+	background-color: white;
+	color: black;
+	font-weight: 500;
+	padding: 5px 25px;
+	font-family: "Raleway";
+}
+
+.github-button:hover {
+	border: 1px solid white;
+	background-color: black;
+	color: white;
+}
+
+.button-text {
+	color: inherit;
+	font-size: 18px;
+}
+
+.button-text:hover {
+	color: inherit;
+	font-size: 18px;
+}
+
+.about-social-button {
+	color: white;
+	margin: 10px 1.5%;
+}
+
+.about-social-button:hover {
+	cursor: pointer;
+}
+
 @media 
 only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px)  {
 
-.logoMobile{
-position: relative;
-top: 35%;
-left: 35%;
-}
-
 .logoSize{
   height: 30%;
-  width: 30%;
+}
+
+.motto-text {
+	font-size: 16px;
+	margin-top: 8vh;
+	letter-spacing: 2px;
 }
 
 .hi-link-text {
@@ -91,5 +180,46 @@ left: 35%;
 	margin-left: 20vw;
 	margin-bottom: 1vh;
 }
+
+.about-section {
+	min-height: 100vh;
+	background-color: white;
+	color: black;
+	padding: 0;
+}
+
+.about-flex-div {
+	flex-direction: column;
+	justify-content: center;
+}
+
+.about-title {
+	font-size: 22px;
+	padding-top: 10vh;
+	text-align: center;
+}
+
+.about-content {
+	font-size: 18px;
+	width: 95%;
+	text-align: justify;
+}
+
+.about-right {
+	width: 100%;
+	height: max-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.github-button {
+	margin-top: 5vh;
+}
+
+.about-socials {
+	margin-top: 10vh;
+}
+
 
 }

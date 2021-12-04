@@ -120,7 +120,7 @@ class Pages extends Component {
         <Route exact path="/hackinfinity" component={Hackinfinity} />
         <Route exact path="/events" component={Events} />
         <Route exact path="/blogs" component={Blogs} />
-        <Route exact path="/kryptos" component={Kryptos} />
+        {/*<Route exact path="/kryptos" component={Kryptos} />*/}
         <Route exact path="/opportunities" component={Opportunities} />
       </Switch>
     );

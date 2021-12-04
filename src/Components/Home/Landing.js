@@ -5,6 +5,10 @@ import * as Scroll from 'react-scroll';
 import Sessions from './Sessions/Sessions.js';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faYoutube, faGithub, faInstagram, faDiscord, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 // Particle JS is commented out for now since it is not 
 // letting the site deploy.
 // import Particles from 'react-particles-js';
@@ -88,16 +92,17 @@ class Home extends Component {
           */}
           <div className="logoMobile">
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
+            <h1 className='motto-text' >WE RISE BY LIFTING OTHERS</h1>
           </div>
           <Particles
             style={particleStyle}
             params={{
               "particles": {
                   "number": {
-                      "value": 60
+                      "value": window.innerWidth <= 600 ? 30 : 60
                   },
                   "size": {
-                      "value": 3
+                      "value": window.innerWidth <= 600 ? 1 : 3
                   }
               },
               "interactivity": {
@@ -110,6 +115,25 @@ class Home extends Component {
               }
           }} />
         </div>
+        {/*<div className='about-section'>
+          <h1 className='about-title' >ABOUT US</h1>
+          <div className='about-flex-div' >
+            <p className='about-content' >Tech Club SSN is a student run organization of the department of ECE in SSN College of Engineering. Tech club is an enthusiastic forum for students craving for technical exposure. Started by a group of students discussing about their GitHub repositories this forum has now evolved into an independent club striving towards excellence every year. Multiple sessions conducted by students on various core domains gives the ebullient engineers a wide exposure on how to approach concepts. On the whole it's a fun filled flexible forum with a group of lads more than willing to extend help to cheer and motivate the students on becoming technical masterminds.</p>
+            <div className='about-right'>
+              <button className="github-button">
+                <a className='button-text' onClick={() => window.open('https://discord.gg/FrVuYVpDAP')} href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
+                  JOIN OUR SERVER
+                </a>
+              </button>
+              <div className='about-socials' >
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.linkedin.com/company/techclub-ssn/')} icon={faLinkedin} size='2x' />
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.youtube.com/channel/UCju9hpXppiHDuKjbcTNAZKw')} icon={faYoutube} size='2x' />
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://github.com/techclubssn')} icon={faGithub} size='2x' />
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.instagram.com/tech_club_ssn/')} icon={faInstagram} size='2x' />
+              </div>
+            </div>
+          </div>
+        </div>*/}
         {/*<Link to='/hackinfinity'>
           <div className='hi-link-div'>
               <h1 className='hi-link-text'>UPCOMING EVENTS : </h1>

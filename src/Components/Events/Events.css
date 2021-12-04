@@ -50,9 +50,13 @@ img {
 }
 
 body {
-  padding: var(--padding-v-big) var(--padding-h-big);
+  /* padding: var(--padding-v-big) var(--padding-h-big); */
   font-family: "Raleway";
   line-height: none;
+}
+
+.upcoming-events {
+  padding: var(--padding-v-big) var(--padding-h-big);
 }
 
 .title {
@@ -160,7 +164,7 @@ body {
 
 @media only screen and (max-width: 576px) {
   body {
-    padding: var(--padding-v-small) var(--padding-h-small);
+    /* padding: var(--padding-v-small) var(--padding-h-small); */
   }
 
   .title {

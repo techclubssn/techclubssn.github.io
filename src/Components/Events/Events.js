@@ -24,7 +24,7 @@ const Events = () => {
   return (
     <div className="upcoming-events">
       <div className="title">
-        Upcoming <span className="title-span">Events</span>
+        {/*Upcoming */}<span className="title-span">Events</span>
       </div>
 
       <div className="carousel">
@@ -52,11 +52,11 @@ const Events = () => {
               November, mark your calendars!
             </div>
             <div className="event-button">
-              <button className="primary-button">
+              {/*<button className="primary-button">
                 <a href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
                   Register Now
                 </a>
-              </button>
+              </button>*/}
               <img className='dm2' src={Dm} alt='dm2' />
             </div>
           </div>

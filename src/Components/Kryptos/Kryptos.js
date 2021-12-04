@@ -4,6 +4,8 @@ import "./Kryptos.css";
 
 import Modal from '../../Containers/Modal/Modal.component'
 
+import Sherlock from '../../Images/sherlock.jpeg'
+
 const Kryptos = () => {
 
   const [dmInput, changeDmInput] = useState('')
@@ -63,15 +65,12 @@ const Kryptos = () => {
     <section className="kryptos">
       <div className="kryptos-title">Kryptos</div>
       <div className="kryptos-content">
+        <img className='sherlock-img' src={Sherlock} alt='Sherlock'/>
+        <div className="write-up">
+          "Despite the 26 alphabets I normally use, I felt it was necessary that a new alphabet was necessary, to give meaning to the dancing men. So in 1903 the dancing men helped me cipher messages. Hope the dancing men all over the site can help you unlock your path."
+        </div>
         <div className="quote">
           The End is in the Beginning
-        </div>
-        <div className="write-up">
-          “It is not really difficult to construct a series of inferences, each
-          dependent upon its predecessor and each simple in itself. If, after
-          doing so, one simply knocks out all the central inferences and
-          presents one's audience with the starting-point and the conclusion,
-          one may produce a startling, though perhaps a meretricious, effect.”
         </div>
         <h1 className='link-text' >Enter the 4 code key here-</h1>
         <div className="link" onClick={submit} >
@@ -90,7 +89,7 @@ const Kryptos = () => {
         {showError && <h1 className='error-msg'>*Incorrect password</h1>}
         {showEnter && <h1 className='error-msg'>*Enter password</h1>}
         {!(showEnter || showError) && <h1 className='error-msg' style={{color: 'black'}} >No error</h1>}
-        <div className="clue">
+        {/*<div className="clue">
           <div className="clue1">
             There are men dancing all around the website to help you decipher the key.
           </div>
@@ -98,7 +97,7 @@ const Kryptos = () => {
             To find their <span id="key">last,</span> <br />
             one should never <br/> forget where they <br /> start
           </div>
-        </div>
+        </div>*/}
         {!showModal && <button className='hint' onClick={showHint} >HINT</button>}
       </div>
     </section>
