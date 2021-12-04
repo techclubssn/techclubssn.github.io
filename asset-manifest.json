@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.b391ccc6.chunk.css",
-    "main.js": "/static/js/main.deeb75eb.chunk.js",
-    "main.js.map": "/static/js/main.deeb75eb.chunk.js.map",
+    "main.css": "/static/css/main.884cb6d4.chunk.css",
+    "main.js": "/static/js/main.25cda7f5.chunk.js",
+    "main.js.map": "/static/js/main.25cda7f5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.59f117ad.js",
     "runtime-main.js.map": "/static/js/runtime-main.59f117ad.js.map",
-    "static/js/2.1ef3d632.chunk.js": "/static/js/2.1ef3d632.chunk.js",
-    "static/js/2.1ef3d632.chunk.js.map": "/static/js/2.1ef3d632.chunk.js.map",
+    "static/js/2.3682e4fb.chunk.js": "/static/js/2.3682e4fb.chunk.js",
+    "static/js/2.3682e4fb.chunk.js.map": "/static/js/2.3682e4fb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.439edf73f79194c03b124a3bdca14113.js": "/precache-manifest.439edf73f79194c03b124a3bdca14113.js",
+    "precache-manifest.c1015b6453ed4f44bd8c82bc8576fdcb.js": "/precache-manifest.c1015b6453ed4f44bd8c82bc8576fdcb.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.b391ccc6.chunk.css.map": "/static/css/main.b391ccc6.chunk.css.map",
-    "static/js/2.1ef3d632.chunk.js.LICENSE.txt": "/static/js/2.1ef3d632.chunk.js.LICENSE.txt",
+    "static/css/main.884cb6d4.chunk.css.map": "/static/css/main.884cb6d4.chunk.css.map",
+    "static/js/2.3682e4fb.chunk.js.LICENSE.txt": "/static/js/2.3682e4fb.chunk.js.LICENSE.txt",
     "static/media/HealthcareIcon.svg": "/static/media/HealthcareIcon.cdaf4eb6.svg",
     "static/media/agritech.svg": "/static/media/agritech.77e4f8fc.svg",
     "static/media/calendar.svg": "/static/media/calendar.d72db218.svg",
@@ -21,12 +21,13 @@
     "static/media/innovation.svg": "/static/media/innovation.97749b0f.svg",
     "static/media/person.svg": "/static/media/person.ce8e4dd1.svg",
     "static/media/phone.svg": "/static/media/phone.740cafdf.svg",
+    "static/media/sherlock.jpeg": "/static/media/sherlock.45aa96a6.jpeg",
     "static/media/women.svg": "/static/media/women.48dc51bf.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.59f117ad.js",
-    "static/js/2.1ef3d632.chunk.js",
-    "static/css/main.b391ccc6.chunk.css",
-    "static/js/main.deeb75eb.chunk.js"
+    "static/js/2.3682e4fb.chunk.js",
+    "static/css/main.884cb6d4.chunk.css",
+    "static/js/main.25cda7f5.chunk.js"
   ]
 }
