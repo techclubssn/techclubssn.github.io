@@ -6,7 +6,7 @@ import Sessions from './Sessions/Sessions.js';
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faYoutube, faGithub, faInstagram, faDiscord, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faYoutube, faGithub, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 // Particle JS is commented out for now since it is not 
@@ -115,16 +115,21 @@ class Home extends Component {
               }
           }} />
         </div>
-        {/*<div className='about-section'>
+        <div className='about-section'>
           <h1 className='about-title' >ABOUT US</h1>
           <div className='about-flex-div' >
             <p className='about-content' >Tech Club SSN is a student run organization of the department of ECE in SSN College of Engineering. Tech club is an enthusiastic forum for students craving for technical exposure. Started by a group of students discussing about their GitHub repositories this forum has now evolved into an independent club striving towards excellence every year. Multiple sessions conducted by students on various core domains gives the ebullient engineers a wide exposure on how to approach concepts. On the whole it's a fun filled flexible forum with a group of lads more than willing to extend help to cheer and motivate the students on becoming technical masterminds.</p>
             <div className='about-right'>
-              <button className="github-button">
-                <a className='button-text' onClick={() => window.open('https://discord.gg/FrVuYVpDAP')} href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
-                  JOIN OUR SERVER
+              <div className='join-us-div' style={{marginBottom: '10vh'}}>
+              <h1 className='about-sub-headings' >BECOME A MEMBER</h1>
+                <a onClick={() => window.open('https://discord.gg/FrVuYVpDAP')} href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
+                  <button className="discord-button">
+                    <FontAwesomeIcon className='discord-icon' icon={faDiscord} />
+                    JOIN OUR SERVER
+                  </button>
                 </a>
-              </button>
+              </div>
+              <h1 className='about-sub-headings hide-title' >FOLLOW US</h1>
               <div className='about-socials' >
                 <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.linkedin.com/company/techclub-ssn/')} icon={faLinkedin} size='2x' />
                 <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.youtube.com/channel/UCju9hpXppiHDuKjbcTNAZKw')} icon={faYoutube} size='2x' />
@@ -133,7 +138,7 @@ class Home extends Component {
               </div>
             </div>
           </div>
-        </div>*/}
+        </div>
         {/*<Link to='/hackinfinity'>
           <div className='hi-link-div'>
               <h1 className='hi-link-text'>UPCOMING EVENTS : </h1>

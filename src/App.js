@@ -10,7 +10,7 @@ import NavbarTC from "./Components/Navbar/Navbar.js";
 import Events from "./Components/Events/Events.js";
 import Hackinfinity from "./Components/Events/Hackinfinity/Hackinfinity.js";
 import Blogs from "./Components/Blogs/Blogs.js";
-import Kryptos from "./Components/Kryptos/Kryptos.js";
+// import Kryptos from "./Components/Kryptos/Kryptos.js";
 import Opportunities from './Components/Opportunities/Opportunities.js'
 // import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
 

@@ -94,21 +94,23 @@ class NavbarTC extends Component {
         style={{ backgroundColor: "black", padding: "1vh 2vw", border: "0" }}
       >
         <Navbar.Header style={{ display: "flex", alignItems: "center" }}>
-          <img
-            src="/imgs/logo.png"
-            alt="logo"
-            style={{ height: "54px", width: "54px" }}
-          />
-          <h1
-            style={{
-              fontSize: "20px",
-              color: "white",
-              fontWeight: "bolder",
-              margin: "0 0 0 10px",
-            }}
-          >
-            Tech Club
-          </h1>
+          <Link style={{ display: "flex", alignItems: "center" }} to="/" onClick={() => this.closeNav('/')}>
+            <img
+              src="/imgs/logo.png"
+              alt="logo"
+              style={{ height: "54px", width: "54px" }}
+            />
+            <h1
+              style={{
+                fontSize: "20px",
+                color: "white",
+                fontWeight: "bolder",
+                margin: "0 0 0 10px",
+              }}
+            >
+              Tech Club
+            </h1>
+          </Link>
           <Navbar.Toggle style={{ position: "absolute", right: "0" }} />
         </Navbar.Header>
         <Navbar.Collapse>
