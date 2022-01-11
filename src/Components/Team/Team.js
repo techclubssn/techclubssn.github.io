@@ -146,7 +146,7 @@ const Team = (data) => {
 
   return(
     <div className='teams-page'>
-      <img className='dm1' src={Dm3} alt='DM' />
+      {/*<img className='dm1' src={Dm3} alt='DM' />*/}
       <div className='team-section' ref={teamRef} >
         <div className='section-title-div'>
           <div className={teamOnScreen? 'bubble-bg bubble-left-in': 'hide-content'}></div>

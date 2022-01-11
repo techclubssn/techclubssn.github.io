@@ -130,19 +130,6 @@ class NavbarTC extends Component {
             </NavItem>
             <NavItem eventKey={2} href="#">
               <Link
-                to="/team"
-                onClick={() => this.closeNav("/team")}
-                className={
-                  '/team' === this.state.activeState
-                    ? "navbar-link-style-active"
-                    : "navbar-link-style"
-                }
-              >
-                Team
-              </Link>
-            </NavItem>
-            <NavItem eventKey={3} href="#">
-              <Link
                 to="/events"
                 onClick={() => this.closeNav("/events")}
                 className={
@@ -154,7 +141,7 @@ class NavbarTC extends Component {
                 Events
               </Link>
             </NavItem>
-            <NavItem eventKey={4} href="#">
+            <NavItem eventKey={3} href="#">
               <Link
                 to="/blogs"
                 onClick={() => this.closeNav("/blogs")}
@@ -167,7 +154,7 @@ class NavbarTC extends Component {
                 Blogs
               </Link>
             </NavItem>
-            <NavItem eventKey={5} href="#">
+            <NavItem eventKey={4} href="#">
               <Link
                 to="/opportunities"
                 onClick={() => this.closeNav("/opportunities")}
@@ -178,6 +165,19 @@ class NavbarTC extends Component {
                 }
               >
                 Opportunities
+              </Link>
+            </NavItem>
+            <NavItem eventKey={5} href="#">
+              <Link
+                to="/team"
+                onClick={() => this.closeNav("/team")}
+                className={
+                  '/team' === this.state.activeState
+                    ? "navbar-link-style-active"
+                    : "navbar-link-style"
+                }
+              >
+                Team
               </Link>
             </NavItem>
             {/*<NavItem eventKey={6} href="#">

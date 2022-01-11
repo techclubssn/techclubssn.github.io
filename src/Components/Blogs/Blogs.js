@@ -68,7 +68,7 @@ const Blogs = () => {
           </p>
         </div>
         <div className="blog-author" style={{display: 'flex', justifyContent: 'flex-end'}} >
-          <img className='dm3' src={Dm} alt='DM' />
+          {/*<img className='dm3' src={Dm} alt='DM' />*/}
           <div>
             <div className="author-name">Shruti Jeyaraman</div>
             <div className="author-info">2nd year, ECE</div>

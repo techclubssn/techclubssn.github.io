@@ -57,7 +57,7 @@ const Events = () => {
                   Register Now
                 </a>
               </button>*/}
-              <img className='dm2' src={Dm} alt='dm2' />
+              {/*<img className='dm2' src={Dm} alt='dm2' />*/}
             </div>
           </div>
         </div>

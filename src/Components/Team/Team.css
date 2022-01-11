@@ -299,8 +299,8 @@
   }
 
   .section-title-div {
-    margin-top: 15vh;
-    margin-bottom: 5vh;
+    margin-top: 80px;
+    margin-bottom: 30px;
     height: 15vh;
     display: flex;
     justify-content: center;
@@ -310,8 +310,8 @@
   }
 
   .bubble-bg {
-    width: 15vh;
-    height: 15vh;
+    width: 80px;
+    height: 80px;
     background-color: #333333;
     border-radius: 50%;
     z-index: -1;
