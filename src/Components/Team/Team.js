@@ -136,13 +136,9 @@ function useOnScreen(ref, rootMargin = "0px") {
 
 
 const Team = (data) => {
-
-  const members = ['Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S']
-  const alumni = ['Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S', 'Shankrith S']
   const teamRef = useRef();
   const alumniRef = useRef();
   const teamOnScreen = useOnScreen(teamRef, "-50%");
-  const alumniOnScreen = useOnScreen(alumniRef, "-60px");
 
   return(
     <div className='teams-page'>
