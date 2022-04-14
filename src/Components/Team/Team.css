@@ -1,4 +1,4 @@
-.teamStyle {
+/* .teamStyle {
   text-align: center;
   background: #CCC;
   color: #333;
@@ -38,4 +38,342 @@
   color:black;
   font-weight: bold;
   text-decoration: none;
+} */
+
+
+@media only screen and (min-width: 576px) {
+  .team-section {
+    width: 100vw;
+    height: max-content;
+    padding-top: 10vh;
+    display: flex;
+    /* align-items: center; */
+  }
+
+  .dm1 {
+    display: inline;
+    margin-left: 30px;
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    top: 25vh;
+    left: 15vw;
+  }
+  
+  .section-title-div {
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+  }
+  
+  .section-title-div-right {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .title-text-div {
+    position: absolute;
+    left: 17%;
+    animation: text-left 0.5s 1;
+  }
+  
+  .title-text-div-right {
+    position: absolute;
+    right: 17%;
+    text-align: right;
+    animation: text-right 0.5s 1;
+  }
+  
+  .section-title-text {
+    font-family: 'Raleway';
+    font-size: 70px;
+    font-weight: 700;
+    color: white;
+    margin: 2px;
+  }
+  
+  .gray {
+    color: #B7B7B7;
+  }
+  
+  .team-contents {
+    width: 100vw;
+    padding-left: 30vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: cards-pop 0.5s 1;
+    z-index: 2;
+  }
+  
+  .alumni-contents {
+    width: 100vw;
+    padding-right: 25vw;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: cards-pop 0.5s 1;
+    z-index: 2;
+  }
+  
+  .team-card {
+    width: 160px;
+    height: 40vh;
+    margin: 1% 4%;
+  }
+  
+  .alumni-card {
+    width: 160px;
+    height: 40vh;
+    margin: 2% 0.5%;
+  }
+  
+  .member-name {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: white;
+    margin: 2px 0 0;
+  }
+  
+  .role-text {
+    font-family: 'Raleway';
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    margin: 2px 0 0;
+  }
+  
+  .domain-spec {
+    font-family: 'Raleway';
+    font-size: 14px;
+    font-style: italic;
+    color: white;
+    margin: 0;
+  }
+  
+  .team-social-button {
+    border: 0;
+    background-color: transparent;
+    display: inline;
+    height: min-content;
+    margin: 2px 4px 0;
+  }
+  
+  .team-social-button:hover {
+    color: white;
+    cursor: pointer;
+  }
+  
+  .hide-content {
+    width: 100vw;
+    padding-left: 30vw;
+    padding-right: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: cards-pop 0.5s 1;
+    z-index: 2;
+    visibility: hidden;
+  }
+  
+  .bubble-bg {
+    background-color: #333333;
+    border-radius: 50%;
+    width: 26vw;
+    height: 26vw;
+    position: absolute;
+  }
+  
+  .bubble-right-in {
+    right: -25%;
+    animation: bubble-right-in 0.5s 1;
+  }
+  
+  .bubble-right-out {
+    right: -100%;
+    animation: bubble-right-out 0.5s 1;
+  }
+  
+  .bubble-left-in {
+    left: -25%;
+    animation: bubble-left-in 0.5s 1;
+  }
+  
+  .bubble-left-out {
+    left: -100%;
+    animation: bubble-left-out 0.5s 1;
+  }
+
+  .team-leaders-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  @keyframes text-right {
+    0% {
+      right: -100%
+    }
+  }
+  
+  
+  @keyframes text-left {
+    0% {
+      left: -100%
+    }
+  }
+  
+  @keyframes bubble-left-in {
+    0% {
+      left: -100%;
+    }
+    30% {
+      left: -100%;
+    }
+  }
+  
+  @keyframes bubble-right-in {
+    0% {
+      right: -100%;
+    }
+    30% {
+      right: -100%;
+    }
+  }
+  
+  @keyframes cards-pop {
+    0% {
+      opacity: 0;
+    }
+    83% {
+      opacity: 0;
+    }
+    84% {
+      opacity: 1;
+      transform: scale(0.9);
+    }
+  }
+  
+  @keyframes hide-right {
+    100% {
+      right: -100%
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .section-title-text {
+    font-size: 52px;
+  }
+
+  .bubble-bg {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .alumni-contents {
+    padding-right: 35vw;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .dm1 {
+    display: inline;
+    margin-left: 30px;
+    height: 80px;
+    width: 40px;
+    position: absolute;
+    top: 20vh;
+    left: 0vw;
+  }
+
+  .section-title-div {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+
+  .bubble-bg {
+    width: 80px;
+    height: 80px;
+    background-color: #333333;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .bubble-left-in {
+    position: absolute;
+    left: 70%;
+  }
+
+  .title-text-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-title-text {
+    margin: 0 3px;
+    font-size: 36px;
+  }
+
+  .gray {
+    color: #B7B7B7;
+  }
+
+  .team-contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .section-title-div-right {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+  }
+
+  .bubble-right-in {
+    position: absolute;
+    left: 70%;
+  }
+
+  .title-text-div-right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .alumni-contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 0;
+  }
+
+  .team-leaders-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+  }
 }

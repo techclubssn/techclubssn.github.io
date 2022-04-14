@@ -5,6 +5,10 @@ import * as Scroll from 'react-scroll';
 import Sessions from './Sessions/Sessions.js';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faYoutube, faGithub, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 // Particle JS is commented out for now since it is not 
 // letting the site deploy.
 // import Particles from 'react-particles-js';
@@ -17,7 +21,7 @@ let scroller = Scroll.scroller;
 // const particleParams = particlesJSON;
 
 const introPage = {
-  height: "90vh",
+  height: "100vh",
   border: "3px",
   boxSizing: "border-box",
   overflowX: "hidden",
@@ -27,7 +31,7 @@ const introPage = {
 
 const particleStyle = {
   position:"absolute",
-  bottom: '10vh'
+  bottom: '0vh'
 }
 
 class Home extends Component {
@@ -88,16 +92,17 @@ class Home extends Component {
           */}
           <div className="logoMobile">
             <img src = "/imgs/logo.png" alt="logo" className="logoSize" />
+            <h1 className='motto-text' >WE RISE BY LIFTING OTHERS</h1>
           </div>
           <Particles
             style={particleStyle}
             params={{
               "particles": {
                   "number": {
-                      "value": 60
+                      "value": window.innerWidth <= 600 ? 30 : 60
                   },
                   "size": {
-                      "value": 3
+                      "value": window.innerWidth <= 600 ? 1 : 3
                   }
               },
               "interactivity": {
@@ -110,7 +115,31 @@ class Home extends Component {
               }
           }} />
         </div>
-        <Link to='/hackinfinity'>
+        <div className='about-section'>
+          <h1 className='about-title' >ABOUT US</h1>
+          <div className='about-flex-div' >
+            <p className='about-content' >Tech Club SSN is a student run organization of the department of ECE in SSN College of Engineering. Tech club is an enthusiastic forum for students craving for technical exposure. Started by a group of students discussing about their GitHub repositories this forum has now evolved into an independent club striving towards excellence every year. Multiple sessions conducted by students on various core domains gives the ebullient engineers a wide exposure on how to approach concepts. On the whole it's a fun filled flexible forum with a group of lads more than willing to extend help to cheer and motivate the students on becoming technical masterminds.</p>
+            <div className='about-right'>
+              <div className='join-us-div' style={{marginBottom: '10vh'}}>
+              <h1 className='about-sub-headings' >BECOME A MEMBER</h1>
+                <a onClick={() => window.open('https://discord.gg/FrVuYVpDAP')} href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
+                  <button className="discord-button">
+                    <FontAwesomeIcon className='discord-icon' icon={faDiscord} />
+                    JOIN OUR SERVER
+                  </button>
+                </a>
+              </div>
+              <h1 className='about-sub-headings hide-title' >FOLLOW US</h1>
+              <div className='about-socials' >
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.linkedin.com/company/techclub-ssn/')} icon={faLinkedin} size='2x' />
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.youtube.com/channel/UCju9hpXppiHDuKjbcTNAZKw')} icon={faYoutube} size='2x' />
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://github.com/techclubssn')} icon={faGithub} size='2x' />
+                <FontAwesomeIcon className='about-social-button' onClick={() => window.open('https://www.instagram.com/tech_club_ssn/')} icon={faInstagram} size='2x' />
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*<Link to='/hackinfinity'>
           <div className='hi-link-div'>
               <h1 className='hi-link-text'>UPCOMING EVENTS : </h1>
               <div>
@@ -124,7 +153,7 @@ class Home extends Component {
         </Element>
         <Element name="sess">
           <Sessions data={this.props.sessionData} sticky={this.props.sticky} />
-        </Element>
+        </Element>*/}
       </div>
     );
   }

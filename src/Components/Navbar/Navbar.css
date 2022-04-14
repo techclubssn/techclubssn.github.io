@@ -11,6 +11,9 @@
 .navbar-link-style{
   color: #aaa;
   padding-left: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Raleway';
 }
 
 .navbar-link-style:link{
@@ -29,5 +32,39 @@
 
 .navbar-link-style:active{
   color: #aaa;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+.navbar-link-style-active{
+  color: white;
+  padding-left: 10px;
+  font-size: 18px;
+  font-family: 'Raleway';
+  font-weight: 400;
+}
+
+.navbar-link-style-active:link{
+  text-decoration: none;
+}
+
+.navbar-link-style-active:visited{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-link-style-active:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-link-style-active:active{
+  color: white;
   text-decoration: none;
 }
