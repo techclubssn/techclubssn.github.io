@@ -2,6 +2,9 @@ import React from "react";
 // import { useState, useEffect, useRef } from "react";
 import "./Events.css";
 import Dm from '../../Images/dcm2.png';
+import { OnGoingEventsData } from "./EventData";
+import EventSlider from "./EventSlider";
+import PastEventsSlider from "./PastEvents";
 
 // function useOnScreen(ref, rootMargin = "0px") {
 //   const [isIntersecting, setIntersecting] = useState(false);
@@ -22,48 +25,63 @@ import Dm from '../../Images/dcm2.png';
 // }
 const Events = () => {
   return (
-    <div className="upcoming-events">
-      <div className="title">
-        {/*Upcoming */}<span className="title-span">Events</span>
+    <div>
+      <div className="upcoming-events">
+        <div className="title">
+          Ongoing <span className="title-span">Events</span>
+        </div>
+        <EventSlider slides={OnGoingEventsData} />
       </div>
-
-      <div className="carousel">
-        <div className="slide-left">
-          {/*<img src="./left-button.svg" alt="" />*/}
+      <div className="upcoming-events">
+        <div className="title">
+          Upcoming <span className="title-span">Events</span>
         </div>
 
-        <div className="event">
-          <div className="left-content">
-            <div className="event-img">
-              {/* <img src="./Events_Workshop.png" alt="" /> */}
-              <img
-                src="https://i.imgur.com/Wdv7tQ5.png"
-                alt="Interships 101"
-              />
+        {/* <div className="carousel">
+          <div className="slide-left">
+            <img src="./left-button.svg" alt="" />
+          </div>
+
+          <div className="event">
+            <div className="left-content">
+              <div className="event-img">
+                <img src="./Events_Workshop.png" alt="" />
+                <img
+                  src="https://i.imgur.com/Wdv7tQ5.png"
+                  alt="Interships 101"
+                />
+              </div>
+            </div>
+            <div className="right-content">
+              <div className="event-title">Tech Club Talks</div>
+              <div className="event-info">
+                Internships, projects, resumes....too overwhelming? Allow us to
+                break it down for you! Look out for this online workshop series
+                where various speakers talk about their journey and also tips from
+                your seniors on how to go about these. The first talk is on 12th
+                November, mark your calendars!
+              </div>
+              <div className="event-button">
+                <button className="primary-button">
+                  <a href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
+                    Register Now
+                  </a>
+                </button>
+                <img className='dm2' src={Dm} alt='dm2' />
+              </div>
             </div>
           </div>
-          <div className="right-content">
-            <div className="event-title">Tech Club Talks</div>
-            <div className="event-info">
-              Internships, projects, resumes....too overwhelming? Allow us to
-              break it down for you! Look out for this online workshop series
-              where various speakers talk about their journey and also tips from
-              your seniors on how to go about these. The first talk is on 12th
-              November, mark your calendars!
-            </div>
-            <div className="event-button">
-              {/*<button className="primary-button">
-                <a href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
-                  Register Now
-                </a>
-              </button>*/}
-              {/*<img className='dm2' src={Dm} alt='dm2' />*/}
-            </div>
+          <div className="slide-right">
+            <img src="./right-button.svg" alt="" />
           </div>
+        </div> */}
+          <EventSlider slides={OnGoingEventsData} />
+      </div>
+      <div className="upcoming-events">
+        <div className="title">
+          Past Events & <span className="title-span">Workshops</span>
         </div>
-        <div className="slide-right">
-          {/*<img src="./right-button.svg" alt="" />*/}
-        </div>
+        <PastEventsSlider slides={OnGoingEventsData} />
       </div>
     </div>
 
