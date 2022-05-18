@@ -30,6 +30,7 @@
     "react-scroll": "^1.7.10",
     "react-scroll-to-element": "^0.2.0",
     "react-sticky": "^6.0.3",
+    "react-swipeable": "^7.0.0",
     "tabletop": "^1.5.2"
   },
   "scripts": {

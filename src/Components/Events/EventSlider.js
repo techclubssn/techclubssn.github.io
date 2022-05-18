@@ -1,36 +1,34 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { OnGoingEventsData } from "./EventData";
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io';
 import './Events.css'
+
 const EventSlider = ({slides}) => {
-    const [current, setCurrent] = useState(0)
     const length = slides.length
-    
+    const [x, setX] = useState(0);
     const nextSlide = () => {
-        setCurrent(current === length-1 ? 0 : current+1)
+        x === -100*(length-1) ? setX(0) : setX(x-100)
     }
     
     const prevSlide = () => {
-        setCurrent(current === 0 ? length-1 : current-1)
+        x === 0 ? setX(-100*(length-1)) : setX(x+100)
     }
 
     if(!Array.isArray(slides) || slides.length <= 0){
         return null;
     }
 
+ 
     return(
         <div className="carousel">
             <IoIosArrowBack className="left-arrow" onClick={prevSlide}/>
             <IoIosArrowForward className="right-arrow" onClick={nextSlide}/>
             {OnGoingEventsData.map((slide, index) => {
                 return (
-                    <div className={index === current ? 'slide active': 'slide'} key={index}>
-                        {index === current && (
+                    <div className="slide" key={index} style={{transform:`translateX(${x}%)`}}>
                             <div className="event">
                                 <div className="left-content">
-                                    <div className="event-img">
-                                        <img src={slide.image} alt="content image"/>
-                                    </div>
+                                    <img src={slide.image} alt="content image" className="event-img"/>
                                 </div>
                                 <div className="right-content">
                                     <div className="event-title">{slide.title}</div>
@@ -44,8 +42,6 @@ const EventSlider = ({slides}) => {
                                     </div>
                                 </div>
                             </div>
-                        )}
-                        
                     </div>
                 )
             })} 
