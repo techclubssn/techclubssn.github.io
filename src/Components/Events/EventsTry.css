@@ -1,0 +1,14 @@
+.slide-item {
+    padding: 5%;
+    transition: 0.5s;
+}
+
+.slide-main {
+    margin-right: auto;
+    margin-left: auto;
+    transform: scale(1.2); 
+}
+
+.slide-preview {
+    opacity: 0.2;
+}

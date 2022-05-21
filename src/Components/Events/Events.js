@@ -5,6 +5,7 @@ import Dm from '../../Images/dcm2.png';
 import { OnGoingEventsData } from "./EventData";
 import EventSlider from "./EventSlider";
 import PastEventsSlider from "./PastEvents";
+import PastEventsTry from "./PastEventsTry";
 
 
 
@@ -48,6 +49,12 @@ const Events = () => {
           Past Events & <span className="title-span">Workshops</span>
         </div>
         <PastEventsSlider slides={OnGoingEventsData}/>
+      </section>
+      <section className="upcoming-events">
+        <div className="title">
+          Past Events & <span className="title-span">Workshops</span>
+        </div>
+        <PastEventsTry slides={OnGoingEventsData}/>
       </section>
     </div>
 
