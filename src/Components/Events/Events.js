@@ -7,7 +7,6 @@ import EventSlider from "./EventSlider";
 import PastEventsSlider from "./PastEvents";
 
 
-
 // function useOnScreen(ref, rootMargin = "0px") {
 //   const [isIntersecting, setIntersecting] = useState(false);
 //   useEffect(() => {

@@ -39,7 +39,7 @@
 }
 
 .navbar.navbar-inverse.navbar-fixed-top{
-  margin-right: 17.5px;
+  margin-right: 22px;
 }
 
 a {
@@ -195,6 +195,21 @@ body {
 .slide{
   min-width: 100%;
   transition: 1s;
+}
+
+.slide-item {
+  padding: 5%;
+  transition: 0.5s;
+}
+
+.slide-main {
+  margin-right: auto;
+  margin-left: auto;
+  transform: scale(1.2); 
+}
+
+.slide-preview {
+  opacity: 0.2;
 }
 
 .right-content {
