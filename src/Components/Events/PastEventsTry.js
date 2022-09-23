@@ -29,10 +29,10 @@ const PastEventsTry = ({slides}) => {
             <div className="carousel large-window">
                 <IoIosArrowBack className="left-arrow" onClick={prevSlide}/>
                 <IoIosArrowForward className="right-arrow" onClick={nextSlide}/>
-                {OnGoingEventsData.map((slide,index) => {
+                {slides.map((slide,index) => {
                     return(
                         <div className="slide-item" style={{transform:`translateX(${x}%)`}} >
-                            <img className={current === index ? 'slide-main event-img' : 'slide-preview event-img' } src={OnGoingEventsData[index].image} alt="content"/>
+                            <img className={current === index ? 'slide-main event-img' : 'slide-preview event-img' } src={slide} alt="content"/>
                         </div>
                     )
                 })}
@@ -40,11 +40,11 @@ const PastEventsTry = ({slides}) => {
             <div className="carousel small-window">
                 <IoIosArrowBack className="left-arrow" onClick={prevSlide}/>
                 <IoIosArrowForward className="right-arrow" onClick={nextSlide}/>
-                {OnGoingEventsData.map((slide, index) => {
+                {slides.map((slide, index) => {
                     return (
                         <div className="slide" key={index} style={{transform:`translateX(${x-100}%)`}}>
                             <div className="event">
-                                <img src={slide.image} alt="content" className="event-img"/>
+                                <img src={slide} alt="content" className="event-img"/>
                             </div>
                         </div>
                     )

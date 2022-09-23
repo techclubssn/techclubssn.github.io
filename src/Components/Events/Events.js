@@ -1,13 +1,30 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 // import { useState, useEffect, useRef } from "react";
 import "./Events.css";
-import Dm from '../../Images/dcm2.png';
+// import Dm from '../../Images/dcm2.png';
 import { OnGoingEventsData } from "./EventData";
 import EventSlider from "./EventSlider";
-import PastEventsSlider from "./PastEvents";
+// import PastEventsSlider from "./PastEvents";
 import PastEventsTry from "./PastEventsTry";
 
+import {getStorage, ref, getDownloadURL, listAll} from "firebase/storage";
+import app from '../../utils/firebase'
 
+const storage = getStorage(app)
+
+const eventsRef = ref(storage, 'events');
+
+const pastEventPosters = [];
+const onGoingEventPosters = [];
+
+listAll(eventsRef)
+  .then((res) => {
+    res.items.forEach(itemRef => {
+      return getDownloadURL(itemRef).then((url) => {
+        pastEventPosters.push(url);
+      })
+    })
+  }).catch(err => console.log(err))
 
 // function useOnScreen(ref, rootMargin = "0px") {
 //   const [isIntersecting, setIntersecting] = useState(false);
@@ -32,7 +49,7 @@ const Events = () => {
 
   return (
     <div className="wrapper">
-      <section className="upcoming-events" >
+      {/*<section className="upcoming-events" >
         <div className="title">
           Ongoing <span className="title-span">Events</span>
         </div>
@@ -43,18 +60,18 @@ const Events = () => {
           Upcoming <span className="title-span">Events</span>
         </div>
         <EventSlider slides={OnGoingEventsData}/>
-      </section>
-      <section className="upcoming-events">
+      </section>*/}
+      {/*<section className="upcoming-events">
         <div className="title">
           Past Events & <span className="title-span">Workshops</span>
         </div>
         <PastEventsSlider slides={OnGoingEventsData}/>
-      </section>
+      </section> */}
       <section className="upcoming-events">
         <div className="title">
           Past Events & <span className="title-span">Workshops</span>
         </div>
-        <PastEventsTry slides={OnGoingEventsData}/>
+        <PastEventsTry slides={pastEventPosters}/>
       </section>
     </div>
 
