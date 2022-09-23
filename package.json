@@ -12,6 +12,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.1.0",
+    "firebase": "^9.9.3",
     "gh-pages": "^2.0.1",
     "markdown": "^0.5.0",
     "papaparse": "^5.3.1",
@@ -21,6 +22,7 @@
     "react-dom": "^17.0.2",
     "react-event-timeline": "^1.6.2",
     "react-google-sheets": "^0.4.0",
+    "react-icons": "^4.3.1",
     "react-motion": "^0.5.2",
     "react-particles-js": "^2.7.1",
     "react-router": "^4.3.1",
@@ -29,6 +31,7 @@
     "react-scroll": "^1.7.10",
     "react-scroll-to-element": "^0.2.0",
     "react-sticky": "^6.0.3",
+    "react-swipeable": "^7.0.0",
     "tabletop": "^1.5.2"
   },
   "scripts": {
