@@ -122,7 +122,7 @@ class Home extends Component {
             <div className='about-right'>
               <div className='join-us-div' style={{marginBottom: '10vh'}}>
               <h1 className='about-sub-headings' >BECOME A MEMBER</h1>
-                <a onClick={() => window.open('https://discord.gg/FrVuYVpDAP')} href="https://forms.gle/MUK6ozrtosZZsKEM7" rel="noopener noreferrer" target="_blank">
+                <a onClick={() => window.open('https://discord.gg/VvYkn6CNhc')} href="/" rel="noopener noreferrer" target="_blank">
                   <button className="discord-button">
                     <FontAwesomeIcon className='discord-icon' icon={faDiscord} />
                     JOIN OUR SERVER

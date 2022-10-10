@@ -154,7 +154,7 @@ class NavbarTC extends Component {
                 Blogs
               </Link>
             </NavItem>
-            <NavItem eventKey={4} href="#">
+            {/* <NavItem eventKey={4} href="#">
               <Link
                 to="/opportunities"
                 onClick={() => this.closeNav("/opportunities")}
@@ -165,6 +165,19 @@ class NavbarTC extends Component {
                 }
               >
                 Opportunities
+              </Link>
+            </NavItem> */}
+            <NavItem eventKey={4} href="#">
+              <Link
+                to="/hackinfinity"
+                onClick={() => this.closeNav("/hackinfinity")}
+                className={
+                  "/hackinfinity" === this.state.activeState
+                    ? "navbar-link-style-active"
+                    : "navbar-link-style"
+                }
+              >
+                Hackinfinity
               </Link>
             </NavItem>
             <NavItem eventKey={5} href="#">
