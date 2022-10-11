@@ -56,7 +56,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
-    if(this.props.dest === 'sessions')
+    if(this.props['dest'] === 'sessions')
       this.scrollToElement('sess')
     if(this.props.dest === 'news')
       this.scrollToElement('news')
