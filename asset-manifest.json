@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.326ffa39.chunk.css",
-    "main.js": "/static/js/main.1878c00f.chunk.js",
-    "main.js.map": "/static/js/main.1878c00f.chunk.js.map",
+    "main.css": "/static/css/main.854587b6.chunk.css",
+    "main.js": "/static/js/main.ddfbabbe.chunk.js",
+    "main.js.map": "/static/js/main.ddfbabbe.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.14c4daaa.js",
     "runtime-main.js.map": "/static/js/runtime-main.14c4daaa.js.map",
     "static/js/2.35354ff2.chunk.js": "/static/js/2.35354ff2.chunk.js",
     "static/js/2.35354ff2.chunk.js.map": "/static/js/2.35354ff2.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6aa7cb22b28e74f3ec299dddf058e66a.js": "/precache-manifest.6aa7cb22b28e74f3ec299dddf058e66a.js",
+    "precache-manifest.698c311dcca16066896045587a03659b.js": "/precache-manifest.698c311dcca16066896045587a03659b.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.326ffa39.chunk.css.map": "/static/css/main.326ffa39.chunk.css.map",
+    "static/css/main.854587b6.chunk.css.map": "/static/css/main.854587b6.chunk.css.map",
     "static/js/2.35354ff2.chunk.js.LICENSE.txt": "/static/js/2.35354ff2.chunk.js.LICENSE.txt",
     "static/media/HealthcareIcon.svg": "/static/media/HealthcareIcon.cdaf4eb6.svg",
     "static/media/agritech.svg": "/static/media/agritech.77e4f8fc.svg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.14c4daaa.js",
     "static/js/2.35354ff2.chunk.js",
-    "static/css/main.326ffa39.chunk.css",
-    "static/js/main.1878c00f.chunk.js"
+    "static/css/main.854587b6.chunk.css",
+    "static/js/main.ddfbabbe.chunk.js"
   ]
 }
