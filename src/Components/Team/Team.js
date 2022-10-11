@@ -115,8 +115,8 @@ import Dm3 from '../../Images/dcm7.png'
 import TeamCard from '../../Containers/TeamCard'
 
 
-
 function useOnScreen(ref, rootMargin = "0px") {
+
   const [isIntersecting, setIntersecting] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(

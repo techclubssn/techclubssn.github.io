@@ -26,7 +26,7 @@ const domains = [
         text: 'Providing realistic and feasible solutions to enhance agricultural productivity using technological advancements.'
     },
     {
-        name: 'Cyber Security',
+        name: 'Security',
         icon: cyberIcon,
         text: 'Apply technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks.'
     },
@@ -36,14 +36,14 @@ const domains = [
         text: 'Enhancing medical facilities and healthcare solutions using intelligent technological innovation.'
     },
     {
-        name: "Women's Safety",
+        name: "Assistive Technology",
         icon: womenIcon,
-        text: "Harnessing the power of technology to develop solutions that provide women a sense of security, ranging from applications to wearables."
+        text: "Harnessing the power of technology to develop solutions that provide assistive, adaptive, and rehabilitative devices for people with disabilities and the elderly."
     },
     {
-        name: 'Climate Change and Sustainability',
+        name: 'Education',
         icon: climateIcon,
-        text: 'Innovative solutions to combat climate change and improve sustainability.'
+        text: 'Innovative solutions to combat illiteracy and improve teaching learning process.'
     },
     {
         name: 'Student Innovation!   ( open idea ) ',
@@ -72,7 +72,7 @@ const Hackinfinity = () => {
                     <button className='hi-button' >Registrations Starting Soon!</button>
                 </a>
             </div>
-            {/* <h1 className='hi-sub-title'>DOMAINS</h1>
+            <h1 className='hi-sub-title'>DOMAINS</h1>
             <div className='hi-domains-section'>
                 {domains.map(item => ( 
                     <div className='hi-domain-preview'>
@@ -83,7 +83,7 @@ const Hackinfinity = () => {
                         </div>
                     </div>
                 ))}
-            </div> */}
+            </div>
             <h1 className='hi-sub-title'>DETAILS AND SCHEDULE</h1>
             <div className='hi-details-section' >
                 <div className='hi-details-left'>
@@ -122,7 +122,7 @@ const Hackinfinity = () => {
                 <div className='hi-details-right'>
                     <div className='hi-align-center'>
                         <img className='hi-details-icon' src={person} alt='person' />
-                        <h1 className='hi-details' >2-3 per team</h1>
+                        <h1 className='hi-details' >3-4 per team</h1>
                     </div>
                     <div className='hi-align-center'>
                         <img className='hi-details-icon' src={calendar} alt='date' />
@@ -131,7 +131,7 @@ const Hackinfinity = () => {
                     <div className='hi-align-center'>
                         <img className='hi-details-icon' src={phone} alt='contact' />
                         <h1 className='hi-details' >Rohith Ram : 9789954509</h1>
-                        <h1 className='hi-details' >Lalith : 9150754623</h1>
+                        <h1 className='hi-details' >Bharath Vishal: 9940656712</h1>
                     </div>
                 </div>
             </div>
@@ -179,7 +179,7 @@ const Hackinfinity = () => {
             <h1 className='hi-sub-title'>CONTACT</h1>
             <div className='hi-prize-section'>
                     <h1 className='hi-details'>Rohith Ram : 9789954509</h1>
-                    <h1 className='hi-details'>Lalith: 9150754624</h1>
+                    <h1 className='hi-details'>Bharath Vishal: 9940656712</h1>
             </div>
         </div>
     )
