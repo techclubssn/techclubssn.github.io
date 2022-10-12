@@ -1,98 +1,13 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: "Ubuntu", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: black;
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none; 
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
-/*
-The below two classes renders the loading animation for several pages 
-and hence is kept in index.css itself
-*/
-
-.loader {
-  border-top: 4px solid orange; 
-  border-right: 4px solid #333; 
-  border-bottom: 4px solid orange;
-  border-left: 4px solid #333;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 0.5s linear infinite
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.container{
-  padding: 0;
-  margin: 0;
-  width: 100%
-}
-
-.col-lg-6, .col-md-6, .col-sm-6{
-    padding-bottom: 100%;
-    margin-bottom: -100%;
-}
-
-.footer-link:link{
-  color: orange;
-  text-decoration: none;
-}
-
-.footer-link:visited{
-  color: orange;
-  text-decoration: none;
-}
-
-.footer-link:hover{
-  color: orange;
-  text-decoration: underline;
-}
-
-.footer-link:active{
-  color: orange;
-  text-decoration: none;
-}
-
-.row {
-    overflow: hidden;
-}
-
-.footer {
-  height: 100px; 
-  text-align: center; 
-  padding-top: 15px; 
-  margin-bottom: 25px;
-  color: white; 
-  font-family: 'Cabin';
-}
-
-.footer-chevron {
-  font-size: 35px;
-  background: transparent;
-  border-color: transparent;
-}
-
-.footer-chevron:hover {
-  color: orange;
-  transition: 0.4s;
-}
-
-@media (max-width: 768px) {
-  .col-lg-6, .col-md-6, .col-sm-6 {
-    padding-bottom: 10px;
-    padding-top: 7px;
-    margin-bottom: 0px;
-  }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
