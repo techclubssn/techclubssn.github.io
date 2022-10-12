@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
 import * as Scroll from "react-scroll";
+import { googleSignIn } from "../../utils/firebase";
 
 // <NavItem eventKey={6} href="#">
 //   <Link to="/hackerspace" onClick={this.closeNav} className='navbar-link-style'>HackerSpace</Link>
@@ -191,6 +192,22 @@ class NavbarTC extends Component {
                 }
               >
                 Team
+              </Link>
+            </NavItem>
+            <NavItem eventKey={6} href="#">
+              <Link
+                to="/login"
+                onClick={() => {
+                  this.closeNav("/login")
+                  googleSignIn()
+                }}
+                className={
+                  '/login' === this.state.activeState
+                    ? "navbar-link-style-active"
+                    : "navbar-link-style"
+                }
+              >
+                Sign In
               </Link>
             </NavItem>
             {/*<NavItem eventKey={6} href="#">

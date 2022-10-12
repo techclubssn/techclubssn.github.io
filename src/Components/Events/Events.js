@@ -8,7 +8,7 @@ import EventSlider from "./EventSlider";
 import PastEventsTry from "./PastEventsTry";
 
 import {getStorage, ref, getDownloadURL, listAll} from "firebase/storage";
-import app from '../../utils/firebase'
+import {app} from '../../utils/firebase'
 
 const storage = getStorage(app)
 

@@ -10,42 +10,44 @@ import NavbarTC from "./Components/Navbar/Navbar.js";
 import Events from "./Components/Events/Events.js";
 import Hackinfinity from "./Components/Events/Hackinfinity/Hackinfinity.js";
 import Blogs from "./Components/Blogs/Blogs.js";
+import LoginSignup from "./Components/LoginSignup/LoginSignup.js";
 // import Kryptos from "./Components/Kryptos/Kryptos.js";
 import Opportunities from './Components/Opportunities/Opportunities.js'
+import UserContextProvider from "./context/UserContext.js";
 // import HackerSpace from './Components/Events/Hackerspace/Hackerspace.js';
 
-let scroll = Scroll.animateScroll;
+// let scroll = Scroll.animateScroll;
 
-class Footer extends Component {
-  scrollToTop() {
-    scroll.scrollToTop();
-  }
+// class Footer extends Component {
+//   scrollToTop() {
+//     scroll.scrollToTop();
+//   }
 
-  render() {
-    return (
-      <div className="footer">
-        <button onClick={this.scrollToTop} className="footer-chevron">
-          <i className="fas fa-chevron-up"></i>
-        </button>
-        <hr width="80%" style={{ marginTop: "7px" }} />
-        <h3>TechClubSSN</h3>
-        <p>
-          Built using React. Fork the website
-          <a
-            href="https://github.com/techclubssn/techclubssn.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            {" "}
-            here
-          </a>
-          .
-        </p>
-      </div>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <div className="footer">
+//         <button onClick={this.scrollToTop} className="footer-chevron">
+//           <i className="fas fa-chevron-up"></i>
+//         </button>
+//         <hr width="80%" style={{ marginTop: "7px" }} />
+//         <h3>TechClubSSN</h3>
+//         <p>
+//           Built using React. Fork the website
+//           <a
+//             href="https://github.com/techclubssn/techclubssn.github.io"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//             className="footer-link"
+//           >
+//             {" "}
+//             here
+//           </a>
+//           .
+//         </p>
+//       </div>
+//     );
+//   }
+// }
 
 // To use the old hackerspace page, uncomment import Hackerspace on top and
 // replace the hackerspace route with this:
@@ -64,6 +66,7 @@ class Footer extends Component {
 class Pages extends Component {
   render() {
     return (
+      <UserContextProvider>
       <Switch>
         <Route
           exact
@@ -122,7 +125,9 @@ class Pages extends Component {
         <Route exact path="/blogs" component={Blogs} />
         {/*<Route exact path="/kryptos" component={Kryptos} />*/}
         <Route exact path="/opportunities" component={Opportunities} />
+        <Route exact path="/feed" component={LoginSignup} />
       </Switch>
+      </UserContextProvider>
     );
   }
 }
