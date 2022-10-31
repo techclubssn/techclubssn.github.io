@@ -17,7 +17,7 @@ function App() {
   let alum_file =
     "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_pjXGCVgHyEOCBtapFt_sE7XMk6Rj-8qqW91zmdoifdBx8nGARMHgXsgUJqOMNFRUAaXVbzFeq5JJ/pub?output=csv";
 
-  const [data, setData] = useState()
+  const [data, setData] = useState({teamData: [], alumniData: []})
 
   useEffect(() => {
     Papa.parse(team_file, {

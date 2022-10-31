@@ -22,7 +22,9 @@ const analytics = getAnalytics(app);
 
 // Authentication
 const provider = new GoogleAuthProvider();
+
 export const auth = getAuth(app)
+
 export const googleSignIn = () => {
   signInWithRedirect(auth, provider);
 }
