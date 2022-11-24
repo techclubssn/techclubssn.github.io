@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Papa, { parse } from 'papaparse';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { AuthContextProvider } from './context/authProvider';
 
 import NavBar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
@@ -9,6 +10,8 @@ import Events from './pages/Events/Events';
 import Blogs from './pages/Blogs/Blogs';
 import Hackinfinity from './pages/Events/Hackinfinity/Hackinfinity'
 import Team from './pages/Team/Team';
+import Dashboard from './pages/Dashboard/Dashboard';
+
 
 function App() {
   
@@ -43,15 +46,17 @@ function App() {
   
   return (
     <div className="App">
-      <NavBar />
-      <Routes>
-        <Route exact path='/' element={<Home/>} />
-        <Route exact path='/events' element={<Events/>} />
-        <Route exact path='/blogs' element={<Blogs/>} />
-        <Route exact path='/hackinfinity' element={<Hackinfinity/>} />
-        <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} />
-      </Routes>
-      
+      <AuthContextProvider>
+        <NavBar />
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/events' element={<Events/>} />
+          <Route exact path='/blogs' element={<Blogs/>} />
+          <Route exact path='/hackinfinity' element={<Hackinfinity/>} />
+          <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} />
+          <Route exact path='/dashboard' element={<Dashboard/>} />
+        </Routes>
+      </AuthContextProvider>
     </div>
   );
 }

@@ -6,3 +6,35 @@
     font-size: 18px;
     font-weight: 400;
   }
+
+.alert-box {
+    position: absolute;
+    bottom: 0;
+    right: -50%;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 2%;
+    animation-name: alert;
+    animation-duration: 5s;
+}
+
+@keyframes alert {
+    0% {
+      right: -50%;
+    }
+  
+    20% {
+      right: 0;
+    }
+
+    80% {
+      right: 0;
+    }
+
+    100% {
+      right: -50%;
+    }
+  }

@@ -8,6 +8,8 @@ import './Home.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faYoutube, faGithub, faInstagram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
+
+
 const introPage = {
     height: "100vh",
     border: "3px",
