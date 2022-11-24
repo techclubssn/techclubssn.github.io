@@ -1,0 +1,44 @@
+.adminparent {
+    padding-top: 20vh;
+}
+.adminbox
+{
+    width: 50vw;
+    margin-left: 25vw;
+    background-color: rgb(217, 223, 218);
+    text-align: center;
+    border-radius: 1em;
+}
+#admintitle
+{
+    width: 70%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 0.3em;
+}
+#admindescription
+{
+    width: 70%;
+    height:30vh;
+    border-radius: 0.5em;
+}
+#adminlink
+{
+    width: 70%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 0.3em;
+}
+.adminbtn
+{
+    background-color: blue;
+    color: white;
+    margin-bottom: 2em;
+    border-radius: 0.2em
+}
+.adminbtn:hover{
+    background-color: blue;
+    color: skyblue;
+    border-radius:0.2em;
+    margin-bottom: 2em;
+}

@@ -1,0 +1,157 @@
+.zenithparent
+{
+    background-color: black;
+}
+.zenithout
+{
+    background-color: black;
+}
+.zenithweb
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    width: 40%;
+}
+.zenithweb:hover
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    width: 42%;
+}
+.zenithimages{
+    margin-top: 2em;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+}
+.zenithweb1
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 5px 10px grey;
+    transform: translate(-50%,50%);
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 3em;
+    width: 40%;
+}
+.zenithweb1:hover{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,50%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 3em;
+    width: 42%;
+}
+.zenithweb2
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,150%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 7em;
+    width: 40%;
+}
+.zenithweb2:hover
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,150%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 7em;
+    width: 42%;
+}
+.zenithtitle
+{
+    text-align: left;
+    margin-left: 4vw;
+    font-weight: bold;
+    font-size:xx-large;
+}
+.zenithweb3
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,250%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 10em;
+    width: 40%;
+}
+.zenithweb3:hover{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,250%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 10em;
+    width: 41%;
+}
+.zenithweb4
+{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,520%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 20em;
+    width: 40%;
+    margin-bottom: 10vh;
+}
+.zenithweb4:hover{
+    background-color: rgb(217, 223, 218);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,520%);
+    box-shadow: 5px 10px grey;
+    align-items: center;
+    text-align: center;
+    border-radius:1em ;
+    margin-top: 20em;
+    width: 42%;
+}

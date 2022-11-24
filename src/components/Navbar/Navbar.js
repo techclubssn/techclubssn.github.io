@@ -72,6 +72,8 @@ const NavBar = () => {
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/blogs" onClick={() => {onSelect('/blogs')}} active={activeRoute === '/blogs'} >Blogs</Nav.Link>
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/hackinfinity" onClick={() => {onSelect('/hackinfinity')}} active={activeRoute === '/hackinfinity'} >Hackinfinity</Nav.Link>
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/team" onClick={() => {onSelect('/team')}} active={activeRoute === '/team'} >Team</Nav.Link>
+            <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/zenith" onClick={() => {onSelect('/zenith')}} active={activeRoute === '/zenith'} >Zenith</Nav.Link>
+            <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/admin" onClick={() => {onSelect('/admin')}} active={activeRoute === '/admin'} >Admin</Nav.Link>
             <button onClick={handleGoogleSignIn} >Sign In</button>
           </Nav>
         </Navbar.Collapse>

@@ -3,7 +3,8 @@ import Papa, { parse } from 'papaparse';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { AuthContextProvider } from './context/authProvider';
-
+import Zenith from './pages/Zenith/zenith';
+import Admin from './pages/admin/admin';
 import NavBar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import Events from './pages/Events/Events';
@@ -55,6 +56,8 @@ function App() {
           <Route exact path='/hackinfinity' element={<Hackinfinity/>} />
           <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} />
           <Route exact path='/dashboard' element={<Dashboard/>} />
+          <Route exact path = '/zenith' element ={<Zenith/>}/>
+          <Route exact path = '/admin' element={<Admin/>}/>
         </Routes>
       </AuthContextProvider>
     </div>
