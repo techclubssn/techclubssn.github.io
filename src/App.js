@@ -11,6 +11,7 @@ import Blogs from './pages/Blogs/Blogs';
 import Hackinfinity from './pages/Events/Hackinfinity/Hackinfinity'
 import Team from './pages/Team/Team';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Domain from './pages/Domain/Domain';
 
 
 function App() {
@@ -54,7 +55,8 @@ function App() {
           <Route exact path='/blogs' element={<Blogs/>} />
           <Route exact path='/hackinfinity' element={<Hackinfinity/>} />
           <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} />
-          <Route exact path='/dashboard' element={<Dashboard/>} />
+          <Route exact path='/zenith' element={<Dashboard/>} />
+          <Route exact path='/zenith/:domainId' element={<Domain/>} />
         </Routes>
       </AuthContextProvider>
     </div>

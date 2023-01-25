@@ -69,10 +69,11 @@ const NavBar = () => {
           <Nav className="justify-content-end flex-grow-1 pe-3 navbar-link" >
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/" onClick={() => {onSelect('/')}} active={activeRoute === '/'} >Home</Nav.Link>
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/events" onClick={() => {onSelect('/events')}} active={activeRoute === '/events'} >Events</Nav.Link>
-            <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/blogs" onClick={() => {onSelect('/blogs')}} active={activeRoute === '/blogs'} >Blogs</Nav.Link>
-            <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/hackinfinity" onClick={() => {onSelect('/hackinfinity')}} active={activeRoute === '/hackinfinity'} >Hackinfinity</Nav.Link>
+            {/* <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/blogs" onClick={() => {onSelect('/blogs')}} active={activeRoute === '/blogs'} >Blogs</Nav.Link> */}
+            {/* <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/hackinfinity" onClick={() => {onSelect('/hackinfinity')}} active={activeRoute === '/hackinfinity'} >Hackinfinity</Nav.Link> */}
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/team" onClick={() => {onSelect('/team')}} active={activeRoute === '/team'} >Team</Nav.Link>
-            <button onClick={handleGoogleSignIn} >Sign In</button>
+            <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/zenith" onClick={() => {onSelect('/zenith')}} active={activeRoute === '/zenith'} >Zenith</Nav.Link>
+            {/* <button onClick={handleGoogleSignIn} >Sign In</button> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

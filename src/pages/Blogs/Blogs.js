@@ -11,7 +11,7 @@ const Blogs = () => {
 
       {/* Content */}
       <section className="blog" id="b1">
-        <div class="blog-number">
+        <div className="blog-number">
           blogpost#<span className="b-number">1</span>
         </div>
         <div className="blog-title">How does BT work?</div>
