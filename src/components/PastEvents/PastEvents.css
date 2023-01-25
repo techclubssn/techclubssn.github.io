@@ -1,0 +1,161 @@
+:root {
+    --primary: #000;
+    --secondary: #fff;
+    --disabled: #777;
+    --tertiary: #b7b7b7;
+    --bubble: #333;
+  
+    --bigtitle-big: 68px;
+    --bigtitle-medium: 52px;
+    --bigtitle-small: 36px;
+  
+    --body1-big: 24px;
+    --body1-medium: 18px;
+    --body1-small: 16px;
+  
+    --body2-big: 18px;
+    --body2-medium: 14px;
+    --body2-small: 10px;
+  
+    --body3-big: 14px;
+    --body3-medium: 10px;
+    --body3-small: 8px;
+  
+    --nav-big: 16px;
+    --nav-medium: 12px;
+    --nav-small: 8px;
+  
+    --small-breakpoint: 576px;
+    --medium-breakpoint: 1000px;
+  
+    --padding-v-big: 3vh;
+    --padding-h-big: 3vw;
+  
+    --padding-v-medium: 3vh;
+    --padding-h-medium: 3vw;
+  
+    --padding-v-small: 5vh;
+    --padding-h-small: 8vw;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    animation: content-intro 1s ease-in-out;
+  }
+
+  .slide-item {
+    padding: 5%;
+    transition: 0.5s;
+}
+
+.slide-main {
+    margin-right: auto;
+    margin-left: auto;
+    transform: scale(1.2); 
+}
+
+.slide-preview {
+    opacity: 0.2;
+}
+  /* .slide-left {
+    height: 10vh;
+    display: none;
+  }
+  .slide-right {
+    height: 10vh;
+    display: none;
+  } */
+  
+  /* for testing */
+  
+  .right-arrow{
+    position: absolute;
+    right: 32px;
+    top: 40%;
+    font-size: 3rem;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .left-arrow{
+    position: absolute;
+    left: 32px;
+    top: 40%;
+    font-size: 3rem;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .left-arrow:hover{
+    transform: scale(1.5); 
+    transition-duration: 0.5s;
+  }
+  
+  .right-arrow:hover{
+    transform: scale(1.5); 
+    transition-duration: 0.5s;
+  }
+  
+  .event {
+    padding: 0 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .slide{
+    min-width: 100%;
+    transition: 1s;
+  }
+  
+  .event-img {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 10px;
+    object-fit: fill;
+  }
+  /* controlling previous events window size for larger window */
+  .small-window{
+    display: none;
+  }
+  
+  
+  @media only screen and (max-width: 576px) {
+  .event {
+      flex-direction: column;
+    }
+  
+    .event-img {
+      height: 50vw;
+      width: 50vw;
+      border: 1px solid wheat;
+    }
+  
+    .large-window{
+      display: none;
+    }
+  
+    .small-window{
+      display: flex;
+    }
+  }
+
+  @keyframes content-intro {
+    0% {
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
