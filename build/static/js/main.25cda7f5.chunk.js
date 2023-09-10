@@ -1298,7 +1298,7 @@
               }
             ),
             o.a.parse(
-              "https://docs.google.com/spreadsheets/d/e/2PACX-1vT_pjXGCVgHyEOCBtapFt_sE7XMk6Rj-8qqW91zmdoifdBx8nGARMHgXsgUJqOMNFRUAaXVbzFeq5JJ/pub?output=csv",
+              "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsMV16aEyjCVC3O2qo5-oGg0t-nbQq-OrM5vtlMn3HcQfxJGJthBaGFVMy7esMg7thnY69xKjPW57B/pub?gid=0&single=true&output=csv",
               {
                 download: !0,
                 header: !0,
