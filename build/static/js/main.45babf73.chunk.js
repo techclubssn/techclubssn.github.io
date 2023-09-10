@@ -1347,7 +1347,7 @@
               }
             ),
             r.a.parse(
-              "https://docs.google.com/spreadsheets/d/e/2PACX-1vQjNAApCm2CohJrqbyVWX61DIKzxOM8pyOoA4xxSmkwrMncQN4rbkw40lZ7Fh51BUluQc7hu2nY9BwI/pub?output=csv",
+              "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2jW1W81BhQ8cVkQPgllfGN1_XiHagkHnuLALeuZQyR_tHHv2PbeuCXIWivuitOn89nuzJ0YLz2hzv/pub?gid=0&single=true&output=csv",
               {
                 download: !0,
                 header: !0,
