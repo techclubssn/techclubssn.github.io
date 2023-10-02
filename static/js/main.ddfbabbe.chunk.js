@@ -1016,24 +1016,29 @@
             text: "Providing realistic and feasible solutions to enhance agricultural productivity using technological advancements.",
           },
           {
-            name: "Security",
+            name: "Renewable Energy and Sustainablity",
             icon: oe.a,
-            text: "Apply technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks.",
+            text: "Catalyzing innovation for a greener tomorrow by harnessing renewable energy and sustainable practices.",
           },
           {
-            name: "Medical and Healthcare",
+            name: "Healthcare Technologies",
             icon: Ee.a,
             text: "Enhancing medical facilities and healthcare solutions using intelligent technological innovation.",
           },
           {
-            name: "Assistive Technology",
+            name: "Smart Cities and Infrastructure",
             icon: ge.a,
-            text: "Harnessing the power of technology to develop solutions that provide assistive, adaptive, and rehabilitative devices for people with disabilities and the elderly.",
+            text: "Building the cities of the future through technology-driven solutions and infrastructure development for enhanced urban living.",
           },
           {
-            name: "Education",
+            name: "Education Technology",
             icon: ce.a,
             text: "Innovative solutions to combat illiteracy and improve teaching learning process.",
+          },
+          {
+            name: "Supply Chain and Logistics",
+            icon: ce.a,
+            text: "Optimizing global supply chains and logistics for efficient and resilient commerce.",
           },
           {
             name: "Student Innovation!   ( open idea ) ",
@@ -1145,7 +1150,7 @@
                       i.a.createElement(
                         "h1",
                         { className: "hi-details-time" },
-                        "10.00 AM"
+                        "10.30 AM"
                       ),
                       i.a.createElement(
                         "h1",
@@ -1160,7 +1165,7 @@
                       i.a.createElement(
                         "h1",
                         { className: "hi-details-time" },
-                        "10.00 PM"
+                        "9.00 PM"
                       )
                     ),
                     i.a.createElement(
@@ -1217,7 +1222,7 @@
                       i.a.createElement(
                         "h1",
                         { className: "hi-details-time" },
-                        "03.00 PM"
+                        "03.30 PM"
                       )
                     ),
                     i.a.createElement(
@@ -1275,7 +1280,7 @@
                     i.a.createElement(
                       "h1",
                       { className: "hi-details" },
-                      "3-4th Oct 2022"
+                      "6-7th Oct 2023"
                     )
                   ),
                   i.a.createElement(
@@ -1289,12 +1294,12 @@
                     i.a.createElement(
                       "h1",
                       { className: "hi-details" },
-                      "Rohith Ram : 9789954509"
+                      "Anusharaj S : 8939075655"
                     ),
                     i.a.createElement(
                       "h1",
                       { className: "hi-details" },
-                      "Bharath Vishal: 9940656712"
+                      "Shruti Jeyaraman: 9500035150"
                     )
                   )
                 )
@@ -1325,25 +1330,7 @@
                     { className: "hi-date-title" },
                     "Rs. 8,000"
                   ),
-                  i.a.createElement(
-                    "h1",
-                    { className: "hi-details" },
-                    "Runner Up"
-                  )
-                ),
-                i.a.createElement(
-                  "div",
-                  null,
-                  i.a.createElement(
-                    "h1",
-                    { className: "hi-date-title" },
-                    "Rs. 5,000"
-                  ),
-                  i.a.createElement(
-                    "h1",
-                    { className: "hi-details" },
-                    "2nd runner Up"
-                  )
+                  i.a.createElement("h1", { className: "hi-details" }, "Runner")
                 )
               ),
               i.a.createElement(
@@ -1416,12 +1403,12 @@
                 i.a.createElement(
                   "h1",
                   { className: "hi-details" },
-                  "Rohith Ram : 9789954509"
+                  "Anusharaj S : 8939075655"
                 ),
                 i.a.createElement(
                   "h1",
                   { className: "hi-details" },
-                  "Bharath Vishal: 9940656712"
+                  "Shruti Jeyaraman: 9500035150"
                 )
               )
             )
@@ -1501,7 +1488,7 @@
                     i.a.createElement(
                       "div",
                       { className: "author-info" },
-                      "2nd year, ECE"
+                      "Final year, ECE"
                     )
                   )
                 )
