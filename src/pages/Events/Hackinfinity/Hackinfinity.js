@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import './Hackinfinity.css'
 
 import agriIcon from './icons/agritech.svg'
+import homeIcon from './icons/home.svg'
+import supplyIcon from './icons/supplychain.svg'
+import energy from './icons/energy.svg'
 import climateIcon from './icons/climate.svg'
 import cyberIcon from './icons/cyber.svg'
 import fintechIcon from './icons/fintech.svg'
@@ -18,39 +21,50 @@ const domains = [
     {
         name: 'FinTech',
         icon: fintechIcon,
-        text: 'Solving critical problems in finance services and processes.'
+        text: 'Transform your finances with game-changing tech.'
+    },
+    {
+        name: 'Renewable Energy and Sustainability',
+        icon: energy,
+        text: 'Power a green revolution with cutting-edge solutions.'
+    },
+    {
+        name: 'Smart Cities and Infrastructure',
+        icon: homeIcon,
+        text: 'Build smarter cities with next-gen infrastructure.'
     },
     {
         name: 'AgriTech',
         icon: agriIcon,
-        text: 'Providing realistic and feasible solutions to enhance agricultural productivity using technological advancements.'
+        text: 'Boost farming efficiency with high-tech innovations.'
     },
     {
-        name: 'Security',
-        icon: cyberIcon,
-        text: 'Apply technologies, processes and controls to protect systems, networks, programs, devices and data from cyber attacks.'
+        name: 'Supply Chain and Logistics',
+        icon: supplyIcon,
+        text: 'Optimize and secure supply chains with smart tech.'
     },
     {
-        name: 'Medical and Healthcare',
+        name: 'Healthcare Technologies',
         icon: medicalIcon,
-        text: 'Enhancing medical facilities and healthcare solutions using intelligent technological innovation.'
+        text: 'Revolutionize care with advanced health tech.'
     },
     {
         name: "Assistive Technology",
         icon: womenIcon,
-        text: "Harnessing the power of technology to develop solutions that provide assistive, adaptive, and rehabilitative devices for people with disabilities and the elderly."
+        text: "Enhance lives with groundbreaking assistive tech."
     },
     {
-        name: 'Education',
+        name: 'Education Technology',
         icon: climateIcon,
-        text: 'Innovative solutions to combat illiteracy and improve teaching learning process.'
+        text: 'Elevate learning with cutting-edge educational tools.'
     },
     {
-        name: 'Student Innovation!   ( open idea ) ',
+        name: 'Student Innovation! (Open Idea)',
         icon: innovationIcon,
-        text: 'Don’t want to be confined to the above domains? Feel free to choose your own topic and problem statement. Impress us!'
+        text: 'Ignite your ideas and tackle any challenge you love!'
     },
 ]
+
 
 const Hackinfinity = () => {
     
@@ -64,7 +78,7 @@ const Hackinfinity = () => {
             <div className='hi-about'>
                 <p className='hi-about-para'>A 24-hour hackathon where you can prototype a groundbreaking solution to real-life problems. Brave against the time crunch and grab this opportunity to win exciting cash prizes upto <span style={{color: 'orange'}}>₹25,000</span>!!!</p>
                 <br/>
-                <p className='hi-about-para'>Participants are encouraged to use technologies such as AI, IoT, AR/VR and Blockchain to build products that can solve problems in the domains given below!</p>
+                <p className='hi-about-para'>Problem statements are chosen in the fields of Healthcare, Renewable Energy, Fintech, Sustainability, Smart cities, supply chain and logistics, Agritech, Education and Tourism. </p>
                 <a className='hi-link' href='/hackinfinity'> 
                 {/*  target='_blank' rel="noopener noreferrer" */}
                     <button className='hi-button' >Registrations Starting Soon!</button>
@@ -88,10 +102,10 @@ const Hackinfinity = () => {
                     <h1 className='hi-date-title'>DAY 1</h1>
                     <div className='hi-details-container'>
                         <div>
-                            <h1 className='hi-details-time'>10.00 AM</h1>
+                            <h1 className='hi-details-time'>10.30 AM</h1>
                             <h1 className='hi-details-time'>11.00 AM</h1>
                             <h1 className='hi-details-time'>03.00 PM</h1>
-                            <h1 className='hi-details-time'>10.00 PM</h1>
+                            <h1 className='hi-details-time'>9.00 PM</h1>
                         </div>
                         <div>
                             <h1 className='hi-details-event'> Introduction</h1>
@@ -106,7 +120,7 @@ const Hackinfinity = () => {
                             <h1 className='hi-details-time'>08.00 AM</h1>
                             <h1 className='hi-details-time'>11.00 AM</h1>
                             <h1 className='hi-details-time'>12.00 PM</h1>
-                            <h1 className='hi-details-time'>03.00 PM</h1>
+                            <h1 className='hi-details-time'>03.30 PM</h1>
                         </div>
                         <div>
                             <h1 className='hi-details-event'>Third Review</h1>
@@ -128,8 +142,8 @@ const Hackinfinity = () => {
                     </div>
                     <div className='hi-align-center'>
                         <img className='hi-details-icon' src={phone} alt='contact' />
-                        <h1 className='hi-details' >Rohith Ram : 9789954509</h1>
-                        <h1 className='hi-details' >Bharath Vishal: 9940656712</h1>
+                        <h1 className='hi-details' >Mohamed Nadhim : 7305421618</h1>
+                        <h1 className='hi-details' >Sanjay : 7305834440</h1>
                     </div>
                 </div>
             </div>
@@ -151,16 +165,16 @@ const Hackinfinity = () => {
             <h1 className='hi-sub-title'>GENERAL INSTRUCTIONS</h1>
             <div className='hi-instructions-section'>
                 <ol>
-                    <li className='hi-details-event'>All the team members should have proper internet connection.</li>
-                    <li className='hi-details-event'>Participants are required to have their own components and software.</li>
-                    <li className='hi-details-event'>Teams will be allotted separate mentors.</li>
-                    <li className='hi-details-event'>Participants will be informed of the order in which reviews will happen and must attend their meetings at the specified times.</li>
-                    <li className='hi-details-event'>Mentorship for technical skills will be given.</li>
-                    <li className='hi-details-event'>Participants are supposed to build their product during the Hackathon.</li>
-                    <li className='hi-details-event'>Product will be judged based on Innovation, Impact, Feasibility and Marketability.</li>
-                    <li className='hi-details-event'>Product can be a mix of hardware and software technologies, but can be purely software or hardware based as well.</li>
-                    <li className='hi-details-event'>Participants are allowed to use existing libraries or components, however only the work done during the 24 hours will be considered for evaluation.</li>
-                    <li className='hi-details-event'>Organizers will be available for any other help/queries.</li>
+                <li className='hi-details-event'>All the team members must have proper internet connection.</li>
+                <li className='hi-details-event'>Participants are required to have their own components and software in order to implement their solution (including extension boxes).</li>
+                <li className='hi-details-event'>Each team will be allocated separate mentors.</li>
+                <li className='hi-details-event'>Mentorship for technical skills will be provided.</li>
+                <li className='hi-details-event'>Participants are supposed to build their product/solution during the Hackathon.</li>
+                <li className='hi-details-event'>Participants are allowed to use existing libraries or components, however only the work done during the 24 hrs will be considered for evaluation.</li>
+                <li className='hi-details-event'>Solutions/products can be a mix of hardware and software technologies, but can be purely software or hardware based as well.</li>
+                <li className='hi-details-event'>Participants will be informed of the order in which reviews will happen and must attend their meetings at the specified times.</li>
+                <li className='hi-details-event'>Solutions/products will be judged based on Innovation, Impact, Feasibility and Marketability.</li>
+                <li className='hi-details-event'>Organizers will be available for any further help/queries.</li>
 
                     {/* <li className='hi-details-event'>It is not necessary that all participants must be from same institute.</li>
                     <li className='hi-details-event'>All the team members should have proper internet connection.</li>
@@ -176,8 +190,8 @@ const Hackinfinity = () => {
             </div>
             <h1 className='hi-sub-title'>CONTACT</h1>
             <div className='hi-prize-section'>
-                    <h1 className='hi-details'>Rohith Ram : 9789954509</h1>
-                    <h1 className='hi-details'>Bharath Vishal: 9940656712</h1>
+                    <h1 className='hi-details'>Mohamed Nadhim : 7305421618</h1>
+                    <h1 className='hi-details'>Sanjay : 7305834440</h1>
             </div>
         </div>
     )
