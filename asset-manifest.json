@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f5f96a9b.css",
+    "main.js": "/static/js/main.9c738695.js",
+    "static/js/787.da855979.chunk.js": "/static/js/787.da855979.chunk.js",
+    "static/media/innovation.svg": "/static/media/innovation.c4fa47a301596c56c9bae8e6cdcf0bd8.svg",
+    "static/media/logo.png": "/static/media/logo.b4352b02b2c21fcf5e2a.png",
+    "static/media/HealthcareIcon.svg": "/static/media/HealthcareIcon.5465b41483c25b93e1fb9f7f5f4330d9.svg",
+    "static/media/energy.svg": "/static/media/energy.c9bc2e7150bac9a08142d96983076eb6.svg",
+    "static/media/agritech.svg": "/static/media/agritech.4c77ee4ccc643e3c28dc2ca3b9e848b4.svg",
+    "static/media/climate.svg": "/static/media/climate.9ad2f90e98d9ad4b33596da4d0cd8db1.svg",
+    "static/media/home.svg": "/static/media/home.5cb43349cd67f03fec22170ede729905.svg",
+    "static/media/supplychain.svg": "/static/media/supplychain.097a17f9ddcf3858d94d871fc805f4e0.svg",
+    "static/media/women.svg": "/static/media/women.e0d8d210aab0cf7f0b2a8d4ead5a6f7e.svg",
+    "static/media/cyber.svg": "/static/media/cyber.d0a319c2478b0d06e857499cdabd1086.svg",
+    "static/media/fintech.svg": "/static/media/fintech.eb84375d7cbf1872139e7f0ebee55054.svg",
+    "index.html": "/index.html",
+    "static/media/calendar.svg": "/static/media/calendar.0b965ce27bee89c4b1ac6e26849c901d.svg",
+    "static/media/phone.svg": "/static/media/phone.0345e6238b21d845c7b8c9038ef6945b.svg",
+    "static/media/person.svg": "/static/media/person.f903669f60f4fa3716220e840a3b3da8.svg",
+    "main.f5f96a9b.css.map": "/static/css/main.f5f96a9b.css.map",
+    "main.9c738695.js.map": "/static/js/main.9c738695.js.map",
+    "787.da855979.chunk.js.map": "/static/js/787.da855979.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5f96a9b.css",
+    "static/js/main.9c738695.js"
+  ]
+}
