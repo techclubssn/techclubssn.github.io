@@ -1,6 +1,6 @@
 .hackinfinity-section {
     background-color: black;
-    padding-top: 20vh;
+    padding-top: 15vh;
     font-family: 'Raleway';
 }
 
@@ -8,17 +8,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .hi-title-line {
     height: 1px;
-    width: 50%;
+    width: 90%;
     background-color: orange;
 }
 
 .pe-title {
-    font-size: 100px;
+    font-size: 50px;
     letter-spacing: 5px;
     margin: 0 3%;
     font-family: 'Arvo', serif;
@@ -39,6 +39,7 @@
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
 }
 
 .hi-link {
@@ -54,8 +55,9 @@
     font-family: "Cabin";
     color: black;
     font-weight: bold;
+    position:sticky;
     padding: 5px 10px;
-    margin-top: -50px;
+    margin-top: -100px;
     border-radius: 4px;
     width: max-content;
 }
@@ -76,7 +78,6 @@
 
 .pe-domains-section {
     padding: 0 6vw;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

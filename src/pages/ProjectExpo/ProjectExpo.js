@@ -71,9 +71,14 @@ const ProjectExpo = () => {
     
     return (
         <div className='hackinfinity-section'>
+            <div className='hi-about-para'>SSN College Of Engineering</div>
+            <div className='hi-about-para' style={{fontSize:25}}>Department of Electronics and Communication Engineering</div>
+            <br></br>
+            <div className='hi-about-para' style={{fontSize:20, fontStyle: 'italic'}}>presents</div>
+            <br></br>
             <div className='hi-header'>
                 <div className='hi-title-line' />
-                <h1 className='pe-title'>PROJECT EXPO 2025</h1>
+                <h1 className='pe-title'>PROJECT <span style={{color: 'orange'}}>EXPO 2025</span></h1>
                 <div className='hi-title-line' />
             </div>
             <div className='hi-about'>
@@ -87,7 +92,7 @@ const ProjectExpo = () => {
                     <button className='pe-button' >Registrations Starting Soon!</button>
                 </a>
             </div>
-            <h1 className='hi-sub-title'><span style={{fontSize: 50}}>DOMAINS</span></h1>
+            <h1 className='hi-sub-title'>DOMAINS</h1>
             <div className='pe-domains-section'>
                 {domains.map(item => ( 
                     <div className='hi-domain-preview'>

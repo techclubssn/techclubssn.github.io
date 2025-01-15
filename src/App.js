@@ -55,7 +55,7 @@ function App() {
           <Route exact path='/events' element={<Events/>} />
           <Route exact path='/blogs' element={<Blogs/>} />
           <Route exact path='/hackinfinity' element={<Hackinfinity/>} />
-          <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} />
+          {/* <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} /> */}
           <Route exact path='/zenith' element={<Dashboard/>} />
           <Route exact path='/zenith/:domainId' element={<Domain/>} />
           <Route exact path='/project-expo' element={<ProjectExpo/>} />
