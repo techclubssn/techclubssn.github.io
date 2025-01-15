@@ -12,6 +12,7 @@ import Hackinfinity from './pages/Events/Hackinfinity/Hackinfinity'
 import Team from './pages/Team/Team';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Domain from './pages/Domain/Domain';
+import ProjectExpo from './pages/ProjectExpo/ProjectExpo';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
           <Route exact path='/team' element={<Team teamData={data.teamData} alumniData={data.alumniData} />} />
           <Route exact path='/zenith' element={<Dashboard/>} />
           <Route exact path='/zenith/:domainId' element={<Domain/>} />
+          <Route exact path='/project-expo' element={<ProjectExpo/>} />
         </Routes>
       </AuthContextProvider>
     </div>

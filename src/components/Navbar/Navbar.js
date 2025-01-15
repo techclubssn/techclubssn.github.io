@@ -73,6 +73,7 @@ const NavBar = () => {
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/hackinfinity" onClick={() => {onSelect('/hackinfinity')}} active={activeRoute === '/hackinfinity'} >Hackinfinity</Nav.Link>
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/team" onClick={() => {onSelect('/team')}} active={activeRoute === '/team'} >Team</Nav.Link>
             <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/zenith" onClick={() => {onSelect('/zenith')}} active={activeRoute === '/zenith'} >Zenith</Nav.Link>
+            <Nav.Link as={Link} style={{marginLeft: '15px'}} to="/project-expo" onClick={() => {onSelect('/project-expo')}} active={activeRoute === '/project-expo'} >Project Expo</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
